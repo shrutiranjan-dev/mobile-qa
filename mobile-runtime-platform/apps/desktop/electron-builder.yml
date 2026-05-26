@@ -1,0 +1,23 @@
+appId: com.mobile.runtime.android
+productName: Android Runtime MVP
+artifactName: Android-Runtime-MVP-${version}-${os}-${arch}.${ext}
+files:
+  - build/**/*
+  - package.json
+directories:
+  output: ../../dist/desktop
+  buildResources: build-resources
+extraMetadata:
+  main: build/main.js
+win:
+  target:
+    - target: nsis
+    - target: portable
+linux:
+  target:
+    - target: AppImage
+    - target: deb
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true

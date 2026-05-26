@@ -1,0 +1,38 @@
+{
+  "name": "mobile-runtime-platform",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start:host-agent": "npm --workspace @mrp/host-agent run start",
+    "start:backend": "npm --workspace @mrp/backend-api run start",
+    "start:worker": "npm --workspace @mrp/android-worker run start",
+    "start:desktop": "npm --workspace @mrp/desktop run start",
+    "desktop:dev": "npm --workspace @mrp/desktop run dev",
+    "desktop:build": "npm --workspace @mrp/desktop run build",
+    "desktop:build:win": "npm --workspace @mrp/desktop run dist:win",
+    "desktop:build:linux": "npm --workspace @mrp/desktop run dist:linux",
+    "desktop:pack": "npm --workspace @mrp/desktop run pack",
+    "desktop:dist": "npm --workspace @mrp/desktop run dist",
+    "dev": "concurrently \"npm run start:host-agent\" \"npm run start:backend\" \"npm run start:worker\" \"npm run start:desktop\"",
+    "docker:windows": "docker compose -f docker/docker-compose.yml -f docker/docker-compose.windows.yml up --build",
+    "docker:ubuntu": "docker compose -f docker/docker-compose.yml -f docker/docker-compose.ubuntu.yml up --build",
+    "docker:down": "docker compose -f docker/docker-compose.yml down",
+    "docker:logs": "docker compose -f docker/docker-compose.yml logs -f",
+    "emu:start:small:clean": "node tools/android-cli.js emulator -avd Android_Small_Clean_API_35 -no-audio -no-boot-anim -no-metrics -gpu swiftshader_indirect -memory 2048 -cores 2",
+    "emu:start:small:gapps": "node tools/android-cli.js emulator -avd Android_Small_GApps_API_35 -no-audio -no-boot-anim -no-metrics -gpu swiftshader_indirect -memory 2048 -cores 2",
+    "emu:start:standard:clean": "node tools/android-cli.js emulator -avd Android_Standard_Clean_API_35 -no-audio -no-boot-anim -no-metrics -gpu swiftshader_indirect -memory 3072 -cores 2",
+    "emu:start:standard:gapps": "node tools/android-cli.js emulator -avd Android_Standard_GApps_API_35 -no-audio -no-boot-anim -no-metrics -gpu swiftshader_indirect -memory 3072 -cores 2",
+    "emu:stop": "node tools/android-cli.js adb -s emulator-5554 emu kill",
+    "emu:list": "node tools/android-cli.js emulator -list-avds",
+    "adb:devices": "node tools/android-cli.js adb devices",
+    "adb:start-server": "node tools/android-cli.js adb start-server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

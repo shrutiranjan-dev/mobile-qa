@@ -1,0 +1,1 @@
+export { DefaultRuntimeHostAdapter as WindowsAdapter } from "./runtime-host-adapter";

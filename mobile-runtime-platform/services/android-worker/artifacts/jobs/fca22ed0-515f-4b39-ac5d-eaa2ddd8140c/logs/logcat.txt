@@ -1,0 +1,1086 @@
+--------- beginning of main
+05-26 19:07:23.428  5069  5069 I abb     : StartCommandInProcess(73657474696e67730067657400676c6f settings.get.glo [truncated])
+05-26 19:07:23.436   581   581 W binder:581_7: type=1400 audit(0.0:109): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+05-26 19:07:23.436   581   581 W binder:581_7: type=1400 audit(0.0:110): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+05-26 19:07:23.444  5069  5069 I abb     : StartCommandInProcess(7061636b61676500696e7374616c6c00 package.install. [truncated])
+05-26 19:07:23.436   581   581 W binder:581_7: type=1400 audit(0.0:111): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+05-26 19:07:24.085   800   800 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+05-26 19:07:26.457   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:26.460   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:26.461   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:26.461   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:26.461   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:26.462   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:26.462   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:26.464  1084  1782 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+05-26 19:07:26.464  1084  1782 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+05-26 19:07:26.467  1264  1582 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=57 ]
+05-26 19:07:26.468  1264  1878 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[f61310d2-7d3b]>Handler" thread_id=62 ]
+05-26 19:07:26.479  1264  1878 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=62 ]
+05-26 19:07:28.480   581   581 W binder:581_7: type=1400 audit(0.0:112): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+--------- beginning of system
+05-26 19:07:28.487   581   854 D CompatChangeReporter: Compat change id reported: 240618202; UID 2000; state: ENABLED
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: No service published for: persistent_data_block
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: persistent_data_block
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:203)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$81.createService(SystemServiceRegistry.java:1071)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$81.createService(SystemServiceRegistry.java:1068)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$StaticServiceFetcher.getService(SystemServiceRegistry.java:2293)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1812)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2241)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.content.Context.getSystemService(Context.java:4503)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at com.android.server.pm.PackageInstallerSession.markAsSealed(PackageInstallerSession.java:2394)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at com.android.server.pm.PackageInstallerSession.commit(PackageInstallerSession.java:2143)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.content.pm.PackageInstaller$Session.commit(PackageInstaller.java:1977)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at com.android.server.pm.PackageManagerShellCommand.doCommitSession(PackageManagerShellCommand.java:4298)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1634)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1561)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:245)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.os.ShellCommand.exec(ShellCommand.java:38)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at com.android.server.pm.PackageManagerService$IPackageManagerImpl.onShellCommand(PackageManagerService.java:6561)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.os.Binder.shellCommand(Binder.java:1230)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.os.Binder.onTransact(Binder.java:1043)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.content.pm.IPackageManager$Stub.onTransact(IPackageManager.java:4620)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at com.android.server.pm.PackageManagerService$IPackageManagerImpl.onTransact(PackageManagerService.java:6545)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.os.Binder.execTransactInternal(Binder.java:1505)
+05-26 19:07:28.513   581   854 E SystemServiceRegistry: 	at android.os.Binder.execTransact(Binder.java:1444)
+05-26 19:07:28.516   581   854 E SystemServiceRegistry: Manager wrapper not available: persistent_data_block
+05-26 19:07:28.705   581   650 D FileSystemUtils: Punching holes in file: /data/app/vmdl2134339297.tmp/base.apk programHeaderOffset: 64 programHeaderNum: 10
+05-26 19:07:28.706   581   650 D FileSystemUtils: Total number of LOAD segments 3
+05-26 19:07:28.706   581   650 D FileSystemUtils: Size before punching holes st_blocks: 252120, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.706   581   650 D FileSystemUtils: Size after punching holes st_blocks: 252120, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.706   581   650 D FileSystemUtils: Extra field length: 9568,  Size before punching holes st_blocks: 252120, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.706   581   650 D FileSystemUtils: Extra field length: 9568 content near offset: 35d95c25004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+05-26 19:07:28.706   581   650 D FileSystemUtils: Punching hole in file - start: 105226240 len:8192
+05-26 19:07:28.709   581   650 D FileSystemUtils: punchHolesInApk:: Size after punching holes st_blocks: 252104, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.710   581   650 D FileSystemUtils: Punching holes in file: /data/app/vmdl2134339297.tmp/base.apk programHeaderOffset: 64 programHeaderNum: 12
+05-26 19:07:28.710   581   650 D FileSystemUtils: Total number of LOAD segments 4
+05-26 19:07:28.710   581   650 D FileSystemUtils: Size before punching holes st_blocks: 252104, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.710   581   650 D FileSystemUtils: Size after punching holes st_blocks: 252104, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.710   581   650 D FileSystemUtils: Extra field length: 11031,  Size before punching holes st_blocks: 252104, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.710   581   650 D FileSystemUtils: Extra field length: 11031 content near offset: 35d9132b00400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+05-26 19:07:28.710   581   650 D FileSystemUtils: Punching hole in file - start: 105472000 len:8192
+05-26 19:07:28.712   581   650 D FileSystemUtils: punchHolesInApk:: Size after punching holes st_blocks: 252096, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.712   581   650 D FileSystemUtils: Punching holes in file: /data/app/vmdl2134339297.tmp/base.apk programHeaderOffset: 64 programHeaderNum: 11
+05-26 19:07:28.713   581   650 D FileSystemUtils: Total number of LOAD segments 4
+05-26 19:07:28.713   581   650 D FileSystemUtils: Size before punching holes st_blocks: 252096, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.713   581   650 D FileSystemUtils: Size after punching holes st_blocks: 252096, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.713   581   650 D FileSystemUtils: Extra field length: 6756,  Size before punching holes st_blocks: 252096, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.713   581   650 D FileSystemUtils: Extra field length: 6756 content near offset: 35d9601a004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+05-26 19:07:28.713   581   650 D FileSystemUtils: Punching hole in file - start: 89763840 len:4096
+05-26 19:07:28.715   581   650 D FileSystemUtils: punchHolesInApk:: Size after punching holes st_blocks: 252088, st_blksize: 4096, st_size: 129079053
+05-26 19:07:28.725   581   592 I system_server: Background concurrent mark compact GC freed 20MB AllocSpace bytes, 114(3052KB) LOS objects, 46% free, 27MB/51MB, paused 924us,1.078ms total 209.616ms
+05-26 19:07:28.742   581   604 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+05-26 19:07:28.846   581   637 I PackageManager: Integrity check passed for file:///data/app/vmdl2134339297.tmp
+05-26 19:07:28.928   581   612 I ActivityManager: Force stopping com.whatsapp appid=10213 user=-1: installPackageLI
+05-26 19:07:28.934   581   637 I PackageManager: Update package com.whatsapp code path from /data/app/~~EBxXCBrsC7szCqh0NaaTbg==/com.whatsapp-aDj7QufU76qknZ9PU0Mr3w== to /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==; Retain data and using new
+05-26 19:07:28.936   581   637 I AppsFilter: interaction: PackageSetting{d20c8d9 com.android.microdroid.empty_payload/10199} -> PackageSetting{5072496 com.whatsapp/10213} BLOCKED
+05-26 19:07:28.936   581   637 I AppsFilter: interaction: PackageSetting{d20c8d9 com.android.microdroid.empty_payload/10199} -> PackageSetting{7072e93 com.whatsapp/10213} BLOCKED
+--------- beginning of kernel
+05-26 19:07:28.926     0     0 I binder  : 581:612 ioctl 400c620e 7722a8b69eb4 returned -11
+05-26 19:07:28.930     0     0 I servicemanager: Caller(pid=581,uid=1000,sid=u:r:system_server:s0) Since 'artd' could not be found trying to start it as a lazy AIDL service. (if it's not configured to be a lazy service, it may be stuck starting or still starting).
+05-26 19:07:28.964   581   612 E ActivityManager: Unable to freeze binder for 4253: -11
+05-26 19:07:28.966   581   603 D DisplayManagerService: Drop pending events for gone uid 10213
+05-26 19:07:28.967   581   612 I ActivityManager: Killing 4253:com.whatsapp/u0a213 (adj 935): stop com.whatsapp due to installPackageLI
+05-26 19:07:28.944     0     0 I binder  : 581:612 ioctl 400c620e 7722a8b69eb4 returned -11
+05-26 19:07:29.002   382   469 I netd    : tetherGetStats() -> {[]} <0.78ms>
+05-26 19:07:28.985     0     0 I init    : starting service 'artd'...
+05-26 19:07:28.990     0     0 I binder  : undelivered transaction 433260, process died.
+05-26 19:07:28.992     0     0 I binder  : undelivered transaction 433939, process died.
+05-26 19:07:28.992     0     0 I binder  : undelivered transaction 434458, process died.
+05-26 19:07:28.992     0     0 I binder  : undelivered transaction 435169, process died.
+05-26 19:07:28.993     0     0 I binder  : undelivered transaction 438069, process died.
+05-26 19:07:28.994     0     0 I binder  : undelivered transaction 438741, process died.
+05-26 19:07:28.995     0     0 I binder  : undelivered transaction 439253, process died.
+05-26 19:07:28.995     0     0 I binder  : undelivered transaction 439554, process died.
+05-26 19:07:28.995     0     0 I binder  : undelivered transaction 439870, process died.
+05-26 19:07:28.995     0     0 I binder  : undelivered transaction 440762, process died.
+05-26 19:07:29.016   581   728 D ConnectivityService: releasing NetworkRequest [ REQUEST id=185, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10213 RequestorUid: 10213 RequestorPkg: com.whatsapp UnderlyingNetworks: Null] ] (release request)
+05-26 19:07:29.017   383   383 I Zygote  : Process 4253 exited due to signal 9 (Killed)
+05-26 19:07:29.018   581   614 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_10213/pid_4253
+05-26 19:07:29.034   581  3284 V ActivityManager: Got obituary of 4253:com.whatsapp
+05-26 19:07:29.110     0     0 I init    : ... started service 'artd' has pid 5081
+05-26 19:07:29.113     0     0 I init    : Control message: Processed ctl.interface_start for 'aidl/artd' from pid: 170 (/system/bin/servicemanager)
+05-26 19:07:29.263  5081  5081 I artd    : Starting artd
+05-26 19:07:29.265  5081  5081 I AidlLazyServiceRegistrar: Registering service artd
+05-26 19:07:29.268  5081  5081 I AidlLazyServiceRegistrar: Process has 1 (of 1 available) client(s) in use after notification artd has clients: 1
+05-26 19:07:29.248     0     0 I servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
+05-26 19:07:29.248     0     0 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+05-26 19:07:29.305     0     0 I logd    : start watching /data/system/packages.list ...
+05-26 19:07:29.324   581   637 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+05-26 19:07:29.324   581   637 D PackageManager: Clear ephemeral installer activity
+05-26 19:07:29.308     0     0 I logd    : ReadPackageList, total packages: 217
+05-26 19:07:29.426  5081  5083 I artd    : Merge skipped because there are no existing profiles
+05-26 19:07:29.426   581   637 I ArtService: Adjusting the compiler filter for 'com.whatsapp' from 'speed-profile' to 'verify' because there is no valid profile
+05-26 19:07:29.611  5081  5081 I artd    : Dex parent of /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk is not writable: Permission denied
+05-26 19:07:29.612  5081  5081 I artd    : GetBestInfo checking odex in dalvik-cache (/data/dalvik-cache/x86_64/data@app@~~CC1of49im3gWGB8c4swVUA==@com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==@base.apk@classes.dex)
+05-26 19:07:29.612  5081  5081 I artd    : Loading /data/dalvik-cache/x86_64/data@app@~~CC1of49im3gWGB8c4swVUA==@com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==@base.apk@classes.dex with executable: 0
+05-26 19:07:29.613  5081  5081 I artd    : OatFileAssistant test for existing oat file /data/dalvik-cache/x86_64/data@app@~~CC1of49im3gWGB8c4swVUA==@com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==@base.apk@classes.dex: File /data/dalvik-cache/x86_64/data@app@~~CC1of49im3gWGB8c4swVUA==@com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==@base.apk@classes.vdex does not exist.
+05-26 19:07:29.613  5081  5081 I artd    : GetBestInfo checking odex next to the dex file (/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.odex)
+05-26 19:07:29.613  5081  5081 I artd    : Loading /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.odex with executable: 0
+05-26 19:07:29.614  5081  5081 I artd    : OatFileAssistant test for existing oat file /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.odex: File /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.vdex does not exist.
+05-26 19:07:29.614  5081  5081 I artd    : GetBestInfo checking vdex in dalvik-cache (/data/dalvik-cache/x86_64/data@app@~~CC1of49im3gWGB8c4swVUA==@com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==@base.apk@classes.vdex)
+05-26 19:07:29.614  5081  5081 I artd    : unable to open vdex file /data/dalvik-cache/x86_64/data@app@~~CC1of49im3gWGB8c4swVUA==@com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==@base.apk@classes.vdex: File /data/dalvik-cache/x86_64/data@app@~~CC1of49im3gWGB8c4swVUA==@com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==@base.apk@classes.vdex does not exist.
+05-26 19:07:29.614  5081  5081 I artd    : OatFileAssistant test for existing oat file /data/dalvik-cache/x86_64/data@app@~~CC1of49im3gWGB8c4swVUA==@com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==@base.apk@classes.vdex: File /data/dalvik-cache/x86_64/data@app@~~CC1of49im3gWGB8c4swVUA==@com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==@base.apk@classes.vdex does not exist.
+05-26 19:07:29.614  5081  5081 I artd    : GetBestInfo checking vdex next to the dex file (/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.vdex)
+05-26 19:07:29.614  5081  5081 I artd    : unable to open vdex file /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.vdex: File /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.vdex does not exist.
+05-26 19:07:29.614  5081  5081 I artd    : OatFileAssistant test for existing oat file /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.vdex: File /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.vdex does not exist.
+05-26 19:07:29.614  5081  5081 I artd    : GetBestInfo checking dm (/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.dm)
+05-26 19:07:29.615  5081  5081 W ziparchive: Unable to open '/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.dm': No such file or directory
+05-26 19:07:29.615  5081  5081 I artd    : OatFileAssistant test for existing oat file /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.dm: I/O error
+05-26 19:07:29.615  5081  5081 I artd    : GetBestInfo checking dm (/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.dm)
+05-26 19:07:29.615  5081  5081 W ziparchive: Unable to open '/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.dm': No such file or directory
+05-26 19:07:29.615  5081  5081 I artd    : OatFileAssistant test for existing oat file /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.dm: I/O error
+05-26 19:07:29.615  5081  5081 I artd    : GetBestInfo no usable artifacts
+05-26 19:07:29.652  5081  5083 I artd    : Running dex2oat: /apex/com.android.art/bin/art_exec --drop-capabilities --set-task-profile=Dex2OatBootComplete --set-priority=background --keep-fds=7:8:9:10:11:12:13 -- /apex/com.android.art/bin/dex2oat64 --zip-fd=7 --zip-location=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk --oat-fd=8 --oat-location=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.odex --output-vdex-fd=9 --swap-fd=10 --class-loader-context-fds=11:12:13 --class-loader-context=PCL[]{PCL[/system/framework/org.apache.http.legacy.jar]#PCL[/system_ext/framework/androidx.window.extensions.jar]#PCL[/system_ext/framework/androidx.window.sidecar.jar]} --classpath-dir=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ== --instruction-set=x86_64 --instruction-set-features=default --instruction-set-variant=x86_64 --compiler-filter=verify --compilation-reason=install --compact-dex-level=none --max-image-block-size=524288 --resolve-startup-const-strings=true --generate-mini-debug-info --runtime-arg -Xtarget-sdk-version:36 --runtime-arg -Xhidden-api-policy:enabled --runtime-arg -Xms64m --runtime-arg -Xmx512m --comments=app-name:com.whatsapp,app-version-name:2.26.7.74,app-version-code:260707404,art-version:350820300
+05-26 19:07:29.652  5081  5083 I artd    : Opened FDs: 7:/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk 8:/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.odex.OklR0e.tmp 9:/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.vdex.BQy9JM.tmp 10:/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.odex.swap.Tr1iIX.tmp 11:/system_ext/framework/androidx.window.sidecar.jar 12:/system_ext/framework/androidx.window.extensions.jar 13:/system/framework/org.apache.http.legacy.jar 
+05-26 19:07:29.739  5086  5086 W dex2oat64: Obsolete flag --compact-dex-level ignored
+05-26 19:07:29.739  5086  5086 W dex2oat64: Unexpected CPU variant for x86: x86_64.
+05-26 19:07:29.739  5086  5086 W dex2oat64: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+05-26 19:07:29.741  5086  5086 W dex2oat64: Mismatch between dex2oat instruction set features to use (ISA: X86_64 Feature string: -ssse3,-sse4.1,-sse4.2,-avx,-avx2,-popcnt) and those from CPP defines (ISA: X86_64 Feature string: ssse3,sse4.1,sse4.2,-avx,-avx2,popcnt) for the command line:
+05-26 19:07:29.741  5086  5086 W dex2oat64: /apex/com.android.art/bin/dex2oat64 --zip-fd=7 --zip-location=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk --oat-fd=8 --oat-location=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/oat/x86_64/base.odex --output-vdex-fd=9 --swap-fd=10 --class-loader-context-fds=11:12:13 --class-loader-context=PCL[]{PCL[/system/framework/org.apache.http.legacy.jar]#PCL[/system_ext/framework/androidx.window.extensions.jar]#PCL[/system_ext/framework/androidx.window.sidecar.jar]} --classpath-dir=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ== --instruction-set=x86_64 --instruction-set-features=default --instruction-set-variant=x86_64 --compiler-filter=verify --compilation-reason=install --compact-dex-level=none --max-image-block-size=524288 --resolve-startup-const-strings=true --generate-mini-debug-info --runtime-arg -Xtarget-sdk-version:36 --runtime-arg -Xhidden-api-policy:enabled --runtime-arg -Xms64m --runtime-arg -Xmx512m --comments=app-name:com.whatsapp,app-version-name:2.26.7.74,app-version-code:260707404,art-version:350820300
+05-26 19:07:29.741  5086  5086 I dex2oat64: /apex/com.android.art/bin/dex2oat64 --output-vdex-fd=9 --class-loader-context-fds=11:12:13 --class-loader-context=PCL[]{PCL[/system/framework/org.apache.http.legacy.jar]#PCL[/system_ext/framework/androidx.window.extensions.jar]#PCL[/system_ext/framework/androidx.window.sidecar.jar]} --classpath-dir=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ== --compiler-filter=verify --compilation-reason=install --compact-dex-level=none --max-image-block-size=524288 --resolve-startup-const-strings=true --generate-mini-debug-info --comments=app-name:com.whatsapp,app-version-name:2.26.7.74,app-version-code:260707404,art-version:350820300
+05-26 19:07:30.757   581   602 D CompatChangeReporter: Compat change id reported: 296060945; UID 10143; state: ENABLED
+05-26 19:07:31.984  5086  5086 I dex2oat64: Using CollectorTypeCMC GC.
+05-26 19:07:32.166  5086  5086 I dex2oat64: Large app, accepted running with swap.
+05-26 19:07:32.283   800   800 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+05-26 19:07:32.448  1084  1782 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+05-26 19:07:32.448  1084  1782 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+05-26 19:07:32.451  1264  1582 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=57 ]
+05-26 19:07:32.452  1264  1878 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[f61310d2-7d3b]>Handler" thread_id=62 ]
+05-26 19:07:32.453   581  1790 D CompatChangeReporter: Compat change id reported: 297989574; UID 10137; state: ENABLED
+05-26 19:07:32.472   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:32.473   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:32.474   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:32.475   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:32.476   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:32.477  1264  1878 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=62 ]
+05-26 19:07:32.477   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:35.490  5086  5086 W dex2oat64: Verification of java.lang.Long X.08Q.A0C(int) took 218.572ms (156039.90 bytecodes/s) (1086552B approximate peak alloc)
+05-26 19:07:36.834   813   898 D EGL_emulation: app_time_stats: avg=36789.99ms min=36789.99ms max=36789.99ms count=1
+05-26 19:07:38.357  1243  1887 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+05-26 19:07:39.026   581   672 D ActivityManager: freezing 1410 com.google.android.gms
+05-26 19:07:39.027   581   672 D ActivityManager: freezing 4995 android.process.acore
+05-26 19:07:39.202   581   728 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-26 19:07:39.203   581   728 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-26 19:07:39.203   581   728 D InetDiagMessage: Destroyed live tcp sockets for uids={10091} in 1ms
+05-26 19:07:40.171  5086  5088 W dex2oat64: Accessing hidden method Landroid/os/PowerWhitelistManager;->isWhitelisted(Ljava/lang/String;Z)Z (blocked, linking, denied)
+05-26 19:07:40.209   800   800 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+05-26 19:07:41.286  5086  5086 W dex2oat64: Accessing hidden method Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;Landroid/text/TextDirectionHeuristic;FFZLandroid/text/TextUtils$TruncateAt;II)V (max-target-p, linking, denied)
+05-26 19:07:41.286  5086  5086 W dex2oat64: Accessing hidden method Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;Landroid/text/TextDirectionHeuristic;FFZLandroid/text/TextUtils$TruncateAt;II)V (max-target-p, linking, denied)
+05-26 19:07:41.483  1084  1782 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+05-26 19:07:41.483  1084  1782 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+05-26 19:07:41.485  1264  1878 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[f61310d2-7d3b]>Handler" thread_id=62 ]
+05-26 19:07:41.486  1264  1582 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=57 ]
+05-26 19:07:41.486   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:41.487   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:41.487   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:41.488   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:41.488   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:41.488   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:41.488   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:41.489   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:41.489   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:41.507  1264  1878 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=62 ]
+05-26 19:07:42.191  5086  5088 W dex2oat64: Accessing hidden method Ldalvik/system/VMDebug;->countInstancesOfClasses([Ljava/lang/Class;Z)[J (max-target-o,core-platform-api, linking, denied)
+05-26 19:07:42.301  5086  5088 W dex2oat64: Accessing hidden method Llibcore/io/Os;->fstat(Ljava/io/FileDescriptor;)Landroid/system/StructStat; (blocked, linking, denied)
+05-26 19:07:43.932  5086  5086 I dex2oat64: dex2oat took 14.197s (20.672s cpu) (threads: 2) arena alloc=0B (0B) java alloc=73MB (76830448B) native alloc=15MB (16249280B) free=1578KB (1616368B) swap=16MB (16777216B)
+05-26 19:07:43.961  5081  5083 I artd    : dex2oat returned code 0
+05-26 19:07:43.988   581   637 I ArtService: Dexopt result: [packageName = com.whatsapp] DexContainerFileDexoptResult{dexContainerFile=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk, primaryAbi=true, abi=x86_64, actualCompilerFilter=verify, status=PERFORMED, dex2oatWallTimeMillis=14313, dex2oatCpuTimeMillis=20730, sizeBytes=68609792, sizeBeforeBytes=0, extendedStatusFlags=[]}
+05-26 19:07:44.000   581   637 D ActivityManager: sync unfroze 1410 com.google.android.gms for 10
+05-26 19:07:44.001   581   637 D ActivityManager: sync unfroze 4588 com.google.android.gms.unstable for 10
+05-26 19:07:44.035   581   637 I AppsFilter: interaction: PackageSetting{4485f43 com.android.microdroid.empty_payload/10199} -> PackageSetting{2f75612 com.whatsapp/10213} BLOCKED
+05-26 19:07:44.041   581  3284 D CompatChangeReporter: Compat change id reported: 261072174; UID 10145; state: ENABLED
+05-26 19:07:44.050  1410  1410 I IntentFilterVerRcvr: S+ domain verification enabled [CONTEXT service_id=244 ]
+05-26 19:07:44.069  1410  5094 I AppLinksIntentOperation: Verifying requested domains [CONTEXT service_id=244 ]
+05-26 19:07:44.078   581  1790 D CompatChangeReporter: Compat change id reported: 261072174; UID 10143; state: ENABLED
+05-26 19:07:44.101  1410  5094 I AppLinksRequestHandler: Processing 1 input requests [CONTEXT service_id=244 ]
+05-26 19:07:44.117   581   637 I ActivityManager: Force stopping com.whatsapp appid=10213 user=0: pkg removed
+05-26 19:07:44.120   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.120   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.120   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.120   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.121   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.125   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.125   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.126   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.126   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.126   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.135  1410  5094 I AppLinksUtilsV1: Legacy cross-profile verification enabled [CONTEXT service_id=244 ]
+05-26 19:07:44.137   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.138   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.138   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.138   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.271  1410  1583 E gclu    : *~*~*~ Previous channel {0} was garbage collected without being shut down! ~*~*~*
+05-26 19:07:44.271  1410  1583 E gclu    :     Make sure to call shutdown()/shutdownNow()
+05-26 19:07:44.271  1410  1583 E gclu    : java.lang.RuntimeException: ManagedChannel allocation site
+05-26 19:07:44.271  1410  1583 E gclu    : 	at gclt.<init>(:com.google.android.gms@242335041@24.23.35 (190800-646585959):21)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at gclu.<init>(:com.google.android.gms@242335041@24.23.35 (190800-646585959):10)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at gcls.a(:com.google.android.gms@242335041@24.23.35 (190800-646585959):244)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at gbvj.a(:com.google.android.gms@242335041@24.23.35 (190800-646585959):5)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at ewrn.a(:com.google.android.gms@242335041@24.23.35 (190800-646585959):173)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at emsu.a(:com.google.android.gms@242335041@24.23.35 (190800-646585959):13)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at etzu.a(:com.google.android.gms@242335041@24.23.35 (190800-646585959):3)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at etyv.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):21)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at etzw.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):5)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at angs.c(:com.google.android.gms@242335041@24.23.35 (190800-646585959):50)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at angs.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):76)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at anmg.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):8)
+05-26 19:07:44.271  1410  1583 E gclu    : 	at java.lang.Thread.run(Thread.java:1012)
+05-26 19:07:44.278  1410  1583 W DataCollectionRegistryC: missing CollectionDefinition for digitalassetlinks.googleapis.com/google.digitalassetlinks.v1.AssetLinks/Check
+05-26 19:07:44.278   382  5097 I resolv  : GetAddrInfoHandler::run: {101 786533 101 983141 10143 0}
+05-26 19:07:44.284   382  5098 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+05-26 19:07:44.284   382  5099 I resolv  : res_nmkquery: (QUERY, IN, A)
+05-26 19:07:44.286   581   774 D ShortcutService: received package broadcast intent: Intent { act=android.intent.action.PACKAGE_REMOVED dat=package: flg=0x4000010 (has extras) }
+05-26 19:07:44.286   581   734 D CompatChangeReporter: Compat change id reported: 297989574; UID 1000; state: ENABLED
+05-26 19:07:44.293   581   734 E AppOps  : attributionTag VCN not declared in manifest of android
+05-26 19:07:44.295   581   754 I AppWidgetServiceImpl: Received broadcast: android.intent.action.PACKAGE_REMOVED on user 0
+05-26 19:07:44.340   943   943 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+05-26 19:07:44.370   581   734 E AppOps  : attributionTag VCN not declared in manifest of android
+05-26 19:07:44.378   581   754 I AppWidgetServiceImpl: Received broadcast: android.intent.action.PACKAGE_ADDED on user 0
+05-26 19:07:44.379   581   754 D AppWidgetServiceImpl: Trying to notify widget providers changed
+05-26 19:07:44.386   581   581 D ActivityManager: sync unfroze 4970 com.android.settings for 10
+05-26 19:07:44.392   581   581 D CompatChangeReporter: Compat change id reported: 151861875; UID 1000; state: ENABLED
+05-26 19:07:44.412   382  5099 I resolv  : res_nsend: used send_dg 114 terrno: 0
+05-26 19:07:44.413   382  5099 I resolv  : doQuery: rcode=0, ancount=4, return value=114
+05-26 19:07:44.420   581   774 D ShortcutService: received package broadcast intent: Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) }
+05-26 19:07:44.420   581   774 D ShortcutService: replacing package: com.whatsapp userId0
+05-26 19:07:44.421   581   774 D ShortcutService: handlePackageUpdateFinished: com.whatsapp user=0
+05-26 19:07:44.425   581   774 D ShortcutService: rescanPackageIfNeeded 0@com.whatsapp, forceRescan=true , isNewApp=false
+05-26 19:07:44.426   382  5098 I resolv  : res_nsend: used send_dg 162 terrno: 0
+05-26 19:07:44.426   382  5098 I resolv  : doQuery: rcode=0, ancount=4, return value=162
+05-26 19:07:44.437   581   774 D ShortcutService: Package com.whatsapp has 0 manifest shortcut(s), and 2 share target(s)
+05-26 19:07:44.437   581   774 D ShortcutService: Package com.whatsapp updated, version 260707404 -> 260707404
+05-26 19:07:44.437   383   383 D Zygote  : Forked child process 5103
+05-26 19:07:44.467  1410  3267 D TrafficStats: tagSocket(191) with statsTag=0x20002500, statsUid=-1
+05-26 19:07:44.482   581  1546 I AppWidgetServiceImpl: getInstalledProvidersForProfiles() 0
+05-26 19:07:44.493   581   602 W Looper  : Slow dispatch took 117ms android.fg h=android.os.Handler c=com.android.server.am.SameProcessApplicationThread$$ExternalSyntheticLambda1@4797dc3 m=0
+05-26 19:07:44.505   581   581 W Looper  : Slow dispatch took 100ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@17c46be m=0
+05-26 19:07:44.512   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.513   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.514   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.514   581   637 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.514  4588  4588 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.518   813   813 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.518   581  3284 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10137, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:44.519  1084  1084 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.519  1410  1410 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.522  4970  4970 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.522  1020  1020 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.523  4907  4907 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.525  1145  1145 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.527  1222  1222 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.536  1410  1441 I gle.android.gms: Background concurrent mark compact GC freed 1900KB AllocSpace bytes, 6(412KB) LOS objects, 49% free, 15MB/31MB, paused 735us,1.138ms total 370.473ms
+05-26 19:07:44.543   884   884 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.558  5103  5103 I ndroid.keychain: Using CollectorTypeCMC GC.
+05-26 19:07:44.561  1264  1264 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.563  5103  5103 W ndroid.keychain: Unexpected CPU variant for x86: x86_64.
+05-26 19:07:44.563  5103  5103 W ndroid.keychain: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+05-26 19:07:44.565   581   602 W Looper  : Slow delivery took 202ms android.fg h=android.os.Handler c=com.android.internal.content.PackageMonitor$$ExternalSyntheticLambda0@605eb1 m=0
+05-26 19:07:44.566   581   782 I SdkSandboxManager: No SDKs used. Skipping SDK data reconcilation for CallingInfo{mUid=10213, mPackageName='com.whatsapp, mAppProcessToken='null'}
+05-26 19:07:44.574  1205  1205 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.575  1243  1243 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.583  5103  5103 E ndroid.keychain: Not starting debugger since process cannot load the jdwp agent.
+05-26 19:07:44.587  5103  5103 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-26 19:07:44.589   581  1790 W ParceledListSlice: Element #24 is 19828 bytes.
+05-26 19:07:44.589   581  1790 W ParceledListSlice: Element #25 is 19864 bytes.
+05-26 19:07:44.590   581  1790 W ParceledListSlice: Element #26 is 19708 bytes.
+05-26 19:07:44.603   581  3284 W ParceledListSlice: Element #27 is 19616 bytes.
+05-26 19:07:44.604   581  3284 W ParceledListSlice: Element #28 is 19728 bytes.
+05-26 19:07:44.607   581   612 D ActivityManager: sync unfroze 1336 com.google.android.permissioncontroller for 3
+05-26 19:07:44.611  1336  1336 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:44.626   581   637 D PackageInstallerSession: Marking session 2134339297 as applied
+05-26 19:07:44.635   581   613 W ActivityManager: Slow operation: 243ms so far, now at startProcess: done updating battery stats
+05-26 19:07:44.637   581   613 W ActivityManager: Slow operation: 245ms so far, now at startProcess: building log message
+05-26 19:07:44.637   581   613 I ActivityManager: Start proc 5103:com.android.keychain/1000 for service {com.android.keychain/com.android.keychain.KeyChainService}
+05-26 19:07:44.637   581   613 W ActivityManager: Slow operation: 246ms so far, now at startProcess: starting to update pids map
+05-26 19:07:44.642   581   613 W ActivityManager: Slow operation: 250ms so far, now at startProcess: done updating pids map
+05-26 19:07:44.644   943   943 E CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: no package found
+05-26 19:07:44.649   581   581 I Telecom : CarModeTracker: Package com.whatsapp is not tracked.: SSH.oR@AQE🔒
+05-26 19:07:44.649   581   782 I SdkSandboxManager: No SDKs used. Skipping SDK data reconcilation for CallingInfo{mUid=10213, mPackageName='com.whatsapp, mAppProcessToken='null'}
+05-26 19:07:44.649   581  1546 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:44.650   581  1546 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:44.650   581  1546 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_WAP_PUSH, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:44.651   581  1546 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = SEND_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:44.653   581   734 E AppOps  : attributionTag VCN not declared in manifest of android
+05-26 19:07:44.654   581  1546 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:44.656   382   469 I netd    : tetherGetStats() -> {[]} <3.90ms>
+05-26 19:07:44.665   581   700 W PackageConfigPersister: App-specific configuration not found for packageName: com.whatsapp and userId: 0
+05-26 19:07:44.671  1020  1069 W PackageManager: Failure retrieving text 0x7f130786 in package com.android.systemui
+05-26 19:07:44.671  1020  1069 W PackageManager: android.content.res.Resources$NotFoundException: String resource ID #0x7f130786
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at android.content.res.Resources.getText(Resources.java:466)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at android.app.ApplicationPackageManager.getText(ApplicationPackageManager.java:2405)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at android.appwidget.AppWidgetProviderInfo.loadDescription(AppWidgetProviderInfo.java:484)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at com.android.launcher3.model.WidgetItem.<init>(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:4)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at com.android.launcher3.model.WidgetsModel.update(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:72)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at com.android.launcher3.p0.execute(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:16)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at com.android.launcher3.LauncherModel.a(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:27)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at com.android.launcher3.t0.run(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:12)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at android.os.Handler.handleCallback(Handler.java:959)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at android.os.Looper.loopOnce(Looper.java:232)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at android.os.Looper.loop(Looper.java:317)
+05-26 19:07:44.671  1020  1069 W PackageManager: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+05-26 19:07:44.674   581   598 I AppWidgetServiceImpl: getWidgetPreview() 0
+05-26 19:07:44.679   581  3284 I AppWidgetServiceImpl: getWidgetPreview() 0
+05-26 19:07:44.708   581   581 I Telecom : InCallController: updateCarModeForConnections: car mode apps: : SSH.oR@AQE🔒
+05-26 19:07:44.709   581   581 I Telecom : InCallController: update carmode current:UserHandle{0} parent:null: SSH.oR@AQE🔒
+05-26 19:07:44.710   581   581 W Looper  : Slow dispatch took 205ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@b374934 m=0
+05-26 19:07:44.720   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.737   581   774 D ShortcutService: Package com.whatsapp: publishing manifest shortcuts
+05-26 19:07:44.741  1264  1582 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=57 ]
+05-26 19:07:44.742   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.742   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.742   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.742   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.742   581   728 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:44.793   581   612 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 10213, packageName = null, attributionTag = null, token = android.os.Binder@2f06f02, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-26 19:07:44.804  1336  1336 I SafetyLabelChangedBroadcastReceiver: received broadcast packageName: com.whatsapp, current user: UserHandle{0}, packageChangeEvent: UPDATE, intent user: UserHandle{0}
+05-26 19:07:44.818   383   383 D Zygote  : Forked child process 5115
+05-26 19:07:44.852  1205  1205 I MediaProvider: Invalidating LocalCallingIdentity cache for package com.whatsapp. Reason: package android.intent.action.PACKAGE_REMOVED
+05-26 19:07:44.852   581   581 W Looper  : Slow delivery took 408ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@8d96764 m=0
+05-26 19:07:44.864  1205  1205 W MediaProvider: WorkProfileOwnerApps cache is empty
+05-26 19:07:44.868  1205  1205 D PickerSyncLockManager: Trying to acquire lock com.android.providers.media.photopicker.sync.CloseableReentrantLock@70561db[Unlocked]. Lock Name = CLOUD_PROVIDER_LOCK. Threads that may be waiting to acquire this lock = []
+05-26 19:07:44.868  1205  1205 D CloseableReentrantLock: Successfully acquired lock com.android.providers.media.photopicker.sync.CloseableReentrantLock@70561db[Locked by thread main]. Lock Name = CLOUD_PROVIDER_LOCK. Threads that may be waiting to acquire this lock = []
+05-26 19:07:44.868  1205  1205 D CloseableReentrantLock: Successfully released lock com.android.providers.media.photopicker.sync.CloseableReentrantLock@70561db[Unlocked]. Lock Name = CLOUD_PROVIDER_LOCK. Threads that may be waiting to acquire this lock = []
+05-26 19:07:44.885  1264  1878 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[f61310d2-7d3b]>Handler" thread_id=62 ]
+05-26 19:07:44.905   813   813 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+05-26 19:07:44.906   813   813 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+05-26 19:07:44.910   813   813 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+05-26 19:07:44.927   943   943 D CarrierSvcBindHelper: onPackageUpdateFinished: com.whatsapp
+05-26 19:07:44.931  1410  3267 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+05-26 19:07:44.931  1410  3267 W Conscrypt: 	at com.google.android.gms.org.conscrypt.Platform.setSocketWriteTimeout(:com.google.android.gms@242335041@24.23.35 (190800-646585959):204)
+05-26 19:07:44.931  1410  3267 W Conscrypt: 	at com.google.android.gms.org.conscrypt.ConscryptFileDescriptorSocket.setSoWriteTimeout(:com.google.android.gms@242335041@24.23.35 (190800-646585959):4)
+05-26 19:07:44.939   943   943 D CarrierSvcBindHelper: No carrier app for: 0
+05-26 19:07:44.939   943   943 D CarrierSvcBindHelper: onPackageModified: com.whatsapp
+05-26 19:07:44.939   943   943 D CarrierSvcBindHelper: No carrier app for: 0
+05-26 19:07:44.952   581   605 W system_server: Long monitor contention with owner android.imms2 (693) at boolean android.content.res.AssetManager.retrieveAttributes(android.content.res.XmlBlock$Parser, int[], int[], int[])(AssetManager.java:1270) waiters=0 in boolean android.content.res.AssetManager.isUpToDate() for 153ms
+05-26 19:07:44.971  1084  1092 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+05-26 19:07:44.979  1084  1092 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+05-26 19:07:44.993   581   581 W Looper  : Slow dispatch took 141ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@c7bb193 m=0
+05-26 19:07:45.012  5115  5115 I com.whatsapp: Using CollectorTypeCMC GC.
+05-26 19:07:45.016  5115  5115 W com.whatsapp: Unexpected CPU variant for x86: x86_64.
+05-26 19:07:45.016  5115  5115 W com.whatsapp: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+05-26 19:07:45.019  5115  5115 E com.whatsapp: Not starting debugger since process cannot load the jdwp agent.
+05-26 19:07:45.025  5115  5115 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-26 19:07:45.064  1294  1294 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:45.108   581   613 W system_server: Long monitor contention with owner ActivityManager (612) at void com.android.server.am.BroadcastQueueModernImpl.updateRunningList()(BroadcastQueueModernImpl.java:450) waiters=0 in void com.android.server.am.ProcessList.lambda$handleProcessStart$1(com.android.server.am.ProcessRecord, java.lang.String, int[], int, int, int, java.lang.String, java.lang.String, java.lang.String, long) for 283ms
+05-26 19:07:45.109   581   613 W ActivityManager: Slow operation: 315ms so far, now at startProcess: done updating battery stats
+05-26 19:07:45.110   581   613 W ActivityManager: Slow operation: 316ms so far, now at startProcess: building log message
+05-26 19:07:45.110   581   613 I ActivityManager: Start proc 5115:com.whatsapp/u0a213 for broadcast {com.whatsapp/com.whatsapp.infra.systemreceivers.appupdated.AppUpdatedReceiver}
+05-26 19:07:45.111  4907  4940 I Bugle   : BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of buoi@e9094a2
+05-26 19:07:45.128  1222  1226 I ogle.android.as: Background concurrent mark compact GC freed 3752KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 7339KB/14MB, paused 604us,764us total 906.335ms
+05-26 19:07:45.152   581   581 W binder:581_7: type=1400 audit(0.0:113): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+05-26 19:07:45.152   581   581 W binder:581_7: type=1400 audit(0.0:114): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+05-26 19:07:45.152   581   581 W binder:581_7: type=1400 audit(0.0:115): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+05-26 19:07:45.221   581   613 W ActivityManager: Slow operation: 427ms so far, now at startProcess: starting to update pids map
+05-26 19:07:45.221   581   613 W ActivityManager: Slow operation: 427ms so far, now at startProcess: done updating pids map
+05-26 19:07:45.225   581   581 W Looper  : Slow dispatch took 117ms main h=android.os.Handler c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@31bc985 m=0
+05-26 19:07:45.242  1243  1243 I GsaVoiceInteractionSrv: (REDACTED) O received %s
+05-26 19:07:45.266   581  3284 D ActivityManager: sync unfroze 1164 com.google.android.apps.wellbeing for 7
+05-26 19:07:45.278   581   581 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:45.281   581   602 W Looper  : Drained
+05-26 19:07:45.326   943   943 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+05-26 19:07:45.327   581   653 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10137, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.268   916   916 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:45.494  1164  1164 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:45.551   943   943 E CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: no package found
+05-26 19:07:45.552   581  3284 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.552   581  3284 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.552   581  3284 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_WAP_PUSH, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.553   581  3284 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = SEND_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.561   581   581 W Looper  : Slow dispatch took 282ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@6ee51e7 m=0
+05-26 19:07:45.563   581  3284 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.568   581   581 W AlarmManager: Package com.whatsapp, uid 10213 lost permission to set exact alarms!
+05-26 19:07:45.583  1264  1878 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=62 ]
+05-26 19:07:45.602   581   581 W Looper  : Drained
+05-26 19:07:45.618   943   943 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+05-26 19:07:45.624   581   654 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10137, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.638   581   794 W Looper  : Slow delivery took 285ms android.perm h=android.os.Handler c=com.android.internal.infra.ServiceConnector$Impl$$ExternalSyntheticLambda2@4d75f2c m=0
+05-26 19:07:45.651   581   653 W system_server: Long monitor contention with owner binder:581_E (1546) at android.content.ComponentName com.android.server.am.ActivityManagerService.startService(android.app.IApplicationThread, android.content.Intent, java.lang.String, boolean, java.lang.String, java.lang.String, int, boolean, int, java.lang.String, java.lang.String)(ActivityManagerService.java:14006) waiters=4 in void com.android.server.am.ActivityManagerService.serviceDoneExecuting(android.os.IBinder, int, int, int, android.content.Intent) for 197ms
+05-26 19:07:45.689  1336  1355 I PermissionControllerServiceImpl: Updating user sensitive for uid 10213
+05-26 19:07:45.703   943   943 E CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: no package found
+05-26 19:07:45.705  5115  5115 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+05-26 19:07:45.705  5115  5115 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-26 19:07:45.705  5115  5115 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+05-26 19:07:45.707   978   978 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:45.763  5115  5115 D nativeloader: Configuring clns-7 for other apk /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/lib/x86_64:/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.whatsapp
+05-26 19:07:45.783   581   774 D ShortcutService: Saving package item com.whatsapp to /data/system_ce/0/shortcut_service/packages/com.whatsapp.xml
+05-26 19:07:45.816   581  1790 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.826   581   654 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.831   581   654 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_WAP_PUSH, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.835  1164  1188 I .apps.wellbeing: Waiting for a blocking GC ProfileSaver
+05-26 19:07:45.840   581   654 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = SEND_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.842   581   933 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-26 19:07:45.857   943  1074 D ImsResolver: maybeAddedImsService, packageName: com.whatsapp
+05-26 19:07:45.867  1410  3267 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+05-26 19:07:45.875  1410  3267 W Conscrypt: 	at com.google.android.gms.org.conscrypt.Platform.setSocketWriteTimeout(:com.google.android.gms@242335041@24.23.35 (190800-646585959):204)
+05-26 19:07:45.875  1410  3267 W Conscrypt: 	at com.google.android.gms.org.conscrypt.ConscryptFileDescriptorSocket.setSoWriteTimeout(:com.google.android.gms@242335041@24.23.35 (190800-646585959):4)
+05-26 19:07:45.878   943   943 D ActivityThread: Package [com.whatsapp] reported as REPLACED, but missing application info. Assuming REMOVED.
+05-26 19:07:45.894  1243  1243 I GsaVoiceInteractionSrv: (REDACTED) O received %s
+05-26 19:07:45.905  1243  1243 I GsaVoiceInteractionSrv: (REDACTED) O received %s
+05-26 19:07:45.934   581  4707 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 10144, packageName = null, attributionTag = null, token = android.os.Binder@2f06f02, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-26 19:07:46.018  5103  5103 D nativeloader: Configuring clns-shared-7 for other apk /system/app/KeyChain/KeyChain.apk. target_sdk_version=35, uses_libraries=, library_path=/system/app/KeyChain/lib/x86_64:/system/app/KeyChain/KeyChain.apk!/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.keychain:/system/app/KeyChain:/system/lib64:/system_ext/lib64
+05-26 19:07:46.025   581   613 W ActivityManager: Slow operation: 90ms so far, now at startProcess: asking zygote to start proc
+05-26 19:07:46.028   581  4707 W ActivityManager: Slow operation: 94ms so far, now at startProcess: done starting proc!
+05-26 19:07:46.030  1410  1583 I AppLinksAsyncVerifierV2: Verification result: checking for a statement with source https://b.whatsapp.com, relation delegate_permission/common.handle_all_urls, and target com.whatsapp --> false. [CONTEXT service_id=244 ]
+05-26 19:07:46.038   383   383 D Zygote  : Forked child process 5146
+05-26 19:07:46.049  1410  5094 I AppLinksHostsVerifierV2: Verification com.whatsapp complete. Successful hosts: . Failed hosts: b.whatsapp.com. Error hosts: . [CONTEXT service_id=244 ]
+05-26 19:07:46.050   581   613 W ActivityManager: Slow operation: 115ms so far, now at startProcess: returned from zygote!
+05-26 19:07:46.051   581   613 W ActivityManager: Slow operation: 116ms so far, now at startProcess: done updating battery stats
+05-26 19:07:46.051   581   613 W ActivityManager: Slow operation: 116ms so far, now at startProcess: building log message
+05-26 19:07:46.052   581   613 I ActivityManager: Start proc 5146:com.google.android.googlequicksearchbox:search/u0a144 for service {com.google.android.googlequicksearchbox/com.google.android.apps.gsa.search.core.service.SearchService}
+05-26 19:07:46.053   581   613 W ActivityManager: Slow operation: 118ms so far, now at startProcess: starting to update pids map
+05-26 19:07:46.053   581   613 W ActivityManager: Slow operation: 118ms so far, now at startProcess: done updating pids map
+05-26 19:07:46.053  5115  5115 V GraphicsEnvironment: Currently set values for:
+05-26 19:07:46.054  5115  5115 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-26 19:07:46.055  5115  5115 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-26 19:07:46.055  5115  5115 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-26 19:07:46.056  5115  5115 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-26 19:07:46.059  1410  5094 I WebApkHostsVerifierV2: Processing 1 input requests [CONTEXT service_id=244 ]
+05-26 19:07:46.060  1410  5094 I AppLinksUtilsV1: Legacy cross-profile verification enabled [CONTEXT service_id=244 ]
+05-26 19:07:46.068  1410  5094 I WebApkHostsVerifierV2: Returning 1 non-WebAPK requests [CONTEXT service_id=244 ]
+05-26 19:07:46.081  5146  5146 I earchbox:search: Using CollectorTypeCMC GC.
+05-26 19:07:46.085  5146  5146 W earchbox:search: Unexpected CPU variant for x86: x86_64.
+05-26 19:07:46.085  5146  5146 W earchbox:search: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+05-26 19:07:46.090  5146  5146 E earchbox:search: Not starting debugger since process cannot load the jdwp agent.
+05-26 19:07:46.111  5146  5146 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-26 19:07:46.116  1164  1169 I .apps.wellbeing: Background concurrent mark compact GC freed 364KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 3907KB/7815KB, paused 1.877ms,1.046ms total 336.296ms
+05-26 19:07:46.116  1164  1169 W .apps.wellbeing: Reducing the number of considered missed Gc histogram windows from 398 to 100
+05-26 19:07:46.129  5103  5103 D CompatChangeReporter: Compat change id reported: 202956589; UID 1000; state: ENABLED
+05-26 19:07:46.142  1164  1188 I .apps.wellbeing: WaitForGcToComplete blocked ProfileSaver on Background for 311.920ms
+05-26 19:07:46.167  1084  5158 I ProximityAuth: [RecentAppsMediator] Package added: (user=UserHandle{0}) com.whatsapp
+05-26 19:07:46.242  5146  5146 D CompatChangeReporter: Compat change id reported: 242716250; UID 10144; state: ENABLED
+05-26 19:07:46.257  1084  5142 I Fitness : FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_REMOVED [CONTEXT service_id=17 ]
+05-26 19:07:46.291  5103  5103 V GraphicsEnvironment: Currently set values for:
+05-26 19:07:46.291  5103  5103 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-26 19:07:46.292  5103  5103 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-26 19:07:46.292  5103  5103 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-26 19:07:46.292  5103  5103 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-26 19:07:46.292  5146  5146 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+05-26 19:07:46.292  5146  5146 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-26 19:07:46.293  5146  5146 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+05-26 19:07:46.302  5115  5115 I FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+05-26 19:07:46.320   581  1790 D CompatChangeReporter: Compat change id reported: 311208629; UID 10143; state: ENABLED
+05-26 19:07:46.329  1410  5169 I Auth    : [SupervisedAccountIntentOperation] onHandleIntent(): android.intent.action.PACKAGE_ADDED
+05-26 19:07:46.331  1410  5147 V Backup  : [PhotosPackagedAddedIO] Flag is disabled.
+05-26 19:07:46.351  1410  1410 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+05-26 19:07:46.351  1410  1410 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+05-26 19:07:46.430  1410  1747 I GmscoreIpa: Using regular flags by method 2 [CONTEXT service_id=255 ]
+05-26 19:07:46.461  1410  5147 W SQLiteLog: (28) double-quoted string literal: "com.whatsapp"
+05-26 19:07:46.511  5115  5115 I FirebaseInitProvider: FirebaseApp initialization successful
+05-26 19:07:46.588  5146  5146 D nativeloader: InitLlndkLibrariesProduct: libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libapexsupport.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-x86_64-android.so:libcom.android.tethering.connectivity_native.so:libdl.so:libft2.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libneuralnetworks.so:libselinux.so:libsync.so:libvendorsupport.so:libvndksupport.so:libvulkan.so
+05-26 19:07:46.588  5146  5146 D nativeloader: Configuring product-clns-7 for unbundled product apk /product/priv-app/Velvet/Velvet.apk. target_sdk_version=34, uses_libraries=, library_path=/product/priv-app/Velvet/lib/x86_64:/product/priv-app/Velvet/Velvet.apk!/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.googlequicksearchbox:/product/lib64:/system/product/lib64
+05-26 19:07:46.589  5146  5146 D nativeloader: InitVndkspLibrariesProduct: VNDK is deprecated with product
+05-26 19:07:46.623   581  3284 D CompatChangeReporter: Compat change id reported: 311208629; UID 1000; state: ENABLED
+05-26 19:07:46.657  5115  5115 I ProcessNameUtil: getMyProcessName
+05-26 19:07:46.657  5115  5115 I ProcessNameUtil: isSecondaryProcess/process name: com.whatsapp/processing time: 1 ms
+05-26 19:07:46.666  1410  3220 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=AppsCorpus serviceId=36
+05-26 19:07:46.676  5146  5146 V GraphicsEnvironment: Currently set values for:
+05-26 19:07:46.684  5146  5146 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-26 19:07:46.692  5146  5146 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-26 19:07:46.692  5146  5146 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-26 19:07:46.692  5146  5146 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-26 19:07:46.767  1410  1747 I Icing   : Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+05-26 19:07:46.771   581  3284 D CompatChangeReporter: Compat change id reported: 161145287; UID 10143; state: ENABLED
+05-26 19:07:46.773  5146  5146 D CompatChangeReporter: Compat change id reported: 3400644; UID 10144; state: ENABLED
+05-26 19:07:46.801  5146  5146 I MultiDex: VM with version 2.1.0 has multidex support
+05-26 19:07:46.811  5146  5146 I MultiDex: Installing application
+05-26 19:07:46.811  5146  5146 I MultiDex: VM has multidex support, MultiDex support library is disabled.
+05-26 19:07:46.846   581   933 D CompatChangeReporter: Compat change id reported: 161145287; UID 10144; state: ENABLED
+05-26 19:07:46.874  5115  5115 W SoLoader: Initializing SoLoader: 0
+05-26 19:07:46.883  5115  5115 I SoLoader: Recording new base apk path: /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk
+05-26 19:07:46.883  5115  5115 I SoLoader: Previously recorded 0 base apk paths.
+05-26 19:07:46.894  5115  5115 I SoLoader: Preparing SO source: DirectorySoSource[root = /vendor/lib64 flags = 2]
+05-26 19:07:46.894  5115  5115 I SoLoader: Preparing SO source: DirectorySoSource[root = /system/lib64 flags = 2]
+05-26 19:07:46.894  5115  5115 I SoLoader: Preparing SO source: DirectApkSoSource[root = [/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk!/lib/x86_64]]
+05-26 19:07:46.946  1410  1583 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=null serviceId=30
+05-26 19:07:46.947  5115  5115 I SoLoader: Preparing SO source: ApplicationSoSource[DirectorySoSource[root = /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/lib/x86_64 flags = 0]]
+05-26 19:07:46.947  5115  5115 I SoLoader: init finish: 4 SO sources prepared
+05-26 19:07:46.952  5115  5115 W SoLoader: SoLoader initialized: 8
+05-26 19:07:46.987  5115  5115 D nativeloader: Load /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk!/lib/x86_64/libsuperpack.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:46.998  5135  5135 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+05-26 19:07:47.007  5135  5135 I AndroidRuntime: Using default boot image
+05-26 19:07:47.007  5135  5135 I AndroidRuntime: Leaving lock profiling enabled
+05-26 19:07:47.014  5135  5135 I app_process: Core platform API reporting enabled, enforcing=false
+05-26 19:07:47.015  5135  5135 I app_process: Using CollectorTypeCMC GC.
+05-26 19:07:47.015  5146  5146 D ProcessLifecycleG3: androidx.startup is not available, initializing using ProcessLifecycleOwnerInitializer instead.
+05-26 19:07:47.115  5135  5135 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+05-26 19:07:47.129  5115  5115 E spk     : loading so archive library
+05-26 19:07:47.259  1410  1747 I Icing   : Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+05-26 19:07:47.306  5135  5135 D nativeloader: Load libicu_jni.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+05-26 19:07:47.306  5135  5135 D app_process: u_setTimeZoneFilesDirectory("/apex/com.android.tzdata/etc/tz/versioned/8/icu") succeeded. 
+05-26 19:07:47.311  5135  5135 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt75l.dat
+05-26 19:07:47.333  1410  1747 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+05-26 19:07:47.338  5146  5146 I c       : Scoped context discovery schemas: [ScopedContextSignal(id=activation-id, marshaller=ProtoScopedContextSignalMarshaller(extension=com.google.protobuf.bo@fec7975), readerKey=com.google.bq.d.a.a.f.a.b@a2f8d0a, writerKey=com.google.bq.d.a.a.f.a.c@2f4497b), ScopedContextSignal(id=apa-canonical-id, marshaller=ProtoScopedContextSignalMarshaller(extension=com.google.protobuf.bo@88f398), readerKey=com.google.bq.d.a.a.f.b.b@41837f1, writerKey=com.google.bq.d.a.a.f.b.c@4c16fd6), ScopedContextSignal(id=product-id, marshaller=com.google.bq.d.a.a.f.d.h@bf40257, readerKey=com.google.bq.d.a.a.f.d.j@5e5b144, writerKey=com.google.bq.d.a.a.f.d.k@d67622d)].
+05-26 19:07:47.342  5135  5135 D nativeloader: Load libjavacore.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+05-26 19:07:47.353  5135  5135 D nativeloader: Load libopenjdk.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+05-26 19:07:47.360  5135  5135 W app_process: Unexpected CPU variant for x86: x86_64.
+05-26 19:07:47.360  5135  5135 W app_process: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+05-26 19:07:47.464  5146  5201 D nativeloader: Load /product/priv-app/Velvet/Velvet.apk!/lib/x86_64/libnative_crash_handler_jni.so using ns product-clns-7 from class loader (caller=/product/priv-app/Velvet/Velvet.apk!classes8.dex): ok
+05-26 19:07:47.476   581   592 I system_server: Background concurrent mark compact GC freed 11MB AllocSpace bytes, 24(540KB) LOS objects, 45% free, 28MB/52MB, paused 22.026ms,2.426ms total 1.807s
+05-26 19:07:47.524  5115  5185 E spk     : re-using previous load of so archive library
+05-26 19:07:47.531   884  1882 D ApfFilter: (wlan0): Adding RA fe80::2 -> ff02::1 1800s fec0::/64 86400s/14400s 
+05-26 19:07:47.544  5135  5135 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-26 19:07:47.545  5135  5135 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
+05-26 19:07:47.551  5135  5135 W Monkey  : args: [-p, com.whatsapp, -c, android.intent.category.LAUNCHER, 1]
+05-26 19:07:47.552  5135  5135 W Monkey  :  arg: "-p"
+05-26 19:07:47.553  5135  5135 W Monkey  :  arg: "com.whatsapp"
+05-26 19:07:47.553  5135  5135 W Monkey  :  arg: "-c"
+05-26 19:07:47.554  5135  5135 W Monkey  :  arg: "android.intent.category.LAUNCHER"
+05-26 19:07:47.556  5135  5135 W Monkey  :  arg: "1"
+05-26 19:07:47.557  5135  5135 W Monkey  : data="com.whatsapp"
+05-26 19:07:47.557  5135  5135 W Monkey  : data="android.intent.category.LAUNCHER"
+05-26 19:07:47.578  1222  1745 I AiAiTextClassifier: [VisualCortexAdapter]: provideRegistration: Registered Prominent Screen Entities for updates.
+05-26 19:07:47.582  1222  1745 I AiAiTextClassifier: [VisualCortexAdapter]: provideRegistration: Registered Prominent Screen Entities for updates.
+05-26 19:07:47.584  5115  5115 W SoLoader: Loading wa_log on the main thread
+05-26 19:07:47.585  1222  1745 I AiAiTextClassifier: [VisualCortexAdapter]: provideRegistration: Registered Prominent Screen Entities for updates.
+05-26 19:07:47.591  1222  1745 I AiAiTextClassifier: [VisualCortexAdapter]: provideRegistration: Registered Prominent Screen Entities for updates.
+05-26 19:07:47.592  1222  1745 I AiAiTextClassifier: [VisualCortexAdapter]: provideRegistration: Registered Prominent Screen Entities for updates.
+05-26 19:07:47.594  1222  1745 I AiAiTextClassifier: [VisualCortexAdapter]: provideRegistration: Registered Prominent Screen Entities for updates.
+05-26 19:07:47.597  1222  1745 I AiAiTextClassifier: [VisualCortexAdapter]: provideRegistration: Registered Prominent Screen Entities for updates.
+05-26 19:07:47.600  1222  1745 I AiAiTextClassifier: [VisualCortexAdapter]: provideRegistration: Registered Prominent Screen Entities for updates.
+05-26 19:07:47.602  1222  1745 I AiAiTextClassifier: [VisualCortexAdapter]: provideRegistration: Registered Prominent Screen Entities for updates.
+05-26 19:07:47.628  5115  5115 W com.whatsapp: type=1400 audit(0.0:116): avc:  granted  { execute } for  path="/data/data/com.whatsapp/files/decompressed/libs.spo/libwa_log.so" dev="dm-46" ino=361523 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:47.631  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libwa_log.so, this can be slow
+05-26 19:07:47.632  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libwa_log.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:47.639  5115  5115 W SoLoader: Loading essential on the main thread
+05-26 19:07:47.640  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libessential.so, this can be slow
+05-26 19:07:47.641  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libfb.so, this can be slow
+05-26 19:07:47.645   581   594 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /system/priv-app/InputDevices/InputDevices.apk' with 1 weak references
+05-26 19:07:47.646   581   594 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/LatinIMEGooglePrebuilt/LatinIMEGooglePrebuilt.apk' with 1 weak references
+05-26 19:07:47.646   581   594 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk' with 1 weak references
+05-26 19:07:47.647   581   594 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+05-26 19:07:47.647   581   594 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/app/AccessibilityMenu/AccessibilityMenu.apk' with 1 weak references
+05-26 19:07:47.647   581   594 W system_server: ApkAssets: Deleting an ApkAssets object '/product/overlay/AccessibilityMenu__sdk_gphone64_x86_64__auto_generated_rro_product.apk' with 1 weak references
+05-26 19:07:47.673  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libglog.so, this can be slow
+05-26 19:07:47.691  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libc++_shared.so, this can be slow
+05-26 19:07:47.693  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libc++_shared.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:47.696  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libglog.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:47.696  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libfbsofterror.so, this can be slow
+05-26 19:07:47.696  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libfbjni.so, this can be slow
+05-26 19:07:47.692  5115  5115 W com.whatsapp: type=1400 audit(0.0:117): avc:  granted  { execute } for  path="/data/data/com.whatsapp/files/decompressed/libs.spo/libc++_shared.so" dev="dm-46" ino=361524 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:47.692  5115  5115 W com.whatsapp: type=1400 audit(0.0:118): avc:  granted  { execute } for  path="/data/data/com.whatsapp/files/decompressed/libs.spo/libglog.so" dev="dm-46" ino=361519 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:47.692  5115  5115 W com.whatsapp: type=1400 audit(0.0:119): avc:  granted  { execute } for  path="/data/data/com.whatsapp/files/decompressed/libs.spo/libfbjni.so" dev="dm-46" ino=361509 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:47.729  1410  1747 I Icing   : Indexing done com.google.android.gms-apps
+05-26 19:07:47.730   581  3284 W ActivityManager: registerReceiverWithFeature: no app for null
+05-26 19:07:47.734  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libfbjni.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:47.732  5115  5115 W com.whatsapp: type=1400 audit(0.0:120): avc:  granted  { execute } for  path="/data/data/com.whatsapp/files/decompressed/libs.spo/libfbsofterror.so" dev="dm-46" ino=361515 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:47.739  1410  1747 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+05-26 19:07:47.740  1410  1747 I Icing   : Indexing done com.google.android.gms-apps
+05-26 19:07:47.741  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libfbsofterror.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:47.740  5115  5115 W com.whatsapp: type=1400 audit(0.0:121): avc:  granted  { execute } for  path="/data/data/com.whatsapp/files/decompressed/libs.spo/libfb.so" dev="dm-46" ino=361512 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:47.765  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libfb.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:47.766  5115  5115 W SoLoader: Loading fb on the main thread
+05-26 19:07:47.768  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libfb.so, this can be slow
+05-26 19:07:47.777  5115  5115 I com.whatsapp: Thread[1,tid=5115,Native,Thread*=0x772545bc7380,peer=0x72e7a270,"main"] recursive attempt to load library "/data/data/com.whatsapp/files/decompressed/libs.spo/libfb.so"
+05-26 19:07:47.779  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libessential.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:47.759     0     0 W audit   : audit_lost=35 audit_rate_limit=5 audit_backlog_limit=64
+05-26 19:07:47.759     0     0 E audit   : rate limit exceeded
+05-26 19:07:47.806  5115  5115 D SigquitBasedANRDetector: Registered
+05-26 19:07:47.839   581   611 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+05-26 19:07:47.839   581   581 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:47.839   581   581 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:47.840   581   581 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:47.840   581   581 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:47.843   581   611 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+05-26 19:07:47.844   581   581 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:47.844   581   581 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:47.845   581   581 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:47.845   581   581 W IPCThreadState: Sending oneway calls to frozen process.
+05-26 19:07:47.850  5115  5115 D SigquitBasedANRDetector: Initialized
+05-26 19:07:47.853  1020  1069 D PackageUpdatedTask: Package updated: mOp=UPDATE packages=[com.whatsapp]
+05-26 19:07:47.854  1222  1222 I AiAiEcho: AppFetcherImpl onPackageChanged com.whatsapp.
+05-26 19:07:47.858  1222  5218 I AiAiEcho: AppIndexer Package:[com.whatsapp] UserProfile:[0] Enabled:[true].
+05-26 19:07:47.861  1222  5218 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.whatsapp], userId:[0], reason:[package is updated.].
+05-26 19:07:47.912  5115  5115 I SigquitBasedANRDetector: Function PaletteWriteCrashThreadStacks hooked with result=0
+05-26 19:07:47.913  5115  5115 D SigquitBasedANRDetector: Detector started
+05-26 19:07:47.926  5115  5115 W SoLoader: Loading rtvip on the main thread
+05-26 19:07:47.927  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading librtvip.so, this can be slow
+05-26 19:07:47.928  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/librtvip.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:47.933  5115  5115 W SoLoader: Loading rtvip on the main thread
+05-26 19:07:47.942  5115  5115 I rtvip   : done
+05-26 19:07:47.951  5115  5115 W SoLoader: Loading vlc on the main thread
+05-26 19:07:47.958  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libvlc.so, this can be slow
+05-26 19:07:47.970  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libvlc.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:47.971  5115  5115 W SoLoader: Loading native_utils on the main thread
+05-26 19:07:47.977  5146  5146 I A       : Initializing GMS Compliance Client Library...
+05-26 19:07:47.982  5146  5146 I A       : Checking for device compliance...
+05-26 19:07:47.983  5146  5146 I A       : Completed library init.
+05-26 19:07:47.984  1020  1020 D StatsLog: LAUNCHER_ALLAPPS_COUNT
+05-26 19:07:48.018  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libnative_utils.so, this can be slow
+05-26 19:07:48.019  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libnative_utils.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:48.094  5115  5115 W SoLoader: Loading curve25519 on the main thread
+05-26 19:07:48.094  5115  5115 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libcurve25519.so, this can be slow
+05-26 19:07:48.095  5115  5115 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libcurve25519.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:48.131  1020  1357 D EGL_emulation: app_time_stats: avg=3999762.50ms min=3999762.50ms max=3999762.50ms count=1
+05-26 19:07:48.152   800   800 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+05-26 19:07:48.231   581  4707 W ActivityTaskManager: callingPackage for (uid=2000, pid=5135) has no WPC
+05-26 19:07:48.263   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_USER_ASPECT_RATIO_OVERRIDE
+05-26 19:07:48.281   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_USER_ASPECT_RATIO_FULLSCREEN_OVERRIDE
+05-26 19:07:48.282   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_ORIENTATION_OVERRIDE
+05-26 19:07:48.317   581  4707 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 10213, packageName = null, attributionTag = null, token = android.os.Binder@2f06f02, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-26 19:07:48.318   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_RESIZEABLE_ACTIVITY_OVERRIDES
+05-26 19:07:48.319   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_MIN_ASPECT_RATIO_OVERRIDE
+05-26 19:07:48.342  5146  5224 I EventBusThread: (REDACTED) Event Bus thread starting with TID %d
+05-26 19:07:48.598   581  4707 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.whatsapp/.Main} with LAUNCH_MULTIPLE from uid 2000 (BAL_ALLOW_PERMISSION) result code=0
+05-26 19:07:48.599  5135  5135 I Monkey  : Events injected: 1
+05-26 19:07:48.604   813   845 V WindowManagerShell: Transition requested (#10): android.os.BinderProxy@59ec022 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=7 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.whatsapp/.Main } baseActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} topActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} origActivity=null realActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} numActivities=1 lastActiveTime=7133341 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@f6e5ab3} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{b115870 com.whatsapp.Main} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= true isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=1080 topActivityLetterboxHeight=1920 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 10 }
+05-26 19:07:48.610   581  3284 W system_server: Long monitor contention with owner binder:581_1F (4707) at int com.android.server.wm.ActivityStarter.execute()(ActivityStarter.java:825) waiters=0 in boolean com.android.server.wm.ActivityTaskManagerService$LocalService.attachApplication(com.android.server.wm.WindowProcessController) for 286ms
+05-26 19:07:48.611   581  3284 W ActivityManager: Slow operation: 287ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+05-26 19:07:48.623   581  3284 W ActivityManager: Slow operation: 299ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+05-26 19:07:48.632   581   605 W system_server: Long monitor contention with owner binder:581_1F (4707) at void com.android.server.wm.WindowManagerService.freezeDisplayRotation(int, int, java.lang.String)(WindowManagerService.java:4519) waiters=2 in void com.android.server.wm.RootWindowContainer$RankTaskLayersRunnable.run() for 258ms
+05-26 19:07:48.633   581   606 W system_server: Long monitor contention with owner binder:581_1F (4707) at void com.android.server.wm.WindowManagerService.freezeDisplayRotation(int, int, java.lang.String)(WindowManagerService.java:4519) waiters=1 in void com.android.server.wm.WindowAnimator.lambda$new$1(long) for 301ms
+05-26 19:07:48.698   382   469 I netd    : tetherGetStats() -> {[]} <16.69ms>
+05-26 19:07:48.724  1020  1020 W SplitSelectStateCtor: Missing session instanceIds
+05-26 19:07:48.724  1020  1020 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+05-26 19:07:48.728   581   933 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ENABLE_FAKE_FOCUS
+05-26 19:07:48.809  1020  1020 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=7, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.whatsapp/.Main }
+05-26 19:07:48.819   813   845 W Looper  : Slow dispatch took 220ms wmshell.main h=android.os.Handler c=com.android.wm.shell.transition.Transitions$TransitionPlayerImpl$$ExternalSyntheticLambda1@b4c317a m=0
+05-26 19:07:48.819   813   845 W Looper  : Slow delivery took 184ms wmshell.main h=android.os.Handler c=null m=16
+05-26 19:07:48.838   813   845 D WindowManagerShell: setLauncherKeepClearAreaHeight: visible=false, height=459
+05-26 19:07:48.840   431   431 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-26 19:07:48.854  5135  5135 I Monkey  : ## Network stats: elapsed time=700ms (0ms mobile, 0ms wifi, 700ms not connected)
+05-26 19:07:48.857  5135  5135 I app_process: System.exit called, status: 0
+05-26 19:07:48.858  5135  5135 I AndroidRuntime: VM exiting with result code 0.
+05-26 19:07:48.929   813   845 W Looper  : Slow dispatch took 90ms wmshell.main h=android.os.Handler c=android.window.TaskOrganizer$1$$ExternalSyntheticLambda4@4e06d2b m=0
+05-26 19:07:49.007   813   861 D SplashScreenView: Build android.window.SplashScreenView{f13c588 V.E...... ......ID 0,0-0,0}
+05-26 19:07:49.007   813   861 D SplashScreenView: Icon: view: android.widget.ImageView{cabb21 V.ED..... ......I. 0,0-0,0 #1020504 android:id/splashscreen_icon_view} drawable: com.android.wm.shell.startingsurface.SplashscreenIconDrawableFactory$ImmobileIconDrawable@6e3b234 size: 504
+05-26 19:07:49.007   813   861 D SplashScreenView: Branding: view: android.view.View{776e85d V.ED..... ......ID 0,0-0,0 #1020503 android:id/splashscreen_branding_view} drawable: android.graphics.drawable.LayerDrawable@d5b75d2 size w: 525 h: 210
+05-26 19:07:49.029   581   603 W Looper  : Slow dispatch took 128ms android.ui h=com.android.server.am.ActivityManagerService$UiHandler c=com.android.server.am.UidObserverController$$ExternalSyntheticLambda0@a595eca m=0
+05-26 19:07:49.035  5146  5146 I SearchServiceCore: We were killed and are starting back!
+05-26 19:07:49.037   581   598 D CoreBackPreview: Window{2afc7e8 u0 Splash Screen com.whatsapp}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@62dee7, mPriority=0, mIsAnimationCallback=false}
+05-26 19:07:49.042   813   845 W Looper  : Drained
+05-26 19:07:49.077  5115  5115 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+05-26 19:07:49.148  5115  5115 I com.whatsapp: WaitForGcToComplete blocked ClassLinker on None for 8.839ms
+05-26 19:07:49.167  5115  5115 I WindowExtensionsImpl: Initializing Window Extensions, vendor API level=6, activity embedding enabled=true
+05-26 19:07:49.273   813   824 V WindowManagerShell: onTransitionReady(transaction=2495375999341)
+05-26 19:07:49.274   813   845 V WindowManagerShell: onTransitionReady (#10) android.os.BinderProxy@59ec022: {id=10 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@d07a0b8} m=OPEN f=NONE leash=Surface(name=Task=7)/@0x323c615 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@587ae91} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x5d3ed2a sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1}]}
+05-26 19:07:49.281   581   602 V WindowManager: Sent Transition (#10) createdAt=05-26 19:07:48.329 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=7 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.whatsapp/.Main } baseActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} topActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} origActivity=null realActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} numActivities=1 lastActiveTime=7133341 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{605882c Task{c86dda0 #7 type=standard A=10213:com.whatsapp}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{de092f5 com.whatsapp.Main} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= true isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=1080 topActivityLetterboxHeight=1920 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 10 }
+05-26 19:07:49.282   581   602 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+05-26 19:07:49.282   581   602 V WindowManager:     info={id=10 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+05-26 19:07:49.282   581   602 V WindowManager:         {WCT{RemoteToken{605882c Task{c86dda0 #7 type=standard A=10213:com.whatsapp}}} m=OPEN f=NONE leash=Surface(name=Task=7)/@0x4f48283 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1},
+05-26 19:07:49.282   581   602 V WindowManager:         {WCT{RemoteToken{3e3688a Task{99dd2a3 #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x9924c9a sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1}
+05-26 19:07:49.282   581   602 V WindowManager:     ]}
+05-26 19:07:49.303  5115  5115 I SplitController: Initializing Activity Embedding Controller.
+05-26 19:07:49.314   581  4707 W UserManagerService: Requested status bar icon for non-badged user 0
+05-26 19:07:49.330   813   845 V WindowManagerShell: Playing animation for (#10) android.os.BinderProxy@59ec022@0
+05-26 19:07:49.331   813   845 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@8c6f1fd
+05-26 19:07:49.335  5115  5115 I SplitController: Setting embedding rules. Size: 1
+05-26 19:07:49.336  5115  5115 I SplitController: Setting embedding rules. Size: 2
+05-26 19:07:49.336  5115  5115 I SplitController: Setting embedding rules. Size: 3
+05-26 19:07:49.350   813   845 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@11e4ef2
+05-26 19:07:49.350   813   845 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@7218943
+05-26 19:07:49.350   813   845 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@dec0bc0
+05-26 19:07:49.350   813   845 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@f95b0f9
+05-26 19:07:49.350   813   845 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+05-26 19:07:49.350   813   845 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@83e683e
+05-26 19:07:49.350   813   845 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@449769f
+05-26 19:07:49.351   813   845 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=10 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@d07a0b8} m=OPEN f=NONE leash=Surface(name=Task=7)/@0x323c615 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@587ae91} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x5d3ed2a sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1}]}
+05-26 19:07:49.351   813   845 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=undefined independent=true modes=[OPEN,TO_FRONT] flags=IN_TASK_WITH_EMBEDDED_ACTIVITY mustBeTask=false order=ANY topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity} launchCookie=null},{atype=undefined independent=true modes=[CLOSE,TO_BACK] flags=IN_TASK_WITH_EMBEDDED_ACTIVITY mustBeTask=false order=ANY topActivity=null launchCookie=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@147e9f7, appThread = android.app.IApplicationThread$Stub$Proxy@f21064, debugName = OverlaySwipeBack }}
+05-26 19:07:49.351   813   845 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@db4ca4a, appThread = android.app.IApplicationThread$Stub$Proxy@ad8ddbb, debugName = LauncherToDream }}
+05-26 19:07:49.351   813   845 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity} launchCookie=null},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@b8792d8, appThread = android.app.IApplicationThread$Stub$Proxy@2878631, debugName = QuickstepLaunchHome }}
+05-26 19:07:49.351   813   845 V WindowManagerShell:  Delegate animation for (#10) to null
+05-26 19:07:49.351   813   845 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@97d4116
+05-26 19:07:49.352   813   845 V WindowManagerShell: start default transition animation, info = {id=10 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@d07a0b8} m=OPEN f=NONE leash=Surface(name=Task=7)/@0x323c615 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@587ae91} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x5d3ed2a sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1}]}
+05-26 19:07:49.369  1020  1357 D EGL_emulation: app_time_stats: avg=1236.70ms min=1236.70ms max=1236.70ms count=1
+05-26 19:07:49.380   813   845 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@c48f782 animAttr=0x13 type=OPEN isEntrance=false
+05-26 19:07:49.391   813   845 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@31309ce animAttr=0x12 type=OPEN isEntrance=true
+05-26 19:07:49.395   813   845 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@97d4116
+05-26 19:07:49.396   813   845 W Looper  : Slow dispatch took 122ms wmshell.main h=android.os.Handler c=com.android.wm.shell.transition.Transitions$TransitionPlayerImpl$$ExternalSyntheticLambda0@aed07fc m=0
+05-26 19:07:49.421   813   845 W Looper  : Slow delivery took 91ms wmshell.main h=android.os.Handler c=android.window.TaskOrganizer$1$$ExternalSyntheticLambda7@8435e85 m=0
+05-26 19:07:49.491  5146  5224 D WM-PackageManagerHelper: Skipping component enablement for androidx.work.impl.background.systemjob.SystemJobService
+05-26 19:07:49.491  5146  5224 D WM-Schedulers: Created SystemJobScheduler and enabled SystemJobService
+05-26 19:07:49.527   813   898 D EGL_emulation: app_time_stats: avg=12692.94ms min=12692.94ms max=12692.94ms count=1
+05-26 19:07:49.621   813   851 W Looper  : Drained
+05-26 19:07:49.622   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_USER_ASPECT_RATIO_OVERRIDE
+05-26 19:07:49.622   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_USER_ASPECT_RATIO_FULLSCREEN_OVERRIDE
+05-26 19:07:49.622   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_ORIENTATION_OVERRIDE
+05-26 19:07:49.623   581  4707 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 10213, packageName = null, attributionTag = null, token = android.os.Binder@2f06f02, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-26 19:07:49.623   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_RESIZEABLE_ACTIVITY_OVERRIDES
+05-26 19:07:49.623   581  4707 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_MIN_ASPECT_RATIO_OVERRIDE
+05-26 19:07:49.627   813   845 W Looper  : Drained
+05-26 19:07:49.628   581  4707 I ActivityTaskManager: START u0 {cmp=com.whatsapp/.registration.app.EULA (has extras)} with LAUNCH_SINGLE_TASK from uid 10213 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+05-26 19:07:49.635   813   845 V WindowManagerShell: Transition requested (#11): android.os.BinderProxy@a113ee7 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=7 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.whatsapp/.Main } baseActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} topActivity=ComponentInfo{com.whatsapp/com.whatsapp.registration.app.EULA} origActivity=null realActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} numActivities=2 lastActiveTime=7134379 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@82c5a94} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{f3d93d com.whatsapp.registration.app.EULA} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= true isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=1080 topActivityLetterboxHeight=1920 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 11 }
+05-26 19:07:49.647  1020  1357 D EGL_emulation: app_time_stats: avg=590937.50ms min=1.60ms max=7091084.00ms count=12
+05-26 19:07:49.667   581   653 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ENABLE_FAKE_FOCUS
+05-26 19:07:49.730   581   602 V WindowManager: Sent Transition (#11) createdAt=05-26 19:07:49.624 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=7 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.whatsapp/.Main } baseActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} topActivity=ComponentInfo{com.whatsapp/com.whatsapp.registration.app.EULA} origActivity=null realActivity=ComponentInfo{com.whatsapp/com.whatsapp.Main} numActivities=2 lastActiveTime=7134379 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{605882c Task{c86dda0 #7 type=standard A=10213:com.whatsapp}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{e0d5a48 com.whatsapp.registration.app.EULA} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= true isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=1080 topActivityLetterboxHeight=1920 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 11 }
+05-26 19:07:49.730   581   602 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+05-26 19:07:49.732   813   851 W Looper  : Slow delivery took 46ms wmshell.anim h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@8182e52 m=0
+05-26 19:07:49.733   813  5227 V WindowManagerShell: onTransitionReady(transaction=2495375999351)
+05-26 19:07:49.791   813   845 V WindowManagerShell: onTransitionReady (#11) android.os.BinderProxy@a113ee7: {id=11 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=STARTING_WINDOW_TRANSFER|FILLS_TASK|IS_BEHIND_STARTING_WINDOW leash=Surface(name=ActivityRecord{b081530 u0 com.whatsapp/.registration.app.EULA)/@0x6324532 sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1080, 1920) d=-1->0 r=-1->0:-1 bc=fffafafa component=com.whatsapp/.registration.app.EULA},{null m=CLOSE f=FILLS_TASK|IS_BEHIND_STARTING_WINDOW|IS_OCCLUDED leash=Surface(name=ActivityRecord{3bef6a3 u0 com.whatsapp/.Main)/@0xb28e283 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 bc=fffafafa component=com.whatsapp/.Main}]}
+05-26 19:07:49.792   813   845 V WindowManagerShell: Non-visible anim so abort: (#11) android.os.BinderProxy@a113ee7@0
+05-26 19:07:49.792   813   845 V WindowManagerShell: Transition was merged: (#11) android.os.BinderProxy@a113ee7@0 into (#10) android.os.BinderProxy@59ec022@0
+05-26 19:07:49.792   813   845 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#10) android.os.BinderProxy@59ec022@0
+05-26 19:07:49.813   581   602 V WindowManager:     info={id=11 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+05-26 19:07:49.813   581   602 V WindowManager:         {null m=OPEN f=STARTING_WINDOW_TRANSFER|FILLS_TASK|IS_BEHIND_STARTING_WINDOW leash=Surface(name=ActivityRecord{b081530 u0 com.whatsapp/.registration.app.EULA)/@0x7bd2365 sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1080, 1920) d=-1->0 r=-1->0:-1 bc=fffafafa component=com.whatsapp/.registration.app.EULA},
+05-26 19:07:49.813   581   602 V WindowManager:         {null m=CLOSE f=FILLS_TASK|IS_BEHIND_STARTING_WINDOW|IS_OCCLUDED leash=Surface(name=ActivityRecord{3bef6a3 u0 com.whatsapp/.Main)/@0x391545c sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 bc=fffafafa component=com.whatsapp/.Main}
+05-26 19:07:49.813   581   602 V WindowManager:     ]}
+05-26 19:07:49.813   581   602 V WindowManager: Finish Transition (#10): created at 05-26 19:07:48.329 collect-started=0.04ms request-sent=260.981ms started=484.437ms ready=545.545ms sent=942.957ms finished=1472.094ms
+05-26 19:07:49.862   813   845 V WindowManagerShell: Track 0 became idle
+05-26 19:07:49.862   813   845 V WindowManagerShell: All active transition animations finished
+05-26 19:07:49.862   813   845 W Looper  : Slow dispatch took 70ms wmshell.main h=android.os.Handler c=com.android.wm.shell.transition.DefaultTransitionHandler$$ExternalSyntheticLambda0@cc9cc39 m=0
+05-26 19:07:49.862   813   845 W Looper  : Slow delivery took 51ms wmshell.main h=android.os.Handler c=null m=1
+05-26 19:07:49.865   581   602 V WindowManager: Finish Transition (#11): created at 05-26 19:07:49.624 collect-started=0.061ms request-sent=3.166ms started=15.04ms ready=43.915ms sent=47.351ms finished=235.085ms
+05-26 19:07:49.866  5146  5214 I A       : (REDACTED) Device Compliance Fetch time taken = %sms
+05-26 19:07:49.867  5146  5214 I A       : Device is compliant!
+05-26 19:07:49.867  5146  5214 I A       : Invoking "compliant" action...
+05-26 19:07:49.870   813   845 W Looper  : Drained
+05-26 19:07:49.902  1020  1020 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+05-26 19:07:49.906   581  1790 W UserManagerService: Requested status bar icon for non-badged user 0
+05-26 19:07:49.919  1020  1020 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+05-26 19:07:49.983   581  1790 W UserManagerService: Requested status bar icon for non-badged user 0
+05-26 19:07:49.990   581  1790 W UserManagerService: Requested status bar icon for non-badged user 0
+05-26 19:07:50.016  5146  5219 D CompatChangeReporter: Compat change id reported: 253665015; UID 10144; state: ENABLED
+05-26 19:07:50.063   581  1790 W UserManagerService: Requested status bar icon for non-badged user 0
+05-26 19:07:50.122  5146  5211 D nativeloader: Load /product/priv-app/Velvet/Velvet.apk!/lib/x86_64/libmappedcountercacheversionjni.so using ns product-clns-7 from class loader (caller=/product/priv-app/Velvet/Velvet.apk!classes9.dex): ok
+05-26 19:07:50.123   581   598 D CompatChangeReporter: Compat change id reported: 253665015; UID 10144; state: ENABLED
+05-26 19:07:50.145  5146  5224 I Search.LoginHelperImpl: Getting accounts.
+05-26 19:07:50.220   581   598 W UserManagerService: Requested status bar icon for non-badged user 0
+05-26 19:07:50.342  5115  5115 I AppCompatViewInflater: app:theme is now deprecated. Please move to using android:theme instead.
+05-26 19:07:50.398   581  1790 D CompatChangeReporter: Compat change id reported: 271850009; UID 10144; state: ENABLED
+05-26 19:07:50.427  5146  5215 W earchbox:search: Long monitor contention with owner EventBus0 (5224) at java.lang.Object e.c.d.b()(PG:46) waiters=0 in java.lang.Object e.c.d.b() for 750ms
+05-26 19:07:50.491  5115  5115 I AppCompatViewInflater: app:theme is now deprecated. Please move to using android:theme instead.
+05-26 19:07:50.596  5146  5224 I A       : (REDACTED) Util.isLowRamDevice: %b, canUsePreemptibleAudioSource: %b
+05-26 19:07:50.600   581  3284 I AppWidgetServiceImpl: getInstalledProvidersForProfiles() 0
+05-26 19:07:50.602   581  1790 D ShortcutService: rescanPackageIfNeeded 0@com.whatsapp, forceRescan=false , isNewApp=false
+05-26 19:07:50.604   581  1790 D ShortcutService: rescanPackageIfNeeded 0@com.whatsapp, forceRescan=false , isNewApp=false
+05-26 19:07:50.614   581  1790 D ShortcutService: rescanPackageIfNeeded 0@com.whatsapp, forceRescan=false , isNewApp=false
+05-26 19:07:50.633   581  3284 W ParceledListSlice: Element #4 is 19728 bytes.
+05-26 19:07:50.661   581   653 I AppWidgetServiceImpl: notifyProviderInheritance() 0
+05-26 19:07:50.709  5146  5214 I A       : NGA disabled due to not being eligible.
+05-26 19:07:50.728   581   774 D ShortcutService: Saving package item com.whatsapp to /data/system_ce/0/shortcut_service/packages/com.whatsapp.xml
+05-26 19:07:50.739  5146  5214 I A       : (REDACTED) Nga state changed to %s
+05-26 19:07:50.740  5146  5214 I A       : (REDACTED) isTngActive=%s
+05-26 19:07:50.798  5115  5243 W LOTTIE  : Animation contains merge paths. Merge paths are only supported on KitKat+ and must be manually enabled by calling enableMergePathsForKitKatAndAbove().
+05-26 19:07:50.851  1084  1088 I .gms.persistent: Background concurrent mark compact GC freed 13MB AllocSpace bytes, 14(360KB) LOS objects, 49% free, 17MB/35MB, paused 759us,847us total 697.432ms
+05-26 19:07:50.880  5115  5115 I ContentCaptureHelper: Setting logging level to DEBUG
+05-26 19:07:50.882  5115  5115 D ContentCaptureManager: setFlushViewTreeAppearingEventDisabled(): setting to false
+05-26 19:07:50.882  5115  5115 D ContentCaptureManager: updateWindowAttributes(): window flags=-2139029248
+05-26 19:07:50.908  5115  5250 D MainContentCaptureSession: handleScheduleFlush(act:com.whatsapp/.registration.app.EULA [state=1 (WAITING_FOR_SERVER), disabled=false], reason=FORCE_FLUSH): not a timeout reason because mDirectServiceInterface is not ready yet
+05-26 19:07:50.927  1084  1090 W .gms.persistent: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/PrebuiltBugle/PrebuiltBugle.apk' with 1 weak references
+05-26 19:07:50.930  1084  1090 W .gms.persistent: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk' with 1 weak references
+05-26 19:07:50.933  5115  5115 W HWUI    : Unknown dataspace 0
+05-26 19:07:50.947  5146  5217 I OpaEligibilityChecker: send OpaEligibilityChange broadcast to CommonBroadcastReceiver
+05-26 19:07:50.984  5115  5115 W LOTTIE  : Animation contains merge paths but they are disabled.
+05-26 19:07:51.013  5146  5151 I earchbox:search: Method exceeds compiler instruction limit: 20926 in java.lang.Object com.google.android.apps.gsa.binaries.velvet.app.aqe.b()
+05-26 19:07:51.019   581  4707 D CoreBackPreview: Window{ef9af4a u0 com.whatsapp/com.whatsapp.registration.app.EULA}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@4002b97, mPriority=0, mIsAnimationCallback=false}
+05-26 19:07:51.054  5115  5248 W com.whatsapp: Long monitor contention with owner WhatsApp Worker #1 (5238) at android.content.SharedPreferences X.00W.A02(X.00L, java.lang.String)(:112) waiters=0 in android.content.SharedPreferences X.00W.A04(java.lang.String) for 108ms
+05-26 19:07:51.140   431   684 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10213 pid=0
+05-26 19:07:51.140   431   684 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10213 => denied (3485 us)
+05-26 19:07:51.145   431   684 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10213 pid=0
+05-26 19:07:51.145   431   684 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10213 => denied (4454 us)
+05-26 19:07:51.145   431   900 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10213 pid=5115
+05-26 19:07:51.145   431   900 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10213 => denied (5682 us)
+05-26 19:07:51.146   431   684 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10213 pid=0
+05-26 19:07:51.146   431   900 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10213 pid=5115
+05-26 19:07:51.146   431   684 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10213 => denied (450 us)
+05-26 19:07:51.146   431   900 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10213 => denied (323 us)
+05-26 19:07:51.147  5115  5235 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+05-26 19:07:51.148  5115  5235 I EGL_emulation: Opening libGLESv2_emulation.so
+05-26 19:07:51.173  5115  5235 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+05-26 19:07:51.174  1222  1406 I AiAiStatsd: Successfully logged feature usage for VISUAL_CORTEX.
+05-26 19:07:51.230  5146  5224 W A       : (REDACTED) Task %s was queued for %dms before starting on executor %s
+05-26 19:07:51.242     0     0 I servicemanager: Caller(pid=5115,uid=10213,sid=u:r:untrusted_app:s0:c213,c256,c512,c768) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+05-26 19:07:51.269   172   172 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+05-26 19:07:51.270  5115  5235 I Gralloc4: mapper 4.x is not supported
+05-26 19:07:51.306  1410  1410 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.auth.blockstore.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+05-26 19:07:51.306  1410  1410 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.auth.blockstore.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+05-26 19:07:51.306  5146  5224 W SearchServiceCore: Abort, client detached.
+05-26 19:07:51.307  5146  5224 W SearchServiceCore: Abort, client detached.
+05-26 19:07:51.307  5146  5224 W SearchServiceCore: Abort, client detached.
+05-26 19:07:51.330  5146  5224 W SearchServiceCore: Abort, client detached.
+05-26 19:07:51.330  5146  5224 W SearchServiceCore: Abort, client detached.
+05-26 19:07:51.338  5146  5210 W earchbox:search: Long monitor contention with owner BG Thread #2 (5217) at android.accounts.Account com.google.android.apps.gsa.search.core.google.gaia.bh.L(java.lang.String)(PG:43) waiters=0 in com.google.common.util.concurrent.cw com.google.android.apps.gsa.search.core.google.gaia.bh.z() for 112ms
+05-26 19:07:51.340  5146  5224 W SearchServiceCore: Abort, client detached.
+05-26 19:07:51.352  1164  1907 W WellbeingSettingsProvid: <DWB> Call failed: get_actions
+05-26 19:07:51.352  1164  1907 W WellbeingSettingsProvid: java.util.concurrent.TimeoutException: Waited 5000 milliseconds (plus 7 milliseconds, 788800 nanoseconds delay) for lep@493d0d2[status=PENDING, info=[inputFuture=[leo@fc15a3[status=PENDING, setFuture=[ldw@8ff10a0[status=PENDING, info=[inputFuture=[lep@76b0459[status=PENDING, info=[inputFuture=[lep@9ba281e[status=PENDING, info=[inputFuture=[lfl@1b068ff[status=PENDING, info=[futures=[lep@c5496cc[status=PENDING, info=[inputFuture=[lep@3be8d15[status=PENDING, info=[inputFuture=[lgj@a5ca82a[status=PENDING, info=[delegate=[lhp@f2c961b[status=PENDING, setFuture=[lep@f9a53b8[status=PENDING, info=[inputFuture=[leo@287e591[status=PENDING, info=[inputFuture=[lgj@af51cf6[status=PENDING, info=[delegate=[lhp@57478f7[status=PENDING, setFuture=[leo@57cf364[status=PENDING, setFuture=[lep@bb449cd[status=PENDING, info=[inputFuture=[lep@bce1282[status=PENDING, info=[inputFuture=[leo@2edad93[status=PENDING, setFuture=[lep@cc7e1d0[status=PENDING, info=[inputFuture=[leo@ec8b5c9[status=PENDING, info=[inputFuture=[leo@54ed4ce[status=PENDING, setFuture=[lgv@cbb8fef[Not completed]]]], function=[propagating=[cei@3914afc]]]]], function=[propagating=[Functions.constant(AppSyncDelta{appConfigsToAdd=[], appConfigsToUpdate=[# cgq@b9fe03c5, # cgq@c8a42906, # cgq@934ae4fc, # cgq@85987d30, # cgq@73946824, # cgq@d357b5ec, # cgq@35f3a752, # cgq@693cab84, # cgq@92c1c3f6, # cgq@abf96ddf, # cgq@35d73408, # cgq@8aa9455e, # cgq@4d5efce8, # cgq@4136ec7b, # cgq@6f60304c, # cgq@3e803e79, # cgq@2bd6104c, # cgq@11b3b6af, # cgq@59e889ca, # cgq@ae6163f5, # cgq@ce3c3602, # cgq@89385631, # cgq@9b38cdb3, # cgq@104024c8, # cgq@61525bd1, # cgq@95683896, # cgq@8896aa0b, # cgq@b5a590ef, # cgq@75612e39, # cgq@1ca952c0, # cgq@38a335b5, # cgq@63ddcf16, # cgq@8fef891f, # cgq@7c3acaf0, # cgq@44bfe1f, # cgq@2fc4ad48, # cgq@3789d175, # cgq@12673bd2, # cgq@9b551b1, # cgq@2eb53260, # cgq@d33d1811, # cgq@77c4fdc2, # cgq@1c4ce373, # cgq@6f570fab, # cgq@c50aa5d6, # cgq@d39f05c5, # cgq@f0c7c5a3, # cgq@ff5c2592, # cgq@df08581, # cgq@dedff1d, # cgq@5e4de7ce, # cgq@1a1fd16b, # cgq@60f833f1, # cgq@cf995c8e, # cgq@6a9479d3, # cgq@dc24785e, # cgq@12d70930, # cgq@4a7bbf66, # cgq@f037dfeb, # cgq@ffc98a48, # cgq@be5a62ea, # cgq@97978960, # cgq@b41bc61f, # cgq@faf152ea, # cgq@c113df87, # cgq@d3be0ab1, # cgq@812108f, # cgq@15a6a206, # cgq@daf71a3b, # cgq@bc78809f, # cgq@ae35af01, # cgq@ee56af7a, # cgq@51f9d69e, # cgq@3bd3a4a4, # cgq@82bae29b, # cgq@e9dd5a0e, # cgq@49809bb8, # cgq@d905d0db, # cgq@2dbb4c9d, # cgq@dd819e81, # cgq@34380ea0, # cgq@e7827e1a, # cgq@dd018b25, # cgq@dd79f156, # cgq@ddf25787, # cgq@de6abdb8, # cgq@dee323e9, # cgq@df5b8a1a, # cgq@dfd3f04b, # cgq@6d8377b4, # cgq@cdc2e909, # cgq@46e29fb3, # cgq@60393d7e, # cgq@2ac1f39d, # cgq@c263ef35, # cgq@7a5a14ae, # cgq@a1f04e52, # cgq@2a278244, # cgq@c909b8ac, # cgq@701e9cd0, # cgq@c27d9557, # cgq@182645b9, # cgq@168c56c4, # cgq@1955b4f1, # cgq@e1b33dd6, # cgq@48e4fe7a, # cgq@45673288, # cgq@bd1a9d3f, # cgq@bd930370, # cgq@be0b69a1, # cgq@be83cfd2, # cgq@befc3603, # cgq@bf749c34, # cgq@bfed0265, # cgq@92a1aea0, # cgq@5c625a09, # cgq@670dfb42, # cgq@57b48b4d, # cgq@750baf90, # cgq@de70d2c, # cgq@8cc4c974, # cgq@5a6f4f07, # cgq@8b5bf300, # cgq@3cef971, # cgq@6a8b5d74, # cgq@56ddc0a4, # cgq@ccab1483, # cgq@ded20cf, # cgq@5050f53a, # cgq@260a2920, # cgq@c465a016, # cgq@81bdabf7, # cgq@4b9dd886, # cgq@40d845d2, # cgq@c18283c6, # cgq@db99d179, # cgq@e3a72b41, # cgq@9b5ef608, # cgq@6f508938, # cgq@c0ad9855, # cgq@ae4a44f5, # cgq@c8f22dfe, # cgq@c8725dc2, # cgq@646087c5, # cgq@d605f32e, # cgq@c921692e, # cgq@11eb7fc7, # cgq@654f6770, # cgq@3f7b0cb2, # cgq@33cd65d2, # cgq@8a9993fe, # cgq@6af361dc, # cgq@187f0d40, # cgq@c586cee7, # cgq@e7697e7a, # cgq@3de9a207, # cgq@d8f2cdcb, # cgq@21dff220, # cgq@902dae4c, # cgq@b50bca8e, # cgq@2a279517, # cgq@fa4314, # cgq@812be47e, # cgq@4f1c8e4a, # cgq@fa1499b6, # cgq@22b13e35, # cgq@6aee6192, # cgq@53878913, # cgq@6b8e3e55, # cgq@df06dc97, # cgq@406bd46, # cgq@a88ea2f7, # cgq@4d1688a8, # cgq@f19e6e59, # cgq@9f7f9652, # cgq@8ac20
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 9a1, # cgq@c7fe861e, # cgq@d56bbe85, # cgq@269269fc, # cgq@f73dc3c8, # cgq@d1d87f4f, # cgq@f9035dfa, # cgq@cd44b324, # cgq@8c9148ef, # cgq@a1c30ebe, # cgq@1558d8c, # cgq@386e48fd, # cgq@6f3552f4, # cgq@e83439c5, # cgq@82ab525d, # cgq@98c19579, # cgq@53bdb5a8, # cgq@eb9d5d7, # cgq@20ba4d59, # cgq@ca54c150, # cgq@f674ac95, # cgq@641f30c0, # cgq@bb0559f5, # cgq@92768c61, # cgq@a20174b0, # cgq@b095d49f, # cgq@cdbe947d, # cgq@dc52f46c, # cgq@eae7545b, # cgq@323626c5, # cgq@db5817c9, # cgq@cef3942, # cgq@12feefa5, # cgq@c68f7195, # cgq@c57a37ec, # cgq@adea6650, # cgq@5b9d1ea8, # cgq@9ea364a4, # cgq@fa99fc25, # cgq@7dbab76f, # cgq@48b920c1, # cgq@7fc74454, # cgq@abd4d576, # cgq@7caaf44a, # cgq@5bdb3edf, # cgq@1edcfdd0, # cgq@6bd67dfb, # cgq@8b68164e, # cgq@5e7d3b07, # cgq@6e40bc81, # cgq@4b58e761, # cgq@f300d87e, # cgq@90ec95b1, # cgq@90656356, # cgq@b2594155, # cgq@78546644, # cgq@6db25648, # cgq@7e517b1, # cgq@db048369, # cgq@3e38232d, # cgq@f3e509cb, # cgq@d6d0c2f0, # cgq@2f903b94, # cgq@6376eb0d, # cgq@2341436c, # cgq@185ea9b, # cgq@2a0288fb], packageNamesToDelete=[]})]]]]]]], function=[propagating=[cjn@afc39f5]]]]], function=[propagating=[cjn@f8b838a]]]]]]]]]]]], function=[propagating=[car@7373dfb]]]]], function=[propagating=[cau@28a0e18]]]]]]]]]], function=[propagating=[cag@3a38071]]]]], function=[propagating=[cme@6264e56]]]]]]]], function=[propagating=[dhi@6b1bed7]]]]], function=[propagating=[bxu@31df3c4]]]]], exceptionType=[class java.lang.Throwable], fallback=[propagating=[cau@19eb2ad]]]]]]], function=[propagating=[bxu@9d0f9e2]]]]
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 	at lem.get(PG:52)
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 	at lgb.get(PG:2)
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 	at com.google.android.apps.wellbeing.api.impl.WellbeingSettingsProvider.i(PG:9)
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 	at com.google.android.apps.wellbeing.api.impl.WellbeingSettingsProvider.call(PG:162)
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 	at android.content.ContentProvider.call(ContentProvider.java:2704)
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:633)
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:307)
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+05-26 19:07:51.353  1164  1907 W WellbeingSettingsProvid: 	at android.os.Binder.execTransact(Binder.java:1444)
+05-26 19:07:51.357  5146  5215 I SettingsDataLayer.AE: (REDACTED) Set Assistant Enabled to %s
+05-26 19:07:51.419  5115  5115 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+05-26 19:07:51.473   581  3284 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10213 pid=0
+05-26 19:07:51.473   581  3284 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10213 => denied (40086 us)
+05-26 19:07:51.473   581  3284 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10213 pid=0
+05-26 19:07:51.473   581  3284 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10213 => denied (259 us)
+05-26 19:07:51.474   581  3284 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10213 pid=0
+05-26 19:07:51.474   581  3284 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10213 => denied (214 us)
+05-26 19:07:51.541   581   602 I ActivityTaskManager: Displayed com.whatsapp/.registration.app.EULA for user 0: +3s281ms
+05-26 19:07:51.673  5146  5214 D CompatChangeReporter: Compat change id reported: 263076149; UID 10144; state: ENABLED
+05-26 19:07:51.722  5146  5271 W earchbox:search: Long monitor contention with owner Blocking Thread #7 (5266) at java.lang.Object com.google.apps.tiktok.tracing.gn.initialValue()(PG:26) waiters=4 in java.lang.Object com.google.apps.tiktok.tracing.gn.initialValue() for 140ms
+05-26 19:07:51.760  5146  5278 W earchbox:search: Long monitor contention with owner Blocking Thread #7 (5266) at java.lang.Object com.google.apps.tiktok.tracing.gn.initialValue()(PG:26) waiters=6 in java.lang.Object com.google.apps.tiktok.tracing.gn.initialValue() for 179ms
+05-26 19:07:51.763  5146  5273 W earchbox:search: Long monitor contention with owner Blocking Thread #7 (5266) at java.lang.Object com.google.apps.tiktok.tracing.gn.initialValue()(PG:26) waiters=10 in java.lang.Object com.google.apps.tiktok.tracing.gn.initialValue() for 180ms
+05-26 19:07:51.773  5146  5219 W earchbox:search: Long monitor contention with owner EventBus0 (5224) at android.accounts.Account com.google.android.apps.gsa.search.core.google.gaia.bh.L(java.lang.String)(PG:43) waiters=1 in com.google.common.util.concurrent.cw com.google.android.apps.gsa.search.core.google.gaia.w.apply(java.lang.Object) for 110ms
+05-26 19:07:51.847  5146  5224 I MicroDetectionState: (REDACTED) Updating hotword opa ineligibility to %b
+05-26 19:07:51.946  5115  5185 W Superpack: Unpacking unsupported call site encoding.
+05-26 19:07:52.114   813   860 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@623bda0
+05-26 19:07:52.116   581  1790 D CoreBackPreview: Window{2afc7e8 u0 Splash Screen com.whatsapp EXITING}: Setting back callback null
+05-26 19:07:52.136   382   469 I netd    : tetherGetStats() -> {[]} <0.41ms>
+05-26 19:07:52.244  5115  5185 W Superpack: Unpacking unsupported call site encoding.
+05-26 19:07:52.311  1410  1791 I Backup  : [GmsBackupAccountManager] Backup account not found in gmscore.
+05-26 19:07:52.337   581  3284 W InputManager-JNI: Input channel object '2afc7e8 Splash Screen com.whatsapp (client)' was disposed without first being removed with the input manager!
+05-26 19:07:52.362  5115  5138 I HWUI    : Davey! duration=909ms; Flags=0, FrameTimelineVsyncId=18416, IntendedVsync=7136183252416, Vsync=7136216585748, InputEventId=0, HandleInputStart=7136228331700, AnimationStart=7136228358100, PerformTraversalsStart=7136229229000, DrawStart=7136229295300, FrameDeadline=7136233252414, FrameInterval=7136228315100, FrameStartTime=16666666, SyncQueued=7136300765400, SyncStart=7136301508700, IssueDrawCommandsStart=7136302323300, SwapBuffers=7136944306400, FrameCompleted=7137093002600, DequeueBufferDuration=19000, QueueBufferDuration=200800, GpuCompleted=7137092878200, SwapBuffersCompleted=7137093002600, DisplayPresentTime=0, CommandSubmissionCompleted=7136944306400, 
+05-26 19:07:52.362  5115  5115 I Choreographer: Skipped 47 frames!  The application may be doing too much work on its main thread.
+05-26 19:07:52.386  1084  5143 W ChimeraUtils: Module com.google.android.gms.backup_base missing resource null(0)
+05-26 19:07:52.467  5115  5261 I HWUI    : Davey! duration=855ms; Flags=0, FrameTimelineVsyncId=18446, IntendedVsync=7136316585744, Vsync=7137099919046, InputEventId=0, HandleInputStart=7137115579000, AnimationStart=7137140926100, PerformTraversalsStart=7137146509500, DrawStart=7137146582600, FrameDeadline=7137116585712, FrameInterval=7137115036200, FrameStartTime=16666666, SyncQueued=7137148895000, SyncStart=7137151379900, IssueDrawCommandsStart=7137151937600, SwapBuffers=7137155493100, FrameCompleted=7137174957300, DequeueBufferDuration=35800, QueueBufferDuration=666500, GpuCompleted=7137174685000, SwapBuffersCompleted=7137174957300, DisplayPresentTime=0, CommandSubmissionCompleted=7137155493100, 
+05-26 19:07:52.477  1020  1020 D BaseDepthController: setSurface:
+05-26 19:07:52.477  1020  1020 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+05-26 19:07:52.477  1020  1020 D BaseDepthController: 	mSurface: null
+05-26 19:07:52.488  1020  1020 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+05-26 19:07:52.503  5146  5256 I SettingsDataLayer.AE: Set Assistant eligibility status
+05-26 19:07:52.518   581   692 I ImeTracker: com.whatsapp:96bf7aa2: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+05-26 19:07:52.519   581   692 I ImeTracker: com.whatsapp:96bf7aa2: onCancelled at PHASE_SERVER_SHOULD_HIDE
+05-26 19:07:52.533  1020  1020 I ActivityThread: Schedule relaunch activity: com.google.android.apps.nexuslauncher.NexusLauncherActivity
+05-26 19:07:52.546  5115  5115 I ContentCaptureHelper: Setting logging level to DEBUG
+05-26 19:07:52.546  5115  5115 D ContentCaptureManager: setFlushViewTreeAppearingEventDisabled(): setting to false
+05-26 19:07:52.551  1084  5143 V Backup  : [BackupAccountNotifier] Handling new intent. Show notification: true
+05-26 19:07:52.580   581  1790 D ConnectivityService: requestNetwork for uid/pid:10144/5146 activeRequest: null callbackRequest: 198 [NetworkRequest [ REQUEST id=199, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10144 RequestorUid: 10144 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
+05-26 19:07:52.582   581   728 D ConnectivityService: NetReassign [199 : null → 101] [c 0] [a 1] [i 0]
+05-26 19:07:52.584  1020  1020 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+05-26 19:07:52.584  1020  1020 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:4)
+05-26 19:07:52.584  1020  1020 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:1)
+05-26 19:07:52.584  1020  1020 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:34)
+05-26 19:07:52.585  5146  5224 I SRMClientSgtnModule: SRMc: Instantiating SodaResourceManagerClient with non-account-scope.
+05-26 19:07:52.586  5146  5224 I SRMClientSgtnModule: SRMc: Instantiating SodaResourceManagerClient with non-account-scope.
+05-26 19:07:52.593   581   721 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=199, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10144 RequestorUid: 10144 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+05-26 19:07:52.593   581   721 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=199, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10144 RequestorUid: 10144 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+05-26 19:07:52.593   581   721 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=199, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10144 RequestorUid: 10144 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+05-26 19:07:52.593   581   721 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=199, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10144 RequestorUid: 10144 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+05-26 19:07:52.595  5146  5256 I SettingsDataLayer.AE: Set isHotwordOpaEligible
+05-26 19:07:52.600  5115  5235 D EGL_emulation: app_time_stats: avg=236.27ms min=14.32ms max=907.73ms count=5
+05-26 19:07:52.731  1145  1145 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157 
+05-26 19:07:52.759  5146  5151 I earchbox:search: Method exceeds compiler instruction limit: 18065 in java.lang.Object com.google.android.apps.gsa.binaries.velvet.app.asa.b()
+05-26 19:07:52.779  5146  5146 W earchbox:search: Long monitor contention with owner GoogleApiHandler (5192) at boolean com.google.android.gms.common.internal.af.b(com.google.android.gms.common.internal.ae, android.content.ServiceConnection, java.lang.String, java.util.concurrent.Executor)(PG:71) waiters=0 in void com.google.android.gms.common.internal.ag.onServiceConnected(android.content.ComponentName, android.os.IBinder) for 218ms
+05-26 19:07:52.841  1145  1145 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+05-26 19:07:52.843  1145  1145 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.whatsapp, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+05-26 19:07:52.847  1020  1020 D StatsLog: LAUNCHER_ONSTOP
+05-26 19:07:52.848   581  1790 I AppWidgetServiceImpl: setAppWidgetHidden() 0
+05-26 19:07:52.853  1145  1145 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+05-26 19:07:52.864  5146  5224 W A       : No value provided for the places model index flag.
+05-26 19:07:52.865  5146  5224 W A       : No value provided for the places model index flag.
+05-26 19:07:52.867  1020  1378 D OneSearchSuggestProvider: Shut down the binder channel
+05-26 19:07:52.890  1145  1145 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+05-26 19:07:52.917  5115  5250 D MainContentCaptureSession: Destroying session (ctx=com.whatsapp.Main@e0ea05b, id=879698192) with 0 event(s) for pkg:com.whatsapp [state=0 (UNKNOWN), disabled=false]
+05-26 19:07:52.925   581  1790 W PackageConfigPersister: App-specific configuration not found for packageName: com.whatsapp and userId: 0
+05-26 19:07:53.012  5146  5224 I A       : getLocaleToModelSpecsMap
+05-26 19:07:53.015  5146  5224 I A       : Fetching latest config from MDD...
+05-26 19:07:53.030  1020  1020 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+05-26 19:07:53.031  1020  1020 D CannedAnimCoordinator: Wrong controller access from h2.i@cac03da, actual provider null
+05-26 19:07:53.109  5146  5224 I A       : (REDACTED) Found map of size: %d
+05-26 19:07:53.111  5146  5224 I MicroDetectionWorker: (REDACTED) Initializing MicroDataManager InitializeType-%d, isForced-%b, isActivePhoneEnrollment-%b isActiveGoogleHomeEnrollment-%b
+05-26 19:07:53.160  5146  5224 I MicroDetectionState: (REDACTED) #takeChangeMicroDetectorMode [mIsBargeInEnabled: %b, mCurrentDetectionMode: %s]
+05-26 19:07:53.181  5146  5219 I A       : getLocaleToModelSpecsMap
+05-26 19:07:53.190  5146  5219 I A       : Fetching latest config from MDD...
+05-26 19:07:53.190  5146  5219 I A       : (REDACTED) Found map of size: %d
+05-26 19:07:53.191  5146  5224 I MicroDetectionState: (REDACTED) Should stop hotword detection immediately - %b
+05-26 19:07:53.191  5146  5219 I MicroDataManager: (REDACTED) Location for model with model type: %s and locale: %s, is : %s
+05-26 19:07:53.192  5146  5219 I MicroModelsUtil: (REDACTED) #getHotwordModel [locale: %s, modelType: %s]
+05-26 19:07:53.199  5146  5224 I MicroDetectionState: (REDACTED) #takeChangeMicroDetectorMode [mIsBargeInEnabled: %b, mCurrentDetectionMode: %s]
+05-26 19:07:53.200  5146  5224 I MicroDetectionState: (REDACTED) Should stop hotword detection immediately - %b
+05-26 19:07:53.394   581  1289 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+05-26 19:07:53.395  1020  1020 D b/254119092: unregistering activity lifecycle callbacks from onActivityDestroyed.
+05-26 19:07:53.395  1020  1020 D b/254119092: clearActivity
+05-26 19:07:53.395  1020  1020 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+05-26 19:07:53.396   581  1546 I AppWidgetServiceImpl: setAppWidgetHidden() 0
+05-26 19:07:53.398   581  1546 D ActivityTaskManager: Remove task fragment: deleteTaskFragment
+05-26 19:07:53.480   813   845 V WindowManagerShell: Transition requested (#12): android.os.BinderProxy@e09488a TransitionRequestInfo { type = CLOSE, triggerTask = null, pipTask = null, remoteTransition = RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2ca1efb, appThread = null, debugName = null }, displayChange = null, flags = 0, debugId = 12 }
+05-26 19:07:53.480   813   845 V WindowManagerShell: RemoteTransition directly requested for (#12) android.os.BinderProxy@e09488a: RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2ca1efb, appThread = null, debugName = null }
+05-26 19:07:53.485   382   469 I netd    : tetherGetStats() -> {[]} <0.41ms>
+05-26 19:07:53.504   431   431 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-26 19:07:53.518   581  4707 D ConnectivityService: Returning UNBLOCKED NetworkInfo to uid=10213
+05-26 19:07:53.524  1020  1020 D RecentsView: reset - mEnableDrawingLiveTile: false, mRecentsAnimationController: null
+05-26 19:07:53.540   581  1546 D SearchUiPerUserService: Removing callback for session Id=com.google.android.apps.nexuslauncher:eb16505e-8caf-41d9-a06e-39a3b616dda0,0 and callback=android.os.BinderProxy@f19d1f1
+05-26 19:07:53.585   581  1546 D SearchUiPerUserService: Removing all callbacks for session Id=com.google.android.apps.nexuslauncher:eb16505e-8caf-41d9-a06e-39a3b616dda0,0 and 0 callbacks.
+05-26 19:07:53.635   581  4707 D ContentCapturePerUserService: finishSession(): no session with id879698192
+05-26 19:07:53.636  5115  5235 D EGL_emulation: app_time_stats: avg=46.32ms min=6.10ms max=119.19ms count=16
+05-26 19:07:53.678  5146  5217 I A       : (REDACTED) Assistant special experience changed to %s.
+05-26 19:07:53.689  1410  1747 I Blockstore: [BlockstoreImpl] Snapshot enabled. updateAccessPerSnapshotIfEligible for package: com.whatsapp [CONTEXT service_id=258 ]
+05-26 19:07:53.971  1020  1024 I s.nexuslauncher: Background concurrent mark compact GC freed 5503KB AllocSpace bytes, 13(1004KB) LOS objects, 49% free, 6829KB/13MB, paused 740us,281.489ms total 3.920s
+05-26 19:07:53.985  1020  1020 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=com.android.launcher3.uioverrides.QuickstepLauncher$2@ff22e8c
+05-26 19:07:53.985  1020  1024 W s.nexuslauncher: Reducing the number of considered missed Gc histogram windows from 708 to 100
+05-26 19:07:53.986   581  3284 D CoreBackPreview: Window{4a9f1a9 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}: Setting back callback null
+05-26 19:07:53.999   581  3284 D CoreBackPreview: Window{4a9f1a9 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@39e1c2f, mPriority=-1, mIsAnimationCallback=false}
+05-26 19:07:54.002   581  3284 D CoreBackPreview: Window{4a9f1a9 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@242823c, mPriority=0, mIsAnimationCallback=true}
+05-26 19:07:54.076  5146  5151 I earchbox:search: Compiler allocated 4144KB to compile java.lang.Object com.google.android.apps.gsa.binaries.velvet.app.arq.a()
+05-26 19:07:54.090  5115  5188 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libwhatsapp.so, this can be slow
+05-26 19:07:54.093  1410  1583 I Blockstore: [DataStoreImpl] No block data associated with key com.google.android.gms.auth.blockstore.DEFAULT_BYTES_DATA_KEY for package com.whatsapp [CONTEXT service_id=258 ]
+05-26 19:07:54.105  5146  5256 W ProductIdClientStreamz: (REDACTED) Product id mismatch (propagated: %s, static: %s, traffic tag: %s).
+05-26 19:07:54.133  5115  5239 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libwhatsappmerged.so, this can be slow
+05-26 19:07:54.225  5146  5214 I MicroModelsUtil: (REDACTED) #getHotwordModelFromMobstore [mobstoreUri: %s]
+05-26 19:07:54.287  5146  5217 I WebViewFactory: Loading com.google.android.webview version 124.0.6367.219 (code 636771938)
+05-26 19:07:54.300  5146  5217 V ResourcesManager: The following library key has been added: ResourcesKey{ mHash=1a957ad8 mResDir=null mSplitDirs=[] mOverlayDirs=[/product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk,/data/resource-cache/com.android.systemui-neutral-iyGG.frro,/data/resource-cache/com.android.systemui-accent-9g4H.frro,/data/resource-cache/com.android.systemui-dynamic-w5CN.frro] mLibDirs=[/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/WebViewGoogle.apk,/data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.apk,/system_ext/framework/androidx.window.extensions.jar] mDisplayId=0 mOverrideConfig=v35 mCompatInfo={420dpi always-compat} mLoaders=[]}
+05-26 19:07:54.300  5146  5256 I MicroDataManager: (REDACTED) MicroDataManager InitializationTask. googleHotwordData is null: true, hotwordModel is null: %b , sourceLocationOfCurrentHotwordModel %s
+05-26 19:07:54.302  5146  5224 I A       : getLocaleToModelSpecsMap
+05-26 19:07:54.302  5146  5224 I A       : Fetching latest config from MDD...
+05-26 19:07:54.302  5146  5224 I A       : (REDACTED) Found map of size: %d
+05-26 19:07:54.316  5115  5239 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libsimplejni.so, this can be slow
+05-26 19:07:54.316  5115  5239 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libsimplejni.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.331  5115  5188 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libpyspeech.so, this can be slow
+05-26 19:07:54.312  5115  5115 W com.whatsapp: type=1400 audit(0.0:127): avc:  granted  { execute } for  comm=576861747341707020576F726B6572 path="/data/data/com.whatsapp/files/decompressed/libs.spo/libsimplejni.so" dev="dm-46" ino=361516 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:54.373  5146  5224 I MicroDetectionState: (REDACTED) #takeChangeMicroDetectorMode [mIsBargeInEnabled: %b, mCurrentDetectionMode: %s]
+05-26 19:07:54.373  5146  5224 I MicroDetectionState: (REDACTED) Should stop hotword detection immediately - %b
+05-26 19:07:54.392  5146  5217 W ziparchive: Unable to open '/data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.dm': No such file or directory
+05-26 19:07:54.392  5146  5217 W ziparchive: Unable to open '/data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.dm': No such file or directory
+05-26 19:07:54.392  5146  5217 W earchbox:search: Entry not found
+05-26 19:07:54.397  5146  5217 D nativeloader: Configuring clns-8 for other apk /data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/lib/x86_64:/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+05-26 19:07:54.399  5146  5217 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-26 19:07:54.461  5146  5217 D nativeloader: Configuring clns-9 for other apk /data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/lib/x86_64:/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+05-26 19:07:54.471  1410  1410 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.auth.api.accounttransfer.service.START pkg=com.google.android.gms }
+05-26 19:07:54.471  1410  1410 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.auth.api.accounttransfer.service.START pkg=com.google.android.gms }
+05-26 19:07:54.518  5115  5239 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libgraphutil.so, this can be slow
+05-26 19:07:54.519  5115  5188 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libexecutorch.so, this can be slow
+05-26 19:07:54.519  5115  5188 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libpytorch.so, this can be slow
+05-26 19:07:54.520  5115  5188 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libar-bundle2.so, this can be slow
+05-26 19:07:54.520  5115  5188 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libar-bundle3.so, this can be slow
+05-26 19:07:54.596  5115  5239 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libgraphutil.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.605  5115  5188 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libar-bundle3.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.614  5115  5188 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libar-bundle2.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.618  5115  5239 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libsmartglasses-bundle.so, this can be slow
+05-26 19:07:54.592  5115  5115 W com.whatsapp: type=1400 audit(0.0:128): avc:  granted  { execute } for  comm=576861747341707020576F726B6572 path="/data/data/com.whatsapp/files/decompressed/libs.spo/libgraphutil.so" dev="dm-46" ino=361730 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:54.639  5115  5235 D EGL_emulation: app_time_stats: avg=46.12ms min=15.02ms max=128.00ms count=20
+05-26 19:07:54.604  5115  5115 W com.whatsapp: type=1400 audit(0.0:129): avc:  granted  { execute } for  comm=486967682050726920576F726B6572 path="/data/data/com.whatsapp/files/decompressed/libs.spo/libar-bundle3.so" dev="dm-46" ino=361638 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:54.644  5115  5188 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libfortify.so, this can be slow
+05-26 19:07:54.631     0     0 W audit   : audit_lost=40 audit_rate_limit=5 audit_backlog_limit=64
+05-26 19:07:54.633     0     0 E audit   : rate limit exceeded
+05-26 19:07:54.608  5115  5115 W com.whatsapp: type=1400 audit(0.0:130): avc:  granted  { execute } for  comm=486967682050726920576F726B6572 path="/data/data/com.whatsapp/files/decompressed/libs.spo/libar-bundle2.so" dev="dm-46" ino=361637 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:54.650  5115  5188 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libfortify.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.658  5115  5188 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libpytorch.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.667  5115  5239 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libxplat_third-party_zstd__zstd.so, this can be slow
+05-26 19:07:54.673  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/priv-app/SystemUIGoogle/SystemUIGoogle.apk' with 1 weak references
+05-26 19:07:54.677  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '/vendor/overlay/SystemUIGoogle__sdk_gphone64_x86_64__auto_generated_rro_vendor.apk' with 1 weak references
+05-26 19:07:54.678  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '/product/overlay/SystemUIGoogle__sdk_gphone64_x86_64__auto_generated_rro_product.apk' with 1 weak references
+05-26 19:07:54.644  5115  5115 W com.whatsapp: type=1400 audit(0.0:131): avc:  granted  { execute } for  comm=486967682050726920576F726B6572 path="/data/data/com.whatsapp/files/decompressed/libs.spo/libfortify.so" dev="dm-46" ino=361518 scontext=u:r:untrusted_app:s0:c213,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c213,c256,c512,c768 tclass=file app=com.whatsapp
+05-26 19:07:54.697  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/Drive/Drive.apk' with 1 weak references
+05-26 19:07:54.789  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/Maps/Maps.apk' with 1 weak references
+05-26 19:07:54.840  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/Photos/Photos.apk' with 1 weak references
+05-26 19:07:54.847  5115  5289 I PlayCore: UID: [10213]  PID: [5115] SplitInstallListenerRegistry : registerListener
+05-26 19:07:54.848  5115  5188 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libexecutorch.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.849  5115  5188 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libpyspeech.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.850  5115  5239 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libxplat_third-party_zstd__zstd.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.851  5115  5239 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libsmartglasses-bundle.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.868  5115  5239 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libsodium.so, this can be slow
+05-26 19:07:54.876  5115  5239 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libsodium.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.876  5115  5239 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libnativeutil-jni.so, this can be slow
+05-26 19:07:54.877  5115  5239 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libnativeutil-jni.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.878  5115  5239 W SoLoader[NativeDeps]: Falling back to custom ELF parsing when loading libgraphstorecerealutil.so, this can be slow
+05-26 19:07:54.878  5115  5239 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libgraphstorecerealutil.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.906  5146  5217 I cr_WVCFactoryProvider: Loaded version=124.0.6367.219 minSdkVersion=29 isBundle=false multiprocess=true packageId=2
+05-26 19:07:54.923  5115  5239 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libwhatsappmerged.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:54.926   382  5308 I resolv  : GetAddrInfoHandler::run: {101 262245 101 983141 10213 0}
+05-26 19:07:54.933   382  5309 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+05-26 19:07:54.934   382  5310 I resolv  : res_nmkquery: (QUERY, IN, A)
+05-26 19:07:54.942  5146  5217 D nativeloader: Load /data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.apk!/lib/x86_64/libmonochrome_64.so using ns clns-9 from class loader (caller=/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/WebViewGoogle.apk): ok
+05-26 19:07:54.983  5115  5188 D nativeloader: Load /data/data/com.whatsapp/files/decompressed/libs.spo/libwhatsapp.so using ns clns-7 from class loader (caller=/data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk): ok
+05-26 19:07:55.010  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/WellbeingPrebuilt/WellbeingPrebuilt.apk' with 1 weak references
+05-26 19:07:55.013  5146  5217 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using ns clns-9 from class loader (caller=/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/WebViewGoogle.apk): ok
+05-26 19:07:55.017  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/YouTubeMusicPrebuilt/YouTubeMusicPrebuilt.apk' with 1 weak references
+05-26 19:07:55.055  1410  3220 I ebvk$a  : Unable to retrieve flag snapshot for com.google.android.gms.auth_api_account_transfer, using defaults.
+05-26 19:07:55.080   581  3284 D CompatChangeReporter: Compat change id reported: 154726397; UID 10143; state: ENABLED
+05-26 19:07:55.090  1410  1748 W AccountTransfer: [RespPersistTableUtil]Reading for accountType:com.whatsapp found no rows
+05-26 19:07:55.093  5146  5315 E chromium: [ERROR:variations_seed_loader.cc(37)] Seed missing signature.
+05-26 19:07:55.098  5146  5315 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.google.android.googlequicksearchbox/app_webview/variations_seed_new"
+05-26 19:07:55.104  5146  5315 I chromium: [INFO:variations_seed_loader.cc(66)] Failed to open file for reading.: No such file or directory (2)
+05-26 19:07:55.105  5146  5315 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.google.android.googlequicksearchbox/app_webview/variations_seed"
+05-26 19:07:55.107  5146  5315 I cr_VariationsUtils: Requesting new seed from IVariationsSeedServer
+05-26 19:07:55.144   581  3284 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 10151, packageName = null, attributionTag = null, token = android.os.Binder@2f06f02, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-26 19:07:55.189   382  5310 I resolv  : res_nsend: used send_dg 103 terrno: 0
+05-26 19:07:55.189   382  5310 I resolv  : doQuery: rcode=0, ancount=3, return value=103
+05-26 19:07:55.191   382  5309 I resolv  : res_nsend: used send_dg 115 terrno: 0
+05-26 19:07:55.191   382  5309 I resolv  : doQuery: rcode=0, ancount=3, return value=115
+05-26 19:07:55.194  5146  5146 I cr_LibraryLoader: Successfully loaded native library
+05-26 19:07:55.195  5146  5146 I cr_CachingUmaRecorder: Flushed 7 samples from 7 histograms, 0 samples were dropped.
+05-26 19:07:55.220   382   469 I netd    : tetherGetStats() -> {[]} <31.53ms>
+05-26 19:07:55.236   383   383 D Zygote  : Forked child process 5316
+05-26 19:07:55.238  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/CalendarGooglePrebuilt/CalendarGooglePrebuilt.apk' with 1 weak references
+05-26 19:07:55.250  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleContacts/GoogleContacts.apk' with 1 weak references
+05-26 19:07:55.257  5115  5289 I SplitController: Setting embedding rules. Size: 4
+05-26 19:07:55.264  5146  5146 I cr_CombinedPProvider: #registerProvider() provider:WV.V7@9672b9c isPolicyCacheEnabled:false policyProvidersSize:0
+05-26 19:07:55.267  5146  5146 I cr_PolicyProvider: #setManagerAndSource() 0
+05-26 19:07:55.297  5115  5320 I WhatsAppJni: EnsureThreadAttached: attached current thread to JVM
+05-26 19:07:55.298  5115  5321 I WhatsAppJni: EnsureThreadAttached: attached current thread to JVM
+05-26 19:07:55.299  5115  5322 I WhatsAppJni: EnsureThreadAttached: attached current thread to JVM
+05-26 19:07:55.305  5115  5240 W com.whatsapp: Long monitor contention with owner High Pri Worker #2 (5188) at boolean com.whatsapp.infra.nativelibloader.WhatsAppLibLoader.BA7()(:75) waiters=0 in boolean com.whatsapp.infra.nativelibloader.WhatsAppLibLoader.BA7() for 4.467s
+05-26 19:07:55.309  5115  5295 W com.whatsapp: Long monitor contention with owner High Pri Worker #2 (5188) at boolean com.whatsapp.infra.nativelibloader.WhatsAppLibLoader.BA7()(:75) waiters=1 in boolean com.whatsapp.infra.nativelibloader.WhatsAppLibLoader.BA7() for 1.530s
+05-26 19:07:55.320  5306  5306 W BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+05-26 19:07:55.324  5306  5306 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+05-26 19:07:55.331   581  3284 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 99000, packageName = null, attributionTag = null, token = android.os.Binder@2f06f02, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-26 19:07:55.323     0     0 I servicemanager: Caller(pid=5306,uid=2000,sid=u:r:shell:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+05-26 19:07:55.345   172   172 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+05-26 19:07:55.348  5306  5325 I Gralloc4: mapper 4.x is not supported
+05-26 19:07:55.361   581   613 W ActivityManager: Slow operation: 211ms so far, now at startProcess: returned from zygote!
+05-26 19:07:55.361   581   613 W ActivityManager: Slow operation: 212ms so far, now at startProcess: done updating battery stats
+05-26 19:07:55.362   581   613 W ActivityManager: Slow operation: 212ms so far, now at startProcess: building log message
+05-26 19:07:55.362   581   613 I ActivityManager: Start proc 5316:com.google.android.webview:webview_service/u0a151 for service {com.google.android.webview/org.chromium.android_webview.services.VariationsSeedServer}
+05-26 19:07:55.362   581   613 W ActivityManager: Slow operation: 212ms so far, now at startProcess: starting to update pids map
+05-26 19:07:55.363   581   613 W ActivityManager: Slow operation: 213ms so far, now at startProcess: done updating pids map
+05-26 19:07:55.475  5316  5316 I webview_service: Using CollectorTypeCMC GC.
+05-26 19:07:55.497  5146  5146 I cr_CombinedPProvider: #linkNativeInternal() 1
+05-26 19:07:55.498  5316  5316 W webview_service: Unexpected CPU variant for x86: x86_64.
+05-26 19:07:55.498  5316  5316 W webview_service: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+05-26 19:07:55.500  5316  5316 E webview_service: Not starting debugger since process cannot load the jdwp agent.
+05-26 19:07:55.511  5115  5239 D TrafficStats: tagSocket(132) with statsTag=0xffffffff, statsUid=-1
+05-26 19:07:55.520  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/PrebuiltDeskClockGoogle/PrebuiltDeskClockGoogle.apk' with 1 weak references
+05-26 19:07:55.559  5316  5316 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-26 19:07:55.667  5146  5146 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+05-26 19:07:55.667  5146  5146 I cr_PolicyProvider: #notifySettingsAvailable() 0
+05-26 19:07:55.667  5146  5146 I cr_CombinedPProvider: #onSettingsAvailable() 0
+05-26 19:07:55.667  5146  5146 I cr_CombinedPProvider: #flushPolicies()
+05-26 19:07:55.668  1020  1020 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+05-26 19:07:55.670  1020  1020 D DeviceSearchAlg: search timeout = %d200
+05-26 19:07:55.679  5115  5235 D EGL_emulation: app_time_stats: avg=68.08ms min=31.95ms max=126.67ms count=15
+05-26 19:07:55.687  5115  5123 I com.whatsapp: Background concurrent mark compact GC freed 11MB AllocSpace bytes, 37(1616KB) LOS objects, 49% free, 8179KB/15MB, paused 812us,3.663ms total 622.838ms
+05-26 19:07:55.698  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/Velvet/Velvet.apk' with 1 weak references
+05-26 19:07:55.753  5146  5233 V ClearcutMetricXmitter: Transmission is done.
+05-26 19:07:55.756  5146  5233 V ClearcutMetricXmitter: Transmission is done.
+05-26 19:07:55.850  5316  5316 D CompatChangeReporter: Compat change id reported: 242716250; UID 10151; state: ENABLED
+05-26 19:07:55.975   581   794 W Looper  : Drained
+05-26 19:07:56.034  5316  5316 W ziparchive: Unable to open '/data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.dm': No such file or directory
+05-26 19:07:56.034  5316  5316 W ziparchive: Unable to open '/data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.dm': No such file or directory
+05-26 19:07:56.034  5316  5316 W webview_service: Entry not found
+05-26 19:07:56.034  5316  5316 D nativeloader: Configuring clns-7 for other apk /data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/lib/x86_64:/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+05-26 19:07:56.035  5316  5316 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-26 19:07:56.066  5316  5316 D nativeloader: Configuring clns-8 for other apk /data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/lib/x86_64:/data/app/~~EeTNMsVBYgTlmJZWEtA77g==/com.google.android.webview-TWG3B2IY1EJyXRO1Cw5dOg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~2Wdszr8qv2dqg1Du0v2Fmw==/com.google.android.trichromelibrary_636771938-Mj_TgHlerCtGILbhpoafsw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+05-26 19:07:56.080   800   800 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+05-26 19:07:56.083  5316  5316 V GraphicsEnvironment: Currently set values for:
+05-26 19:07:56.086  5316  5316 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-26 19:07:56.086  5316  5316 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-26 19:07:56.086  5316  5316 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-26 19:07:56.086  5316  5316 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-26 19:07:56.096  5316  5316 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+05-26 19:07:56.097  5316  5316 I cr_WebViewApkApp: Launched version=124.0.6367.219 minSdkVersion=29 isBundle=false processName=com.google.android.webview:webview_service
+05-26 19:07:56.286  1020  1020 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+05-26 19:07:56.286  1020  1020 W BcSmartspaceView: Current card is not present in the Adapter; cannot log.
+05-26 19:07:56.342  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/SettingsIntelligenceGooglePrebuilt/SettingsIntelligenceGooglePrebuilt.apk' with 1 weak references
+05-26 19:07:56.412     0     0 I logd    : logdr: UID=2000 GID=2000 PID=5350 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+05-26 19:07:56.511  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/YouTube/YouTube.apk' with 1 weak references
+05-26 19:07:56.597  1020  1020 I OverviewComponentObserver: updateOverviewTargets: mIsHomeDisabled=false, isDefaultHomeNull=false, mIsDefaultHome=true
+05-26 19:07:56.598  1020  1020 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-26 19:07:56.528     0     0 I logd    : start watching /data/system/packages.list ...
+05-26 19:07:56.644  5115  5230 W com.whatsapp: Long monitor contention with owner WhatsApp Worker #3 (5240) at boolean X.0GL.A03(X.05f, X.00V, X.0H9, X.07C, X.0HA, X.0HC, java.lang.String, java.lang.String)(:232) waiters=0 in boolean X.0GL.A03(X.05f, X.00V, X.0H9, X.07C, X.0HA, X.0HC, java.lang.String, java.lang.String) for 5.700s
+05-26 19:07:56.674  5115  5188 W com.whatsapp: Long monitor contention with owner WhatsApp Worker #3 (5240) at boolean X.0GL.A03(X.05f, X.00V, X.0H9, X.07C, X.0HA, X.0HC, java.lang.String, java.lang.String)(:232) waiters=1 in void X.0GL.A01() for 1.369s
+05-26 19:07:56.681  5115  5289 W com.whatsapp: Long monitor contention with owner WhatsApp Worker #3 (5240) at boolean X.0GL.A03(X.05f, X.00V, X.0H9, X.07C, X.0HA, X.0HC, java.lang.String, java.lang.String)(:232) waiters=2 in boolean X.0GL.A03(X.05f, X.00V, X.0H9, X.07C, X.0HA, X.0HC, java.lang.String, java.lang.String) for 1.370s
+05-26 19:07:56.711  5115  5235 D EGL_emulation: app_time_stats: avg=44.73ms min=3.75ms max=169.79ms count=18
+05-26 19:07:56.677     0     0 I logd    : ReadPackageList, total packages: 217
+05-26 19:07:56.713   581  1546 I AppWidgetServiceImpl: getInstalledProvidersForProfiles() 0
+05-26 19:07:56.713   581  1546 I AppWidgetServiceImpl: notifyProviderInheritance() 0
+05-26 19:07:56.719  1020  1026 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~CC1of49im3gWGB8c4swVUA==/com.whatsapp-y30uFyf5-EVMw-NIvdyClQ==/base.apk' with 1 weak references

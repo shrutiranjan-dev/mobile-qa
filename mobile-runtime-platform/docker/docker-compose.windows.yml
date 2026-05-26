@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  backend-api:
+    environment:
+      HOST_AGENT_URL: http://host.docker.internal:5050
+
+  android-worker:
+    environment:
+      ADB_HOST: host.docker.internal
+      ADB_PORT: 5037
+      ADB_SERVER_SOCKET: tcp:host.docker.internal:5037

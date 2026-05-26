@@ -1,0 +1,41 @@
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+apps/desktop/build/
+apps/desktop/native/winembed/build/
+*.tsbuildinfo
+
+# Runtime outputs
+uploads/*
+!uploads/.gitkeep
+services/backend-api/uploads/*
+!services/backend-api/uploads/.gitkeep
+artifacts/jobs/*
+!artifacts/jobs/.gitkeep
+
+# Logs/temp
+*.log
+tmp/
+temp/
+
+# Windows-only generated binaries/artifacts
+*.exe
+*.dll
+*.pdb
+*.lib
+*.exp
+*.iobj
+*.ipdb
+*.ilk
+*.obj
+*.idb
+*.tlog
+*.bin
+*.blockmap
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini

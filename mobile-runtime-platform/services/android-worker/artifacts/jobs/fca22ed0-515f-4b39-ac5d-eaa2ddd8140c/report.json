@@ -1,0 +1,55 @@
+{
+  "jobId": "fca22ed0-515f-4b39-ac5d-eaa2ddd8140c",
+  "platform": "android",
+  "runtimeProfile": "Android_Small_Clean_API_35",
+  "status": "passed",
+  "reason": null,
+  "device": {
+    "serial": "emulator-5554"
+  },
+  "app": {
+    "packageName": "com.whatsapp"
+  },
+  "steps": [
+    {
+      "name": "apk_validate",
+      "status": "passed"
+    },
+    {
+      "name": "package_extract",
+      "status": "passed"
+    },
+    {
+      "name": "apk_install",
+      "status": "passed"
+    },
+    {
+      "name": "app_launch",
+      "status": "passed"
+    },
+    {
+      "name": "process_check",
+      "status": "passed"
+    },
+    {
+      "name": "screenshot_capture",
+      "status": "passed"
+    },
+    {
+      "name": "logcat_capture",
+      "status": "passed"
+    },
+    {
+      "name": "crash_detection",
+      "status": "passed"
+    }
+  ],
+  "artifacts": {
+    "report": "artifacts/jobs/fca22ed0-515f-4b39-ac5d-eaa2ddd8140c/report.json",
+    "screenshot": "artifacts/jobs/fca22ed0-515f-4b39-ac5d-eaa2ddd8140c/screenshots/launch.png",
+    "logcat": "artifacts/jobs/fca22ed0-515f-4b39-ac5d-eaa2ddd8140c/logs/logcat.txt"
+  },
+  "warnings": [],
+  "startedAt": "2026-05-26T13:37:28.984Z",
+  "finishedAt": "2026-05-26T13:38:02.753Z"
+}

@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7
+    container_name: mobile-runtime-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  android-worker:
+    container_name: mobile-runtime-android-worker
+    build:
+      context: ..
+      dockerfile: services/android-worker/Dockerfile
+    ports:
+      - "6060:6060"
+    environment:
+      NODE_ENV: development
+      PORT: 6060
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      ADB_HOST: host.docker.internal
+      ADB_PORT: 5037
+      ADB_SERVER_SOCKET: tcp:host.docker.internal:5037
+      UPLOAD_DIR: /app/uploads
+      ARTIFACT_DIR: /app/artifacts
+      ANDROID_SDK_ROOT: /opt/android-sdk
+      ANDROID_HOME: /opt/android-sdk
+    volumes:
+      - ../uploads:/app/uploads
+      - ../artifacts:/app/artifacts
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  backend-api:
+    container_name: mobile-runtime-backend-api
+    build:
+      context: ..
+      dockerfile: services/backend-api/Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      NODE_ENV: development
+      PORT: 4000
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      HOST_AGENT_URL: http://host.docker.internal:5050
+      ANDROID_WORKER_URL: http://android-worker:6060
+      UPLOAD_DIR: /app/uploads
+      ARTIFACT_DIR: /app/artifacts
+    volumes:
+      - ../uploads:/app/uploads
+      - ../artifacts:/app/artifacts
+    depends_on:
+      redis:
+        condition: service_healthy
+      android-worker:
+        condition: service_started

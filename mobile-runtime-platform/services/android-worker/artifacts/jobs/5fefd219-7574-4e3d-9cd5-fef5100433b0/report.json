@@ -1,0 +1,27 @@
+{
+  "jobId": "5fefd219-7574-4e3d-9cd5-fef5100433b0",
+  "platform": "android",
+  "runtimeProfile": "Android_Small_Clean_API_35",
+  "status": "blocked",
+  "reason": "APK does not exist: uploads\\1779798663861-WhatsApp-2.26.7.74.apk",
+  "device": {
+    "serial": "emulator-5554"
+  },
+  "app": {
+    "packageName": "unknown"
+  },
+  "steps": [
+    {
+      "name": "apk_validate",
+      "status": "failed"
+    }
+  ],
+  "artifacts": {
+    "report": "artifacts/jobs/5fefd219-7574-4e3d-9cd5-fef5100433b0/report.json",
+    "screenshot": "artifacts/jobs/5fefd219-7574-4e3d-9cd5-fef5100433b0/screenshots/launch.png",
+    "logcat": "artifacts/jobs/5fefd219-7574-4e3d-9cd5-fef5100433b0/logs/logcat.txt"
+  },
+  "warnings": [],
+  "startedAt": "2026-05-26T12:31:04.246Z",
+  "finishedAt": "2026-05-26T12:31:04.248Z"
+}

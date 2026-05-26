@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Android Runtime MVP</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">AR</div>
+          <div>
+            <div class="brand-title">Android Runtime MVP</div>
+            <div class="brand-sub">Runtime Cockpit</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-item active" data-target="runtime">Runtime</button>
+          <button class="nav-item" data-target="jobs">Jobs</button>
+          <button class="nav-item" data-target="artifacts">Artifacts</button>
+          <button class="nav-item" data-target="reports">Reports</button>
+          <button class="nav-item" data-target="settings">Settings</button>
+        </nav>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <div>
+            <h1>Android Runtime MVP</h1>
+            <p>Lightweight Android APK runtime validation</p>
+          </div>
+          <div class="topbar-right">
+            <span id="globalStatus" class="badge offline">Offline</span>
+            <span id="displayModeChip" class="meta-chip">Display: Live Embedded Stream</span>
+            <span id="currentDevice" class="meta-chip">Device: none</span>
+            <span id="currentProfile" class="meta-chip">Profile: none</span>
+            <button id="refresh" class="btn btn-primary">Refresh</button>
+          </div>
+        </header>
+
+        <main class="main-grid" id="runtime">
+          <section class="hero-panel card">
+            <div class="panel-head">
+              <h2>Emulator Workspace</h2>
+              <div class="panel-actions">
+                <button id="refreshPreview" class="btn btn-ghost">Refresh Preview</button>
+                <button id="capturePreview" class="btn btn-ghost">Screenshot Now</button>
+                <button id="restartApp" class="btn btn-ghost" disabled>Restart App</button>
+                <button id="rotateView" class="btn btn-ghost" disabled>Rotate</button>
+                <button id="reconnectStream" class="btn btn-ghost hidden">Reconnect</button>
+                <button id="stopEmulatorToolbar" class="btn btn-danger">Stop Emulator</button>
+              </div>
+            </div>
+
+            <div class="emulator-wrap">
+              <div class="emulator-frame">
+                <div id="emulatorHost" class="emulator-host"></div>
+                <img id="preview" alt="embedded android stream viewport" tabindex="0" role="application" aria-label="Embedded Android Stream Viewport" />
+                <div id="previewPlaceholder" class="preview-placeholder">
+                  <h3>No runtime screenshot yet</h3>
+                  <p>Upload and run an APK to preview emulator state.</p>
+                </div>
+              </div>
+              <div class="emulator-overlay">
+                <span class="stream-badge static">Embedded Stream</span>
+                <span class="stream-badge live">Live</span>
+                <span id="overlayStream" class="stream-badge disconnected">Disconnected</span>
+                <span id="overlayInputActive" class="stream-badge disconnected">Input Inactive</span>
+                <span id="overlayDisplayMode">display: streaming</span>
+                <span id="overlayDevice">serial: none</span>
+                <span id="overlayBoot">boot: unknown</span>
+                <span id="overlayProfile">profile: none</span>
+              </div>
+              <div class="emulator-nav-controls">
+                <button id="navBack" class="btn btn-ghost btn-icon" type="button" aria-label="Back">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg><span>Back</span>
+                </button>
+                <button id="navHome" class="btn btn-ghost btn-icon" type="button" aria-label="Home">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h14V10" /></svg><span>Home</span>
+                </button>
+                <button id="navRecents" class="btn btn-ghost btn-icon" type="button" aria-label="Recents">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2" /><path d="M9 6v12" /></svg><span>Recents</span>
+                </button>
+                <button id="navEnter" class="btn btn-ghost btn-icon" type="button" aria-label="Enter">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h11" /><path d="M12 8l4 4-4 4" /><path d="M4 6v12" /></svg><span>Enter</span>
+                </button>
+                <button id="navDelete" class="btn btn-ghost btn-icon" type="button" aria-label="Delete">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18" /><path d="M8 6V4h8v2" /><path d="M6 6l1 14h10l1-14" /><path d="M10 10v7M14 10v7" /></svg><span>Delete</span>
+                </button>
+                <button id="navPower" class="btn btn-ghost btn-icon" type="button" aria-label="Power">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8" /><path d="M7.05 5.05a9 9 0 1 0 9.9 0" /></svg><span>Power</span>
+                </button>
+              </div>
+              <div class="emulator-text-tools">
+                <label for="deviceTextInput">Send text to device</label>
+                <input id="deviceTextInput" type="text" maxlength="500" placeholder="Type text for focused Android field" />
+                <button id="sendDeviceText" class="btn btn-primary btn-icon" type="button" aria-label="Send text">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20l18-8L3 4v6l12 2-12 2z" /></svg><span>Send</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="control-panel card">
+            <h2>Runtime Control</h2>
+
+            <div id="statusCards" class="status-cards"></div>
+
+            <div class="field-block">
+              <label for="runtimeProfile">Runtime Profile</label>
+              <select id="runtimeProfile"></select>
+              <small id="profileHint"></small>
+              <div id="selectedProfile" class="meta-line">Selected: -</div>
+            </div>
+
+            <div class="field-block actions-row">
+              <button id="startEmulator" class="btn btn-primary">Start Emulator</button>
+              <button id="stopEmulator" class="btn btn-danger">Stop Emulator</button>
+              <button id="refreshDevices" class="btn btn-ghost">Refresh Devices</button>
+            </div>
+
+            <div class="runner card-inner">
+              <h3>APK Runner</h3>
+              <label class="file-picker">
+                <input id="apkFile" type="file" accept=".apk" />
+                <span>Choose APK</span>
+              </label>
+              <div id="apkSelected" class="meta-line">Selected APK: none</div>
+              <div id="runTarget" class="meta-line">Target: no device</div>
+              <button id="uploadRun" class="btn btn-success">Upload & Run</button>
+            </div>
+
+            <div id="resultSummary" class="result-summary hidden"></div>
+          </section>
+        </main>
+
+        <section class="bottom-panel card">
+          <div class="tabs">
+            <button class="tab active" data-tab="timeline">Job Timeline</button>
+            <button class="tab" data-tab="logcat">Logcat</button>
+            <button class="tab" data-tab="report">Report JSON</button>
+            <button class="tab" data-tab="artifacts">Artifacts</button>
+            <button class="tab" data-tab="debug">Advanced Debug</button>
+          </div>
+
+          <div class="tab-body active" id="tab-timeline">
+            <div id="timeline" class="timeline"></div>
+          </div>
+
+          <div class="tab-body" id="tab-logcat">
+            <pre id="logcatView" class="mono">No logcat loaded.</pre>
+          </div>
+
+          <div class="tab-body" id="tab-report">
+            <pre id="reportView" class="mono">No report loaded.</pre>
+          </div>
+
+          <div class="tab-body" id="tab-artifacts">
+            <div id="artifactActions" class="artifact-actions"></div>
+          </div>
+
+          <div class="tab-body" id="tab-debug">
+            <details>
+              <summary>Service Config</summary>
+              <pre id="serviceConfig" class="mono"></pre>
+            </details>
+            <details>
+              <summary>Preflight Raw JSON</summary>
+              <pre id="preflightRaw" class="mono"></pre>
+            </details>
+            <details>
+              <summary>Job Raw JSON</summary>
+              <pre id="jobRaw" class="mono"></pre>
+            </details>
+          </div>
+        </section>
+
+        <div id="toast" class="toast hidden"></div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
