@@ -4,17 +4,17 @@ node_modules/
 # Build outputs
 dist/
 **/dist/
-apps/desktop/build/
-apps/desktop/native/winembed/build/
+mobile-runtime-platform/apps/desktop/build/
+mobile-runtime-platform/apps/desktop/native/winembed/build/
 *.tsbuildinfo
 
 # Runtime outputs
-uploads/*
-!uploads/.gitkeep
-services/backend-api/uploads/*
-!services/backend-api/uploads/.gitkeep
-artifacts/jobs/*
-!artifacts/jobs/.gitkeep
+mobile-runtime-platform/uploads/*
+!mobile-runtime-platform/uploads/.gitkeep
+mobile-runtime-platform/services/backend-api/uploads/*
+!mobile-runtime-platform/services/backend-api/uploads/.gitkeep
+mobile-runtime-platform/artifacts/jobs/*
+!mobile-runtime-platform/artifacts/jobs/.gitkeep
 
 # Logs/temp
 *.log
