@@ -12,5 +12,17 @@ contextBridge.exposeInMainWorld("desktopBridge", {
   onRuntimeConfig: (handler: (config: unknown) => void) => ipcRenderer.on("runtime:config", (_e, data) => handler(data)),
   onRuntimeRefresh: (handler: () => void) => ipcRenderer.on("runtime:refresh", () => handler()),
   onRuntimeError: (handler: (message: string) => void) => ipcRenderer.on("runtime:error", (_e, message) => handler(message)),
-  onAbout: (handler: (data: { appName: string; version: string }) => void) => ipcRenderer.on("runtime:about", (_e, data) => handler(data))
+  onAbout: (handler: (data: { appName: string; version: string }) => void) => ipcRenderer.on("runtime:about", (_e, data) => handler(data)),
+  onNativeDockAction: (handler: (data: { action: "dock" | "undock" | "stream" }) => void) =>
+    ipcRenderer.on("runtime:native-dock-action", (_e, data) => handler(data)),
+  onNativeDockRedockResult: (handler: (data: { ok: boolean; reason?: string; message?: string }) => void) =>
+    ipcRenderer.on("runtime:native-dock-redock-result", (_e, data) => handler(data))
+});
+
+contextBridge.exposeInMainWorld("runtimeDock", {
+  dockEmulatorWindow: (payload: unknown) => ipcRenderer.invoke("native-dock:dock", payload),
+  undockEmulatorWindow: (payload: unknown) => ipcRenderer.invoke("native-dock:undock", payload),
+  setDockMode: (mode: "stream" | "native-dock") => ipcRenderer.invoke("native-dock:set-mode", mode),
+  getDockState: () => ipcRenderer.invoke("native-dock:get-state"),
+  getDisplayInfo: () => ipcRenderer.invoke("native-dock:display-info")
 });

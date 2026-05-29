@@ -55,8 +55,57 @@
             </div>
 
             <div class="emulator-wrap">
+              <div class="display-mode-panel">
+                <label for="displayModeSelect">Display Mode</label>
+                <select id="displayModeSelect">
+                  <option value="stream">Embedded Stream - Stable</option>
+                  <option value="native-dock">Native Window Dock - Experimental</option>
+                </select>
+                <span id="displayModeBadge" class="stream-badge live">Embedded Stream / Stable</span>
+                <span id="nativeDockStateBadge" class="stream-badge static">Stream Stable</span>
+              </div>
+              <div id="nativeDockPanel" class="native-dock-panel hidden">
+                <div class="native-dock-title">Native Window Dock Area</div>
+                <div class="native-dock-warning">Native Dock positions the real Android Emulator window over this panel. It is not true DOM embedding and may require re-docking after window move/resize.</div>
+                <div class="dock-fit-row">
+                  <label for="nativeDockFitMode">Native Dock Fit</label>
+                  <select id="nativeDockFitMode">
+                    <option value="full">Full Emulator Window</option>
+                    <option value="compact">Compact</option>
+                    <option value="custom">Custom</option>
+                  </select>
+                </div>
+                <div class="native-dock-actions">
+                  <button id="dockEmulatorWindow" class="btn btn-primary" type="button">Dock Emulator Window</button>
+                  <button id="redockEmulatorWindow" class="btn btn-ghost" type="button">Re-dock</button>
+                  <button id="undockEmulatorWindow" class="btn btn-danger" type="button">Undock</button>
+                  <button id="returnToStream" class="btn btn-ghost" type="button">Return to Stream</button>
+                </div>
+                <div id="nativeDockResultSummary" class="dock-result-summary">Last dock result: none</div>
+                <details class="dock-calibration">
+                  <summary>Advanced Dock Calibration</summary>
+                  <p class="dock-calibration-help">Use calibration if the real emulator window is slightly offset from the dock box due to Windows titlebar, DPI scaling, or multi-monitor setup.</p>
+                  <div class="dock-calibration-grid">
+                    <label>Offset X <input id="dockOffsetX" type="number" value="0" step="1" /></label>
+                    <label>Offset Y <input id="dockOffsetY" type="number" value="0" step="1" /></label>
+                    <label>Width Delta <input id="dockWidthDelta" type="number" value="0" step="1" /></label>
+                    <label>Height Delta <input id="dockHeightDelta" type="number" value="0" step="1" /></label>
+                    <label>Target Width <input id="dockTargetWidth" type="number" value="360" step="1" min="200" /></label>
+                    <label>Target Height <input id="dockTargetHeight" type="number" value="560" step="1" min="300" /></label>
+                  </div>
+                  <div class="native-dock-actions">
+                    <button id="applyDockCalibration" class="btn btn-primary" type="button">Apply & Re-dock</button>
+                    <button id="resetDockCalibration" class="btn btn-ghost" type="button">Reset Calibration</button>
+                    <button id="centerDockTarget" class="btn btn-ghost" type="button">Center Target</button>
+                    <button id="fitFullDockTarget" class="btn btn-ghost" type="button">Fit Full Emulator Window</button>
+                  </div>
+                </details>
+              </div>
               <div class="emulator-frame">
-                <div id="emulatorHost" class="emulator-host"></div>
+                <div id="emulatorHost" class="emulator-host hidden"></div>
+                <div id="nativeDockTarget" class="native-dock-target hidden" aria-label="Native Window Dock Area">
+                  <span id="nativeDockTargetLabel">Native Window Dock Area</span>
+                </div>
                 <img id="preview" alt="embedded android stream viewport" tabindex="0" role="application" aria-label="Embedded Android Stream Viewport" />
                 <div id="previewPlaceholder" class="preview-placeholder">
                   <h3>No runtime screenshot yet</h3>

@@ -42,7 +42,7 @@ let runtimeConfig = {
   hostAgentUrl: "http://localhost:5050",
   backendApiUrl: "http://localhost:4000",
   workerUrl: "http://localhost:6060",
-  embedMode: "force"
+  embedMode: "stream"
 };
 
 const state = {
@@ -71,10 +71,21 @@ const state = {
     lastFrameAt: 0,
     lastSnapshotUrl: null
   },
-  nativeEmbed: {
-    supported: false,
-    attached: false,
-    mode: "stream"
+  displayMode: "stream",
+  nativeDock: {
+    active: false,
+    lastPayload: null,
+    status: "inactive",
+    lastResult: null,
+    calibration: {
+      x: 0,
+      y: 0,
+      widthDelta: 0,
+      heightDelta: 0,
+      targetWidth: 360,
+      targetHeight: 560
+    },
+    fitMode: "full"
   },
   rotateTarget: "landscape"
 };
@@ -83,6 +94,28 @@ const el = {
   globalStatus: document.getElementById("globalStatus"),
   currentDevice: document.getElementById("currentDevice"),
   displayModeChip: document.getElementById("displayModeChip"),
+  displayModeSelect: document.getElementById("displayModeSelect"),
+  displayModeBadge: document.getElementById("displayModeBadge"),
+  nativeDockStateBadge: document.getElementById("nativeDockStateBadge"),
+  nativeDockPanel: document.getElementById("nativeDockPanel"),
+  nativeDockTarget: document.getElementById("nativeDockTarget"),
+  nativeDockTargetLabel: document.getElementById("nativeDockTargetLabel"),
+  nativeDockFitMode: document.getElementById("nativeDockFitMode"),
+  dockEmulatorWindow: document.getElementById("dockEmulatorWindow"),
+  redockEmulatorWindow: document.getElementById("redockEmulatorWindow"),
+  undockEmulatorWindow: document.getElementById("undockEmulatorWindow"),
+  returnToStream: document.getElementById("returnToStream"),
+  nativeDockResultSummary: document.getElementById("nativeDockResultSummary"),
+  dockOffsetX: document.getElementById("dockOffsetX"),
+  dockOffsetY: document.getElementById("dockOffsetY"),
+  dockWidthDelta: document.getElementById("dockWidthDelta"),
+  dockHeightDelta: document.getElementById("dockHeightDelta"),
+  dockTargetWidth: document.getElementById("dockTargetWidth"),
+  dockTargetHeight: document.getElementById("dockTargetHeight"),
+  applyDockCalibration: document.getElementById("applyDockCalibration"),
+  resetDockCalibration: document.getElementById("resetDockCalibration"),
+  centerDockTarget: document.getElementById("centerDockTarget"),
+  fitFullDockTarget: document.getElementById("fitFullDockTarget"),
   currentProfile: document.getElementById("currentProfile"),
   preflightRaw: document.getElementById("preflightRaw"),
   jobRaw: document.getElementById("jobRaw"),
@@ -116,7 +149,6 @@ const el = {
   artifactActions: document.getElementById("artifactActions"),
   serviceConfig: document.getElementById("serviceConfig"),
   toast: document.getElementById("toast"),
-  emulatorHost: document.getElementById("emulatorHost"),
   navBack: document.getElementById("navBack"),
   navHome: document.getElementById("navHome"),
   navRecents: document.getElementById("navRecents"),
@@ -131,7 +163,7 @@ const el = {
 };
 
 const emulatorFrame = document.querySelector(".emulator-frame");
-let resizeTimer = null;
+let dockDebounceTimer = null;
 const gestureState = {
   down: false,
   startX: 0,
@@ -150,17 +182,87 @@ function showToast(message, level = "warn") {
   setTimeout(() => el.toast.classList.add("hidden"), 3200);
 }
 
+function loadDockCalibration() {
+  state.nativeDock.calibration.x = Number(localStorage.getItem("nativeDockOffsetX") || 0) || 0;
+  state.nativeDock.calibration.y = Number(localStorage.getItem("nativeDockOffsetY") || 0) || 0;
+  state.nativeDock.calibration.widthDelta = Number(localStorage.getItem("nativeDockWidthDelta") || 0) || 0;
+  state.nativeDock.calibration.heightDelta = Number(localStorage.getItem("nativeDockHeightDelta") || 0) || 0;
+  state.nativeDock.calibration.targetWidth = Number(localStorage.getItem("nativeDockTargetWidth") || 360) || 360;
+  state.nativeDock.calibration.targetHeight = Number(localStorage.getItem("nativeDockTargetHeight") || 560) || 560;
+  state.nativeDock.fitMode = localStorage.getItem("nativeDockFitMode") || "full";
+}
+
+function renderDockCalibration() {
+  if (el.dockOffsetX) el.dockOffsetX.value = String(state.nativeDock.calibration.x);
+  if (el.dockOffsetY) el.dockOffsetY.value = String(state.nativeDock.calibration.y);
+  if (el.dockWidthDelta) el.dockWidthDelta.value = String(state.nativeDock.calibration.widthDelta);
+  if (el.dockHeightDelta) el.dockHeightDelta.value = String(state.nativeDock.calibration.heightDelta);
+  if (el.dockTargetWidth) el.dockTargetWidth.value = String(state.nativeDock.calibration.targetWidth);
+  if (el.dockTargetHeight) el.dockTargetHeight.value = String(state.nativeDock.calibration.targetHeight);
+  if (el.nativeDockFitMode) el.nativeDockFitMode.value = state.nativeDock.fitMode;
+}
+
+function applyDockTargetSize() {
+  if (!el.nativeDockTarget) return;
+  let width = state.nativeDock.calibration.targetWidth;
+  let height = state.nativeDock.calibration.targetHeight;
+  if (state.nativeDock.fitMode === "full") {
+    width = 360;
+    height = 560;
+  } else if (state.nativeDock.fitMode === "compact") {
+    width = 320;
+    height = 520;
+  }
+  state.nativeDock.calibration.targetWidth = width;
+  state.nativeDock.calibration.targetHeight = height;
+  el.nativeDockTarget.style.width = `${Math.max(200, width)}px`;
+  el.nativeDockTarget.style.height = `${Math.max(300, height)}px`;
+}
+
+function setNativeDockStatus(status) {
+  state.nativeDock.status = status;
+  if (!el.nativeDockStateBadge) return;
+  let text = "Stream Stable";
+  if (status === "docking") text = "Docking...";
+  if (status === "docked") text = "Native Dock Active";
+  if (status === "failed") text = "Dock Failed";
+  if (status === "returned-to-stream") text = "Returned to Stream";
+  el.nativeDockStateBadge.textContent = text;
+}
+
+function renderNativeDockResult() {
+  if (!el.nativeDockResultSummary) return;
+  const r = state.nativeDock.lastResult;
+  if (!r) {
+    el.nativeDockResultSummary.textContent = "Last dock result: none";
+    return;
+  }
+  const title = r.windowTitle || "unknown";
+  const proc = r.processName || "unknown";
+  const b = r.bounds ? `(${r.bounds.x},${r.bounds.y},${r.bounds.width}x${r.bounds.height})` : "";
+  el.nativeDockResultSummary.textContent = `Last dock result: ${title} [${proc}] ${b}`.trim();
+}
+
 function renderDisplayMode() {
-  const embedded = state.nativeEmbed.mode === "native" && state.nativeEmbed.attached;
-  const modeLabel = embedded ? "Native Embed Experimental" : "Live Embedded Stream";
+  const docked = state.displayMode === "native-dock" && state.nativeDock.active;
+  const modeLabel = state.displayMode === "native-dock" ? "Native Window Dock - Experimental" : "Embedded Stream - Stable";
   if (el.displayModeChip) {
     el.displayModeChip.textContent = `Display: ${modeLabel}`;
     el.displayModeChip.classList.remove("mode-embedded", "mode-streaming");
-    el.displayModeChip.classList.add(embedded ? "mode-embedded" : "mode-streaming");
+    el.displayModeChip.classList.add(state.displayMode === "native-dock" ? "mode-embedded" : "mode-streaming");
   }
+  if (el.displayModeBadge) el.displayModeBadge.textContent = docked ? "Native Dock Active" : "Embedded Stream / Stable";
+  if (el.nativeDockPanel) el.nativeDockPanel.classList.toggle("hidden", state.displayMode !== "native-dock");
+  if (el.nativeDockTarget) el.nativeDockTarget.classList.toggle("hidden", state.displayMode !== "native-dock");
+  if (el.preview) el.preview.classList.toggle("hidden", state.displayMode === "native-dock");
+  if (el.previewPlaceholder) el.previewPlaceholder.classList.toggle("hidden", state.displayMode === "native-dock");
+  if (el.nativeDockTargetLabel) el.nativeDockTargetLabel.classList.toggle("hidden", docked);
+  document.body.classList.toggle("native-dock-active", state.displayMode === "native-dock");
+  applyDockTargetSize();
   if (el.overlayDisplayMode) {
     el.overlayDisplayMode.textContent = `display: ${modeLabel.toLowerCase()}`;
   }
+  renderNativeDockResult();
 }
 
 function setGlobalStatus(status) {
@@ -328,89 +430,110 @@ function applyDisplayLayout(width, height) {
   emulatorFrame.style.setProperty("--emu-ar", `${width} / ${height}`);
 }
 
-function getEmbedBounds() {
-  const rect = emulatorFrame?.getBoundingClientRect();
-  if (!rect) {
-    return { x: 0, y: 0, width: 900, height: 600 };
-  }
+function getEmulatorDockRect() {
+  const rect = el.nativeDockTarget?.getBoundingClientRect();
+  if (!rect) return null;
+  const serial = getActiveSerial();
   return {
-    x: Math.max(0, Math.floor(rect.left)),
-    y: Math.max(0, Math.floor(rect.top)),
-    width: Math.max(100, Math.floor(rect.width)),
-    height: Math.max(100, Math.floor(rect.height))
+    serial,
+    avdName: state.selectedProfile || null,
+    displayMode: state.displayMode,
+    rect: {
+      left: rect.left,
+      top: rect.top,
+      width: rect.width,
+      height: rect.height,
+      devicePixelRatio: window.devicePixelRatio || 1,
+      scrollX: window.scrollX || 0,
+      scrollY: window.scrollY || 0
+    },
+    offsets: {
+      x: state.nativeDock.calibration.x,
+      y: state.nativeDock.calibration.y,
+      widthDelta: state.nativeDock.calibration.widthDelta,
+      heightDelta: state.nativeDock.calibration.heightDelta
+    }
   };
 }
 
-function setWorkspaceMode(mode) {
-  state.nativeEmbed.mode = mode;
-  if (mode === "native") {
-    if (el.emulatorHost) el.emulatorHost.style.display = "block";
-    el.preview.style.display = "none";
-    el.previewPlaceholder.style.display = "none";
-    renderDisplayMode();
-    return;
-  }
-
-  if (el.emulatorHost) el.emulatorHost.style.display = "none";
-  if (!state.remoteDisplay.active && !el.preview.src) {
-    el.preview.style.display = "none";
-    el.previewPlaceholder.style.display = "block";
-  }
+function setDisplayMode(mode) {
+  state.displayMode = mode;
+  void window.runtimeDock?.setDockMode?.(mode);
+  if (mode === "stream" && state.nativeDock.status === "inactive") setNativeDockStatus("inactive");
+  if (el.displayModeSelect && el.displayModeSelect.value !== mode) el.displayModeSelect.value = mode;
   renderDisplayMode();
 }
 
-async function detachNativeEmbed() {
-  if (!state.nativeEmbed.supported || !state.nativeEmbed.attached) return;
+function scheduleDockSync(reason = "redock") {
+  if (state.displayMode !== "native-dock") return;
+  if (dockDebounceTimer) clearTimeout(dockDebounceTimer);
+  dockDebounceTimer = setTimeout(() => {
+    void dockEmulatorWindow(reason);
+  }, 120);
+}
+
+async function dockEmulatorWindow(reason = "dock") {
+  if (!window.runtimeDock?.dockEmulatorWindow) {
+    showToast("Native dock bridge unavailable.", "error");
+    return;
+  }
+  const payload = getEmulatorDockRect();
+  if (!payload) {
+    showToast("Dock target area not available.", "error");
+    return;
+  }
+  if (payload.rect.width < 200 || payload.rect.height < 300) {
+    showToast("Dock target too small for emulator window.", "warn");
+    return;
+  }
   try {
-    await window.desktopBridge.emulatorDetach();
+    setNativeDockStatus("docking");
+    const result = await window.runtimeDock.dockEmulatorWindow(payload);
+    state.nativeDock.lastResult = result;
+    if (!result?.ok) {
+      state.nativeDock.active = false;
+      setNativeDockStatus("failed");
+      renderDisplayMode();
+      if (String(result?.reason || "") === "emulator_window_not_found") {
+        showToast("No visible emulator window found. Start emulator in windowed mode, not -no-window.", "warn");
+      } else if (String(result?.reason || "") === "windows_dock_helper_failed") {
+        showToast("Native Dock helper failed. Stream mode is still available.", "warn");
+      } else {
+        showToast("Native Dock failed. Returning to Embedded Stream.", "warn");
+      }
+      await returnToStreamFallback();
+      return;
+    }
+    state.nativeDock.active = true;
+    state.nativeDock.lastPayload = payload;
+    setNativeDockStatus("docked");
+    renderDisplayMode();
+    if (reason === "dock") showToast("Native Dock active.", "ok");
+  } catch (error) {
+    state.nativeDock.active = false;
+    setNativeDockStatus("failed");
+    showToast("Native Dock failed. Returning to Embedded Stream.", "error");
+    await returnToStreamFallback();
+  }
+}
+
+async function undockEmulatorWindow() {
+  const payload = getEmulatorDockRect() || { serial: getActiveSerial(), avdName: state.selectedProfile || null };
+  try {
+    await window.runtimeDock?.undockEmulatorWindow(payload);
   } catch {
     // best effort
-  } finally {
-    state.nativeEmbed.attached = false;
-    setWorkspaceMode("stream");
   }
+  state.nativeDock.active = false;
+  setNativeDockStatus("inactive");
+  renderDisplayMode();
 }
 
-async function resizeNativeEmbed() {
-  if (!state.nativeEmbed.supported || !state.nativeEmbed.attached) return;
-  try {
-    await window.desktopBridge.emulatorResize({ bounds: getEmbedBounds() });
-  } catch {
-    // keep fallback state handled by attach flow
-  }
-}
-
-function scheduleNativeResize() {
-  if (resizeTimer) clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    void resizeNativeEmbed();
-  }, 80);
-}
-
-async function tryNativeAttach(payload) {
-  if (runtimeConfig.embedMode !== "force") return false;
-  if (!state.nativeEmbed.supported) return false;
-  try {
-    const result = payload.pid
-      ? await window.desktopBridge.emulatorAttach({ pid: payload.pid, bounds: getEmbedBounds() })
-      : await window.desktopBridge.emulatorAttachRunning({ bounds: getEmbedBounds() });
-    if (!result?.ok) {
-      showToast(result?.error || "Native embed unavailable, using Live Embedded Stream.", "warn");
-      state.nativeEmbed.attached = false;
-      setWorkspaceMode("stream");
-      return false;
-    }
-
-    stopLivePreview();
-    state.nativeEmbed.attached = true;
-    setWorkspaceMode("native");
-    return true;
-  } catch (error) {
-    showToast(`Native embed failed: ${error?.message || error}`, "warn");
-    state.nativeEmbed.attached = false;
-    setWorkspaceMode("stream");
-    return false;
-  }
+async function returnToStreamFallback() {
+  setDisplayMode("stream");
+  setNativeDockStatus("returned-to-stream");
+  const serial = getActiveSerial();
+  if (serial) await startLivePreview(serial);
 }
 
 async function refreshLiveFrame() {
@@ -682,18 +805,16 @@ async function refreshStatus() {
   el.preflightRaw.textContent = JSON.stringify(debug, null, 2);
 
   const device = state.devices.find((d) => d.state === "device");
-  if (!device && state.nativeEmbed.attached) {
-    await detachNativeEmbed();
+  if (!device?.bootCompleted) {
+    stopLivePreview();
+    if (state.displayMode !== "native-dock") setPreview(null);
+    return;
   }
-  if (device?.bootCompleted) {
-    if (!state.nativeEmbed.attached) {
-      await startLivePreview(device.serial);
-    }
-  } else {
-    if (!state.nativeEmbed.attached) {
-      stopLivePreview();
-      setPreview(null);
-    }
+
+  if (state.displayMode === "stream") {
+    await startLivePreview(device.serial);
+  } else if (state.displayMode === "native-dock" && state.nativeDock.active) {
+    scheduleDockSync("status-refresh");
   }
 }
 
@@ -730,12 +851,8 @@ async function startEmulator() {
       return;
     }
 
-    if (state.nativeEmbed.supported) {
-      const attached = await tryNativeAttach({ pid: result?.pid || 0 });
-      if (!attached) {
-        const dev = state.devices.find((d) => d.state === "device" && d.bootCompleted);
-        if (dev) await startLivePreview(dev.serial);
-      }
+    if (state.displayMode === "native-dock") {
+      await dockEmulatorWindow("dock");
     }
   } catch (e) {
     showToast(`Start emulator failed: ${e.message}`, "error");
@@ -744,7 +861,9 @@ async function startEmulator() {
 
 async function stopEmulator() {
   try {
-    await detachNativeEmbed();
+    if (state.displayMode === "native-dock") {
+      await undockEmulatorWindow();
+    }
     stopLivePreview();
     const result = await getJson(`${runtimeConfig.hostAgentUrl}/android/emulator/stop`, {
       method: "POST",
@@ -860,6 +979,9 @@ async function init() {
   if (el.serviceConfig) {
     el.serviceConfig.textContent = `HOST_AGENT_URL=${runtimeConfig.hostAgentUrl} | BACKEND_API_URL=${runtimeConfig.backendApiUrl} | WORKER_URL=${runtimeConfig.workerUrl}`;
   }
+
+  loadDockCalibration();
+  renderDockCalibration();
 
   el.runtimeProfile.addEventListener("change", () => {
     state.selectedProfile = el.runtimeProfile.value;
@@ -1010,7 +1132,10 @@ async function init() {
   el.preview.addEventListener("focus", () => setInputActive(true));
   el.preview.addEventListener("blur", () => setInputActive(false));
 
-  document.querySelectorAll(".tab").forEach((btn) => btn.addEventListener("click", () => setActiveTab(btn.dataset.tab)));
+  document.querySelectorAll(".tab").forEach((btn) => btn.addEventListener("click", () => {
+    setActiveTab(btn.dataset.tab);
+    scheduleDockSync("tab-change");
+  }));
 
   el.refresh.addEventListener("click", refreshStatus);
   document.getElementById("refreshDevices")?.addEventListener("click", refreshStatus);
@@ -1018,10 +1143,77 @@ async function init() {
   el.stopEmulator.addEventListener("click", stopEmulator);
   el.stopEmulatorToolbar.addEventListener("click", stopEmulator);
   document.getElementById("uploadRun")?.addEventListener("click", uploadAndRun);
+  el.displayModeSelect?.addEventListener("change", async () => {
+    const nextMode = el.displayModeSelect.value === "native-dock" ? "native-dock" : "stream";
+    setDisplayMode(nextMode);
+    if (nextMode === "stream") {
+      await undockEmulatorWindow();
+      await returnToStreamFallback();
+      return;
+    }
+    scheduleDockSync("mode-switch");
+  });
+  el.applyDockCalibration?.addEventListener("click", async () => {
+    state.nativeDock.calibration.x = Number(el.dockOffsetX?.value || 0) || 0;
+    state.nativeDock.calibration.y = Number(el.dockOffsetY?.value || 0) || 0;
+    state.nativeDock.calibration.widthDelta = Number(el.dockWidthDelta?.value || 0) || 0;
+    state.nativeDock.calibration.heightDelta = Number(el.dockHeightDelta?.value || 0) || 0;
+    state.nativeDock.calibration.targetWidth = Number(el.dockTargetWidth?.value || 360) || 360;
+    state.nativeDock.calibration.targetHeight = Number(el.dockTargetHeight?.value || 560) || 560;
+    state.nativeDock.fitMode = el.nativeDockFitMode?.value || state.nativeDock.fitMode;
+    localStorage.setItem("nativeDockOffsetX", String(state.nativeDock.calibration.x));
+    localStorage.setItem("nativeDockOffsetY", String(state.nativeDock.calibration.y));
+    localStorage.setItem("nativeDockWidthDelta", String(state.nativeDock.calibration.widthDelta));
+    localStorage.setItem("nativeDockHeightDelta", String(state.nativeDock.calibration.heightDelta));
+    localStorage.setItem("nativeDockTargetWidth", String(state.nativeDock.calibration.targetWidth));
+    localStorage.setItem("nativeDockTargetHeight", String(state.nativeDock.calibration.targetHeight));
+    localStorage.setItem("nativeDockFitMode", state.nativeDock.fitMode);
+    applyDockTargetSize();
+    await dockEmulatorWindow("redock");
+  });
+  el.resetDockCalibration?.addEventListener("click", async () => {
+    state.nativeDock.calibration = { x: 0, y: 0, widthDelta: 0, heightDelta: 0, targetWidth: 360, targetHeight: 560 };
+    state.nativeDock.fitMode = "full";
+    localStorage.setItem("nativeDockOffsetX", "0");
+    localStorage.setItem("nativeDockOffsetY", "0");
+    localStorage.setItem("nativeDockWidthDelta", "0");
+    localStorage.setItem("nativeDockHeightDelta", "0");
+    localStorage.setItem("nativeDockTargetWidth", "360");
+    localStorage.setItem("nativeDockTargetHeight", "560");
+    localStorage.setItem("nativeDockFitMode", "full");
+    renderDockCalibration();
+    applyDockTargetSize();
+    await dockEmulatorWindow("redock");
+  });
+  el.nativeDockFitMode?.addEventListener("change", async () => {
+    state.nativeDock.fitMode = el.nativeDockFitMode.value;
+    localStorage.setItem("nativeDockFitMode", state.nativeDock.fitMode);
+    applyDockTargetSize();
+    renderDockCalibration();
+    await dockEmulatorWindow("redock");
+  });
+  el.centerDockTarget?.addEventListener("click", async () => {
+    applyDockTargetSize();
+    await dockEmulatorWindow("redock");
+  });
+  el.fitFullDockTarget?.addEventListener("click", async () => {
+    state.nativeDock.fitMode = "full";
+    localStorage.setItem("nativeDockFitMode", "full");
+    applyDockTargetSize();
+    renderDockCalibration();
+    await dockEmulatorWindow("redock");
+  });
+  el.dockEmulatorWindow?.addEventListener("click", () => { void dockEmulatorWindow("dock"); });
+  el.redockEmulatorWindow?.addEventListener("click", () => { void dockEmulatorWindow("redock"); });
+  el.undockEmulatorWindow?.addEventListener("click", () => { void undockEmulatorWindow(); });
+  el.returnToStream?.addEventListener("click", async () => {
+    await undockEmulatorWindow();
+    await returnToStreamFallback();
+  });
 
   document.getElementById("refreshPreview")?.addEventListener("click", async () => {
-    if (state.nativeEmbed.attached) {
-      await resizeNativeEmbed();
+    if (state.displayMode === "native-dock") {
+      await dockEmulatorWindow("redock");
       return;
     }
     if (state.remoteDisplay.active) {
@@ -1165,24 +1357,39 @@ async function init() {
   if (bridge?.onRuntimeRefresh) bridge.onRuntimeRefresh(() => refreshStatus());
   if (bridge?.onRuntimeError) bridge.onRuntimeError((message) => showToast(message, "error"));
   if (bridge?.onAbout) bridge.onAbout((data) => showToast(`${data.appName} v${data.version}`, "ok"));
+  if (bridge?.onNativeDockAction) {
+    bridge.onNativeDockAction(async ({ action }) => {
+      if (action === "dock") {
+        setDisplayMode("native-dock");
+        await dockEmulatorWindow("dock");
+      } else if (action === "undock") {
+        await undockEmulatorWindow();
+      } else {
+        await undockEmulatorWindow();
+        await returnToStreamFallback();
+      }
+    });
+  }
+  if (bridge?.onNativeDockRedockResult) {
+    bridge.onNativeDockRedockResult(async (result) => {
+      if (result?.ok) return;
+      setNativeDockStatus("failed");
+      showToast("Auto re-dock failed. Returning to Embedded Stream.", "warn");
+      await returnToStreamFallback();
+    });
+  }
 
-  state.nativeEmbed.supported = !!(bridge?.emulatorAttach && bridge?.emulatorAttachRunning && bridge?.emulatorResize && bridge?.emulatorDetach && navigator.platform.toLowerCase().includes("win"));
-  setWorkspaceMode("stream");
+  setDisplayMode("stream");
+  setNativeDockStatus("inactive");
   renderDisplayMode();
-  window.addEventListener("resize", scheduleNativeResize);
+  window.addEventListener("resize", () => scheduleDockSync("window-resize"));
+  window.addEventListener("scroll", () => scheduleDockSync("window-scroll"), { passive: true });
   if (window.ResizeObserver && emulatorFrame) {
-    const observer = new ResizeObserver(() => scheduleNativeResize());
+    const observer = new ResizeObserver(() => scheduleDockSync("layout-resize"));
     observer.observe(emulatorFrame);
   }
 
   await refreshStatus();
-  if (state.nativeEmbed.supported) {
-    const live = state.devices.find((d) => d.state === "device" && d.bootCompleted);
-    if (live) {
-      const ok = await tryNativeAttach({ pid: 0 });
-      if (!ok) await startLivePreview(live.serial);
-    }
-  }
   renderTimeline(null, null);
 }
 

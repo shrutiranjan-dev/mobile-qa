@@ -13,6 +13,16 @@ export type RuntimeHostAdapter = {
     sdkmanagerPath: string | null;
     avdmanagerPath: string | null;
   };
+  dockEmulatorWindow(payload: { serial?: string | null; avdName?: string | null; x: number; y: number; width: number; height: number }): Promise<DockResult>;
+  undockEmulatorWindow(payload: { serial?: string | null; avdName?: string | null }): Promise<DockResult>;
+};
+
+export type DockResult = {
+  ok: boolean;
+  reason?: string;
+  message: string;
+  windowTitle?: string;
+  bounds?: { x: number; y: number; width: number; height: number };
 };
 
 const BUILD_TOOLS_VERSION = "35.0.0";
@@ -59,6 +69,22 @@ export class DefaultRuntimeHostAdapter implements RuntimeHostAdapter {
       aaptPath: path.join(sdkRoot, "build-tools", BUILD_TOOLS_VERSION, `aapt${ext}`),
       sdkmanagerPath: path.join(sdkRoot, "cmdline-tools", "latest", "bin", `sdkmanager${bat}`),
       avdmanagerPath: path.join(sdkRoot, "cmdline-tools", "latest", "bin", `avdmanager${bat}`)
+    };
+  }
+
+  async dockEmulatorWindow(_payload: { serial?: string | null; avdName?: string | null; x: number; y: number; width: number; height: number }): Promise<DockResult> {
+    return {
+      ok: false,
+      reason: "native_dock_not_supported_on_this_host",
+      message: "Native dock is not supported on this host."
+    };
+  }
+
+  async undockEmulatorWindow(_payload: { serial?: string | null; avdName?: string | null }): Promise<DockResult> {
+    return {
+      ok: false,
+      reason: "native_dock_not_supported_on_this_host",
+      message: "Native undock is not supported on this host."
     };
   }
 }

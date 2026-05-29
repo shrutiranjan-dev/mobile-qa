@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
-import { DefaultRuntimeHostAdapter } from "./adapters/runtime-host-adapter";
+import { DefaultRuntimeHostAdapter, RuntimeHostAdapter } from "./adapters/runtime-host-adapter";
+import { WindowsAdapter } from "./adapters/windows-adapter";
+import { UbuntuAdapter } from "./adapters/ubuntu-adapter";
 import { AndroidSdkService } from "./android/android-sdk-service";
 import { EmulatorService } from "./android/emulator-service";
 import { AdbService } from "./android/adb-service";
@@ -9,7 +11,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const adapter = new DefaultRuntimeHostAdapter();
+const baseAdapter = new DefaultRuntimeHostAdapter();
+const adapter: RuntimeHostAdapter = baseAdapter.getHostOs() === "windows"
+  ? new WindowsAdapter()
+  : baseAdapter.getHostOs() === "ubuntu"
+    ? new UbuntuAdapter()
+    : baseAdapter;
 const sdkService = new AndroidSdkService(adapter);
 const emulatorService = new EmulatorService(sdkService, new AdbService(sdkService));
 const adbService = new AdbService(sdkService);
@@ -33,6 +40,11 @@ function asClampedInt(value: unknown, min = 0, max = Number.MAX_SAFE_INTEGER) {
 function sanitizeTextInput(raw: string) {
   const withoutControlChars = raw.replace(/[\u0000-\u001F\u007F]/g, "");
   return withoutControlChars.slice(0, 500);
+}
+
+function asFiniteNumber(value: unknown) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
 }
 
 app.get("/health", (_req, res) => {
@@ -95,6 +107,76 @@ app.post("/android/emulator/stop", async (req, res) => {
     res.json(result);
   } catch (error) {
     res.status(500).json({ error: error instanceof Error ? error.message : "Failed to stop emulator" });
+  }
+});
+
+app.post("/android/emulator/window/dock", async (req, res) => {
+  const serial = req.body?.serial ? String(req.body.serial).trim() : "";
+  const avdName = req.body?.avdName ? String(req.body.avdName).trim() : "";
+  const x = asFiniteNumber(req.body?.x);
+  const y = asFiniteNumber(req.body?.y);
+  const width = asFiniteNumber(req.body?.width);
+  const height = asFiniteNumber(req.body?.height);
+
+  if (!serial && !avdName) return res.status(400).json({ ok: false, reason: "serial_or_avdName_required", message: "serial or avdName is required" });
+  if (x === null || y === null || width === null || height === null) return res.status(400).json({ ok: false, reason: "invalid_payload", message: "x/y/width/height must be finite numbers" });
+
+  const safePayload = {
+    serial: serial || null,
+    avdName: avdName || null,
+    x: Math.max(-10000, Math.min(10000, Math.round(x))),
+    y: Math.max(-10000, Math.min(10000, Math.round(y))),
+    width: Math.max(200, Math.min(8000, Math.round(width))),
+    height: Math.max(300, Math.min(8000, Math.round(height)))
+  };
+
+  try {
+    const dock = await adapter.dockEmulatorWindow(safePayload);
+    if (!dock.ok) return res.status(404).json(dock);
+    const dockAny = dock as { message?: string; windowTitle?: string; bounds?: { x: number; y: number; width: number; height: number } };
+    return res.json({
+      ok: true,
+      mode: "native-dock",
+      message: dockAny.message || "Emulator window docked",
+      windowTitle: dockAny.windowTitle,
+      bounds: dockAny.bounds || { x: safePayload.x, y: safePayload.y, width: safePayload.width, height: safePayload.height }
+    });
+  } catch (error) {
+    return res.status(500).json({ ok: false, reason: "dock_failed", message: error instanceof Error ? error.message : "Dock failed" });
+  }
+});
+
+app.post("/android/emulator/window/undock", async (req, res) => {
+  const serial = req.body?.serial ? String(req.body.serial).trim() : "";
+  const avdName = req.body?.avdName ? String(req.body.avdName).trim() : "";
+  if (!serial && !avdName) return res.status(400).json({ ok: false, reason: "serial_or_avdName_required", message: "serial or avdName is required" });
+  try {
+    const out = await adapter.undockEmulatorWindow({ serial: serial || null, avdName: avdName || null });
+    if (!out.ok) return res.status(404).json(out);
+    const outAny = out as { message?: string; windowTitle?: string; bounds?: { x: number; y: number; width: number; height: number } };
+    return res.json({
+      ok: true,
+      mode: "native-dock",
+      message: outAny.message || "Emulator window undocked",
+      windowTitle: outAny.windowTitle,
+      bounds: outAny.bounds
+    });
+  } catch (error) {
+    return res.status(500).json({ ok: false, reason: "undock_failed", message: error instanceof Error ? error.message : "Undock failed" });
+  }
+});
+
+app.get("/android/emulator/window/candidates", async (_req, res) => {
+  try {
+    const includeAll = String(_req.query?.all || "").toLowerCase() === "true";
+    const maybeWindowsAdapter = adapter as RuntimeHostAdapter & { listEmulatorWindowCandidates?: (all?: boolean) => Promise<unknown> };
+    if (!maybeWindowsAdapter.listEmulatorWindowCandidates) {
+      return res.json({ ok: false, reason: "window_candidates_not_supported_on_this_host" });
+    }
+    const result = await maybeWindowsAdapter.listEmulatorWindowCandidates(includeAll);
+    return res.json(result);
+  } catch (error) {
+    return res.status(500).json({ ok: false, reason: "window_candidates_failed", message: error instanceof Error ? error.message : "Failed to list candidates" });
   }
 });
 

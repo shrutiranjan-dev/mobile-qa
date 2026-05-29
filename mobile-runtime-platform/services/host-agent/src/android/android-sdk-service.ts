@@ -1,8 +1,8 @@
 import fs from "fs";
-import { DefaultRuntimeHostAdapter } from "../adapters/runtime-host-adapter";
+import { DefaultRuntimeHostAdapter, RuntimeHostAdapter } from "../adapters/runtime-host-adapter";
 
 export class AndroidSdkService {
-  constructor(private readonly adapter = new DefaultRuntimeHostAdapter()) {}
+  constructor(private readonly adapter: RuntimeHostAdapter = new DefaultRuntimeHostAdapter()) {}
 
   getStatus() {
     const hostOs = this.adapter.getHostOs();

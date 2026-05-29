@@ -11,8 +11,20 @@ The Electron desktop UI is an Android runtime cockpit for operating the host-age
 - Bottom panel tabs: timeline, logcat, report JSON, artifacts, advanced debug.
 
 ## Embedded Emulator View
-- Default and primary display mode: `Live Embedded Stream`.
-- Native Win32 SetParent path is experimental only and gated behind `EMBED_MODE=force`.
+- Display modes:
+  - `Embedded Stream - Stable` (default)
+  - `Native Window Dock - Experimental` (optional)
+- Native dock is not true DOM embedding; it repositions the real emulator OS window over a reserved dock area.
+- Native Win32 SetParent embedding remains experimental-only and is not default.
+- Native Dock includes:
+  - Dock/Re-dock/Undock/Return-to-Stream controls
+  - state badge (`Stream Stable`, `Docking...`, `Native Dock Active`, `Dock Failed`)
+  - automatic fallback to stream on docking failure
+  - auto re-dock on desktop window move/resize (debounced)
+  - local calibration offsets persisted in `localStorage`
+  - dedicated `#nativeDockTarget` rectangle for OS-level dock placement (not whole workspace)
+  - fit modes (`Full Emulator Window`, `Compact`, `Custom`)
+  - target width/height controls with persisted calibration
 - Overlay badges show:
   - `Embedded Stream`
   - `Live`
@@ -51,6 +63,8 @@ The Electron desktop UI is an Android runtime cockpit for operating the host-age
 - `POST /android/input/keyevent`
 - `POST /android/input/text`
 - `POST /android/emulator/stop`
+- `POST /android/emulator/window/dock`
+- `POST /android/emulator/window/undock`
 
 ## Safety Gating
 Input controls are disabled when any of the following are true:
@@ -61,5 +75,8 @@ Input controls are disabled when any of the following are true:
 ## Known Limitations
 - `adb shell input text` escaping has Android shell limitations for some characters/IME behavior.
 - Stream view is not native window embedding.
+- Native dock window may overlay UI and cannot be clipped like DOM.
 - Coordinates use detected display size or default fallback assumptions.
+- DPI and multi-monitor setups may require calibration offsets.
+- Emulator titlebar/toolbar are native and remain visible in dock mode.
 - Multi-touch gestures are not supported in MVP.

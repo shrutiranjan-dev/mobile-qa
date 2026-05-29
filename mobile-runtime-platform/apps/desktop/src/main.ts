@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu, ipcMain, shell } from "electron";
+import { app, BrowserWindow, Menu, ipcMain, shell, screen } from "electron";
 import path from "path";
 import fs from "fs";
 
@@ -25,6 +25,27 @@ type EmbedBounds = {
   height: number;
 };
 
+type DockRectPayload = {
+  serial?: string | null;
+  avdName?: string | null;
+  displayMode?: string;
+  rect?: {
+    left: number;
+    top: number;
+    width: number;
+    height: number;
+    devicePixelRatio?: number;
+    scrollX?: number;
+    scrollY?: number;
+  };
+  offsets?: {
+    x?: number;
+    y?: number;
+    widthDelta?: number;
+    heightDelta?: number;
+  };
+};
+
 type WinEmbedBridge = {
   findWindowByPid: (pid: number) => string | null;
   findWindowByTitleContains: (needle: string) => string | null;
@@ -39,6 +60,20 @@ const embedState: {
   childHwndHex: string | null;
 } = {
   childHwndHex: null
+};
+
+const nativeDockState: {
+  active: boolean;
+  mode: "stream" | "native-dock";
+  lastPayload: DockRectPayload | null;
+  lastWindow: BrowserWindow | null;
+  timer: NodeJS.Timeout | null;
+} = {
+  active: false,
+  mode: "stream",
+  lastPayload: null,
+  lastWindow: null,
+  timer: null
 };
 
 let winEmbedBridge: WinEmbedBridge | null = null;
@@ -113,6 +148,40 @@ function getRuntimeConfig(): RuntimeConfig {
   };
 }
 
+function envNumber(name: string, fallback = 0) {
+  const raw = process.env[name];
+  const num = Number(raw);
+  return Number.isFinite(num) ? num : fallback;
+}
+
+function resolveScreenRect(win: BrowserWindow, payload: DockRectPayload) {
+  const rect = payload.rect;
+  if (!rect) throw new Error("dock rect is required");
+  const contentBounds = win.getContentBounds();
+  const offsetX = Number.isFinite(Number(payload.offsets?.x)) ? Number(payload.offsets?.x) : envNumber("NATIVE_DOCK_OFFSET_X", 0);
+  const offsetY = Number.isFinite(Number(payload.offsets?.y)) ? Number(payload.offsets?.y) : envNumber("NATIVE_DOCK_OFFSET_Y", 0);
+  const widthDelta = Number.isFinite(Number(payload.offsets?.widthDelta)) ? Number(payload.offsets?.widthDelta) : envNumber("NATIVE_DOCK_WIDTH_DELTA", 0);
+  const heightDelta = Number.isFinite(Number(payload.offsets?.heightDelta)) ? Number(payload.offsets?.heightDelta) : envNumber("NATIVE_DOCK_HEIGHT_DELTA", 0);
+  const titlebarOffset = envNumber("NATIVE_DOCK_TITLEBAR_OFFSET", 0);
+
+  return {
+    x: Math.max(-10000, Math.min(10000, Math.round(contentBounds.x + rect.left + offsetX))),
+    y: Math.max(-10000, Math.min(10000, Math.round(contentBounds.y + rect.top + titlebarOffset + offsetY))),
+    width: Math.max(200, Math.min(8000, Math.round(rect.width + widthDelta))),
+    height: Math.max(300, Math.min(8000, Math.round(rect.height + heightDelta)))
+  };
+}
+
+async function postJson(url: string, body: unknown) {
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  const data = await res.json().catch(() => ({ ok: false, message: `Non-JSON response from ${url}` }));
+  return { ok: res.ok, status: res.status, data };
+}
+
 function createWindow(config: RuntimeConfig) {
   const win = new BrowserWindow({
     width: 1200,
@@ -159,6 +228,25 @@ function setAppMenu(win: BrowserWindow, config: RuntimeConfig) {
             if (result) {
               win.webContents.send("runtime:error", `Unable to open artifacts folder: ${result}`);
             }
+          }
+        },
+        { type: "separator" },
+        {
+          label: "Dock Native Emulator Window",
+          click: () => {
+            win.webContents.send("runtime:native-dock-action", { action: "dock" });
+          }
+        },
+        {
+          label: "Undock Native Emulator Window",
+          click: () => {
+            win.webContents.send("runtime:native-dock-action", { action: "undock" });
+          }
+        },
+        {
+          label: "Return to Stream",
+          click: () => {
+            win.webContents.send("runtime:native-dock-action", { action: "stream" });
           }
         }
       ]
@@ -300,9 +388,89 @@ app.whenReady().then(() => {
     embedState.childHwndHex = null;
     return { ok: true };
   });
+  ipcMain.handle("native-dock:dock", async (event, payload: DockRectPayload) => {
+    const win = BrowserWindow.fromWebContents(event.sender) || BrowserWindow.getFocusedWindow() || BrowserWindow.getAllWindows()[0];
+    if (!win) return { ok: false, message: "Desktop window not available." };
+    const screenRect = resolveScreenRect(win, payload);
+    const req = {
+      serial: payload?.serial || null,
+      avdName: payload?.avdName || null,
+      x: screenRect.x,
+      y: screenRect.y,
+      width: screenRect.width,
+      height: screenRect.height
+    };
+    const result = await postJson(`${config.hostAgentUrl}/android/emulator/window/dock`, req);
+    nativeDockState.lastPayload = payload;
+    nativeDockState.lastWindow = win;
+    nativeDockState.mode = "native-dock";
+    nativeDockState.active = !!result.data?.ok;
+    return { mode: "native-dock", ...result.data };
+  });
+  ipcMain.handle("native-dock:undock", async (_event, payload: DockRectPayload) => {
+    const req = {
+      serial: payload?.serial || null,
+      avdName: payload?.avdName || null
+    };
+    const result = await postJson(`${config.hostAgentUrl}/android/emulator/window/undock`, req);
+    nativeDockState.active = false;
+    nativeDockState.mode = "stream";
+    return { mode: "native-dock", ...result.data };
+  });
+  ipcMain.handle("native-dock:set-mode", async (_event, mode: "stream" | "native-dock") => {
+    nativeDockState.mode = mode;
+    if (mode === "stream") nativeDockState.active = false;
+    return { ok: true, mode: nativeDockState.mode };
+  });
+  ipcMain.handle("native-dock:get-state", async () => {
+    return {
+      active: nativeDockState.active,
+      mode: nativeDockState.mode,
+      hasPayload: !!nativeDockState.lastPayload
+    };
+  });
+  ipcMain.handle("native-dock:display-info", () => {
+    return {
+      offsets: {
+        NATIVE_DOCK_OFFSET_X: envNumber("NATIVE_DOCK_OFFSET_X", 0),
+        NATIVE_DOCK_OFFSET_Y: envNumber("NATIVE_DOCK_OFFSET_Y", 0),
+        NATIVE_DOCK_WIDTH_DELTA: envNumber("NATIVE_DOCK_WIDTH_DELTA", 0),
+        NATIVE_DOCK_HEIGHT_DELTA: envNumber("NATIVE_DOCK_HEIGHT_DELTA", 0),
+        NATIVE_DOCK_TITLEBAR_OFFSET: envNumber("NATIVE_DOCK_TITLEBAR_OFFSET", 0)
+      }
+    };
+  });
 
   const win = createWindow(config);
   setAppMenu(win, config);
+  const scheduleWindowRedock = () => {
+    if (!nativeDockState.active || !nativeDockState.lastPayload || !nativeDockState.lastWindow || nativeDockState.lastWindow.isMinimized()) return;
+    if (nativeDockState.timer) clearTimeout(nativeDockState.timer);
+    nativeDockState.timer = setTimeout(async () => {
+      if (!nativeDockState.lastWindow || !nativeDockState.lastPayload) return;
+      const screenRect = resolveScreenRect(nativeDockState.lastWindow, nativeDockState.lastPayload);
+      const redockResult = await postJson(`${config.hostAgentUrl}/android/emulator/window/dock`, {
+        serial: nativeDockState.lastPayload.serial || null,
+        avdName: nativeDockState.lastPayload.avdName || null,
+        x: screenRect.x,
+        y: screenRect.y,
+        width: screenRect.width,
+        height: screenRect.height
+      });
+      if (!redockResult.data?.ok && nativeDockState.lastWindow && !nativeDockState.lastWindow.isDestroyed()) {
+        nativeDockState.lastWindow.webContents.send("runtime:native-dock-redock-result", {
+          ok: false,
+          reason: redockResult.data?.reason,
+          message: redockResult.data?.message || "Auto re-dock failed."
+        });
+      }
+    }, 120);
+  };
+  win.on("move", scheduleWindowRedock);
+  win.on("resize", scheduleWindowRedock);
+  win.on("restore", scheduleWindowRedock);
+  win.on("unmaximize", scheduleWindowRedock);
+  screen.on("display-metrics-changed", scheduleWindowRedock);
 
   win.on("closed", () => {
     if (winEmbedBridge && embedState.childHwndHex) {
