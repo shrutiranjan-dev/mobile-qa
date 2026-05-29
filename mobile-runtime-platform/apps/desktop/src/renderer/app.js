@@ -87,6 +87,10 @@ const state = {
     },
     fitMode: "full"
   },
+  adbRecovery: {
+    inFlight: false,
+    lastAttemptAt: 0
+  },
   rotateTarget: "landscape"
 };
 
@@ -789,6 +793,27 @@ async function refreshStatus() {
       ]);
       state.services.sdk = sdk.ready ? "ok" : "warn";
       state.devices = devices.devices || [];
+      const offlineEmu = state.devices.find((d) => d.serial?.startsWith("emulator-") && d.state === "offline");
+      const now = Date.now();
+      const canRecover = !!offlineEmu && !state.adbRecovery.inFlight && (now - state.adbRecovery.lastAttemptAt > 15000);
+      if (canRecover) {
+        state.adbRecovery.inFlight = true;
+        state.adbRecovery.lastAttemptAt = now;
+        try {
+          await getJson(`${runtimeConfig.hostAgentUrl}/android/adb/recover`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({})
+          });
+          const refreshed = await getJson(`${runtimeConfig.hostAgentUrl}/android/devices`);
+          state.devices = refreshed.devices || [];
+          showToast("ADB recovery attempted from UI.", "ok");
+        } catch (recoverErr) {
+          showToast(`ADB auto-recovery failed: ${recoverErr.message || recoverErr}`, "warn");
+        } finally {
+          state.adbRecovery.inFlight = false;
+        }
+      }
       renderProfiles(avds.avds || []);
       debug.sdk = sdk;
       debug.avds = avds;
@@ -845,7 +870,19 @@ async function startEmulator() {
       showToast(`Starting emulator ${result.avdName}`, "ok");
     }
 
-    const started = await waitForBootAndPreview();
+    let started = await waitForBootAndPreview();
+    if (!started) {
+      const offline = state.devices.find((d) => d.serial?.startsWith("emulator-") && d.state === "offline");
+      if (offline) {
+        showToast("Emulator detected offline. Recovering ADB and retrying stream boot wait...", "warn");
+        await getJson(`${runtimeConfig.hostAgentUrl}/android/adb/recover`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({})
+        });
+        started = await waitForBootAndPreview(30, 1500);
+      }
+    }
     if (!started) {
       showToast("Emulator boot is taking longer than expected. Click Refresh in a few seconds.", "warn");
       return;

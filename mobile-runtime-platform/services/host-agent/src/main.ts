@@ -85,6 +85,18 @@ app.get("/android/devices", async (_req, res) => {
   }
 });
 
+app.post("/android/adb/recover", async (_req, res) => {
+  try {
+    await adbService.reconnectOffline().catch(() => undefined);
+    await adbService.restartServer().catch(() => undefined);
+    await adbService.reconnectOffline().catch(() => undefined);
+    const devices = await adbService.listDevices();
+    res.json({ ok: true, devices });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error instanceof Error ? error.message : "Failed to recover adb state" });
+  }
+});
+
 app.post("/android/emulator/start", async (req, res) => {
   const avdName = String(req.body?.avdName || "").trim();
   if (!avdName) {

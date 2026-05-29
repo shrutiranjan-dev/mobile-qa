@@ -45,6 +45,37 @@ export class AdbService {
       });
   }
 
+  async reconnectOffline() {
+    await this.exec(["reconnect", "offline"], 10000);
+  }
+
+  async restartServer() {
+    await this.exec(["kill-server"], 10000);
+    await this.exec(["start-server"], 10000);
+  }
+
+  async waitForDeviceState(serial: string, expectedState: "device" | "offline", timeoutMs = 15000, intervalMs = 500) {
+    const startedAt = Date.now();
+    while (Date.now() - startedAt < timeoutMs) {
+      const devices = await this.listDevices();
+      const found = devices.find((d) => d.serial === serial);
+      if (found?.state === expectedState) return true;
+      await new Promise((r) => setTimeout(r, intervalMs));
+    }
+    return false;
+  }
+
+  async waitForDeviceGone(serial: string, timeoutMs = 15000, intervalMs = 500) {
+    const startedAt = Date.now();
+    while (Date.now() - startedAt < timeoutMs) {
+      const devices = await this.listDevices();
+      const found = devices.find((d) => d.serial === serial);
+      if (!found) return true;
+      await new Promise((r) => setTimeout(r, intervalMs));
+    }
+    return false;
+  }
+
   async isBootCompleted(serial: string) {
     const result = await this.exec(["-s", serial, "shell", "getprop", "sys.boot_completed"], 5000);
     return result.trim() === "1";

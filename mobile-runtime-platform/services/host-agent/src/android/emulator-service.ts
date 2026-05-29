@@ -34,13 +34,31 @@ export class EmulatorService {
       throw new Error("Emulator path could not be resolved.");
     }
 
-    const devices = await this.adbService.listDevices();
-    const running = devices.find((d) => d.state === "device");
+    await this.adbService.reconnectOffline().catch(() => undefined);
+    let devices = await this.adbService.listDevices();
+    let running = devices.find((d) => d.state === "device");
     if (running) {
       return {
         status: "already_running",
         serial: running.serial
       };
+    }
+
+    const staleOffline = devices.find((d) => d.serial.startsWith("emulator-") && d.state === "offline");
+    if (staleOffline) {
+      await this.adbService.reconnectOffline().catch(() => undefined);
+      await this.adbService.restartServer().catch(() => undefined);
+      devices = await this.adbService.listDevices();
+      running = devices.find((d) => d.state === "device");
+      if (running) {
+        return {
+          status: "already_running",
+          serial: running.serial
+        };
+      }
+      // Best-effort cleanup for stale offline emulator entry before spawning a new instance.
+      await this.adbService.exec(["-s", staleOffline.serial, "emu", "kill"]).catch(() => undefined);
+      await this.adbService.waitForDeviceGone(staleOffline.serial, 8000).catch(() => undefined);
     }
 
     const profile = RUNTIME_PROFILES.find((p) => p.avdName === avdName);
@@ -52,6 +70,8 @@ export class EmulatorService {
       "-no-audio",
       "-no-boot-anim",
       "-no-metrics",
+      "-no-snapshot-load",
+      "-no-snapshot-save",
       "-gpu",
       "swiftshader_indirect",
       "-memory",
@@ -75,12 +95,14 @@ export class EmulatorService {
 
   async stopEmulator(serial?: string) {
     const devices = await this.adbService.listDevices();
-    const target = serial || devices.find((d) => d.state === "device")?.serial;
+    const target = serial || devices.find((d) => d.state === "device")?.serial || devices.find((d) => d.serial.startsWith("emulator-"))?.serial;
     if (!target) {
       return { status: "not_running" };
     }
 
-    await this.adbService.exec(["-s", target, "emu", "kill"]);
+    await this.adbService.exec(["-s", target, "emu", "kill"]).catch(() => undefined);
+    await this.adbService.waitForDeviceGone(target, 12000).catch(() => undefined);
+    await this.adbService.reconnectOffline().catch(() => undefined);
     return { status: "stopping", serial: target };
   }
 }
